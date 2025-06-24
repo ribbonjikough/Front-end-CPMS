@@ -19,8 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="login-container">
         <form class="login-form" method="post" onsubmit="return validateLogin();">
             <h2>Login</h2>
-            <input type="text" name="username" id="username" placeholder="Username" autocomplete="off" required>
-            <input type="password" name="password" id="password" placeholder="Password" autocomplete="off" required>
+            <input type="text" name="username" id="username" placeholder="Username" autocomplete="off">
+            <input type="password" name="password" id="password" placeholder="Password" autocomplete="off">
             <button type="submit">Login</button>
         </form>
     </div>
