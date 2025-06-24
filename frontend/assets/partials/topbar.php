@@ -1,25 +1,31 @@
-<?php
-// filepath: c:\Users\User\OneDrive - Universiti Malaya\Documents\GitHub\Front-end-CPMS\frontend\assets\partials\topbar.php
-?>
-<link rel="stylesheet" href="assets/css/style.css">
-
-<div class="topbar">
-  <div class="topbar-left">
-    <img src="assets/img/company-logo.png" alt="Company Logo" class="topbar-logo">
-    <span class="topbar-divider"></span>
-    <span class="topbar-title">
-      <?php echo isset($topbar_title) ? htmlspecialchars($topbar_title) : 'Feedbacks'; ?>
-    </span>
-  </div>
-  <div class="topbar-right">
-    <img src="assets/img/pfp.png" alt="Profile Picture" class="topbar-pfp">
-    <div class="topbar-user">
-      <div class="topbar-username">John Doe</div>
-      <div class="topbar-role">Global Admin</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="assets/css/globals.css" />
+    <link rel="stylesheet" href="assets/css/styleguide.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="top-menu">
+      <div class="logo-walkin-search">
+        <img class="image" src="assets/img/company-logo.png" />
+        <img class="divider" src="data:image/svg+xml;utf8,<svg width='2' height='44' xmlns='http://www.w3.org/2000/svg'><rect width='2' height='44' fill='%23E4E4E4'/></svg>" />
+        <div class="walkin">
+          <div class="walk-in">
+            <?php echo isset($topbar_title) ? htmlspecialchars($topbar_title) : 'Dashboard'; ?>
+          </div>
+        </div>
+      </div>
+      <div class="frame">
+        <div class="image-wrapper"><img class="img" src="assets/img/pfp.png" /></div>
+        <div class="div">
+          <div class="text-wrapper">John Doe</div>
+          <div class="text-wrapper-2">Global Admin</div>
+        </div>
+        <img class="polygon" src="data:image/svg+xml;utf8,<svg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L6 7L11 1' stroke='%23333' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+      </div>
     </div>
-    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="topbar-caret">
-      <path d="M1 1L6 7L11 1" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </div>
-</div>
-<script src="../../assets/js/script.js"></script>
+  </body>
+</html>
