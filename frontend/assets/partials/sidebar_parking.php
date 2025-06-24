@@ -10,35 +10,34 @@
     <?php
     // Set $sidebar_active = 'car', 'manual', 'history', or 'lpr' before including this file
     if (!isset($sidebar_active)) $sidebar_active = 'car';
+    $current_file = basename($_SERVER['SCRIPT_NAME']);
     ?>
-    <div class="side-menu-home">
+    <div class="side-menu">
       <div class="frame">
-        <div class="select-box<?php if($sidebar_active === 'car') echo ' active'; ?>">
-          <div class="radio-bubton">
-            <div class="group<?php if($sidebar_active === 'car') echo ' active'; ?>">
-              <div class="ellipse<?php if($sidebar_active === 'car') echo ' active'; ?>"></div>
-            </div>
+        <a href="parking_car.php" class="menu-item<?= $current_file === 'car_in_park.php' ? ' active' : '' ?>">
+          <div class="radio-btn">
+            <div class="radio-circle<?= $current_file === 'car_in_park.php' ? ' active' : '' ?>"></div>
           </div>
           <div class="transactions">Car in Park</div>
-        </div>
-        <div class="div<?php if($sidebar_active === 'manual') echo ' active'; ?>">
-          <div class="radio-bubton">
-            <div class="ellipse-2<?php if($sidebar_active === 'manual') echo ' active'; ?>"></div>
+        </a>
+        <a href="parking_manual.php" class="menu-item<?= $current_file === 'parking_manual.php' ? ' active' : '' ?>">
+          <div class="radio-btn">
+            <div class="radio-circle<?= $current_file === 'parking_manual.php' ? ' active' : '' ?>"></div>
           </div>
           <div class="transactions">Manual Gate Opening Record</div>
-        </div>
-        <div class="div<?php if($sidebar_active === 'history') echo ' active'; ?>">
-          <div class="radio-bubton">
-            <div class="ellipse-2<?php if($sidebar_active === 'history') echo ' active'; ?>"></div>
+        </a>
+        <a href="parking_history.php" class="menu-item<?= $current_file === 'parking_history.php' ? ' active' : '' ?>">
+          <div class="radio-btn">
+            <div class="radio-circle<?= $current_file === 'parking_history.php' ? ' active' : '' ?>"></div>
           </div>
           <div class="transactions">Parking History</div>
-        </div>
-        <div class="div<?php if($sidebar_active === 'lpr') echo ' active'; ?>">
-          <div class="radio-bubton">
-            <div class="ellipse-2<?php if($sidebar_active === 'lpr') echo ' active'; ?>"></div>
+        </a>
+        <a href="parking_lpr.php" class="menu-item<?= $current_file === 'parking_lpr.php' ? ' active' : '' ?>">
+          <div class="radio-btn">
+            <div class="radio-circle<?= $current_file === 'parking_lpr.php' ? ' active' : '' ?>"></div>
           </div>
           <div class="transactions">LPR Logs</div>
-        </div>
+        </a>
       </div>
     </div>
   </body>

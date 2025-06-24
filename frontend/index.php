@@ -1,5 +1,5 @@
 <?php
-$topbar_title = "Dashboard";
+$topbar_title = 'Dashboard'; // Set the title for the topbar
 include 'assets/partials/topbar.php';
 ?>
 <!DOCTYPE html>

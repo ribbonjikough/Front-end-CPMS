@@ -1,4 +1,5 @@
 <?php
+$topbar_title = 'Season Parking'; // Set the title for the topbar
 include 'assets/partials/topbar.php';
 ?>
 <!DOCTYPE html>
@@ -14,9 +15,8 @@ include 'assets/partials/topbar.php';
 </html>
 
 <div class="sidebar-layout">
-    
     <?php include 'assets/partials/primary_sidebar.php'; ?>
-    <?php include 'assets/partials/sidebar_home.php'; ?>
+    <?php include 'assets/partials/sidebar_season.php'; ?>
     <div class="main-content">
         <!-- Your main page content here -->
     </div>

@@ -10,36 +10,60 @@
     <?php
 $current = isset($_SESSION['current_page']) ? $_SESSION['current_page'] : 'home';
 
-// Define which pages make each icon active
-$active_map = [
-    'home'     => ['home', 'dashboard', 'global'],
-    'parking'  => ['parking', 'car', 'vehicle'],
-    'report'   => ['report', 'analytics'],
-    'season'   => ['season', 'seasonal'],
-    'settings' => ['settings', 'preferences']
+// Define sidebar items: key, icon, alt, and target PHP file
+$sidebar_items = [
+    [
+        'key'  => 'home',
+        'icon' => 'assets/img/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg',
+        'alt'  => 'home',
+        'href' => 'index.php',
+        'pages' => ['index.php', 'dashboard_season.php'],
+    ],
+    [
+        'key'  => 'parking',
+        'icon' => 'assets/img/directions_car_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg',
+        'alt'  => 'parking',
+        'href' => 'car_in_park.php',
+        'pages' => ['car_in_park.php',],
+    ],
+    [
+        'key'  => 'report',
+        'icon' => 'assets/img/monitoring_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg',
+        'alt'  => 'report',
+        'href' => 'transactions.php',
+        'pages' => ['transactions.php'],
+    ],
+    [
+        'key'  => 'season',
+        'icon' => 'assets/img/featured_seasonal_and_gifts_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24 (1).svg',
+        'alt'  => 'season parking',
+        'href' => 'season_parking_list.php',
+        'pages' => ['season_parking_list.php'],
+    ],
+    [
+        'key'  => 'settings',
+        'icon' => 'assets/img/settings_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg',
+        'alt'  => 'settings',
+        'href' => 'settings.php',
+        'pages' => ['settings.php'],
+    ],
 ];
 
-function is_active($key, $current, $active_map) {
-    return in_array($current, $active_map[$key]);
-}
+// Detect current PHP file
+$current_file = basename($_SERVER['SCRIPT_NAME']);
 ?>
     <div class="primary-side-menu">
       <div class="frame">
-        <div class="sidebar-icon-wrapper<?php if(is_active('home', $current, $active_map)) echo ' active'; ?>">
-          <img class="sidebar-icon" src="assets/img/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="home" />
-        </div>
-        <div class="sidebar-icon-wrapper<?php if(is_active('parking', $current, $active_map)) echo ' active'; ?>">
-          <img class="sidebar-icon" src="assets/img/directions_car_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="parking" />
-        </div>
-        <div class="sidebar-icon-wrapper<?php if(is_active('report', $current, $active_map)) echo ' active'; ?>">
-          <img class="sidebar-icon" src="assets/img/monitoring_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="report" />
-        </div>
-        <div class="sidebar-icon-wrapper<?php if(is_active('season', $current, $active_map)) echo ' active'; ?>">
-          <img class="sidebar-icon" src="assets/img/featured_seasonal_and_gifts_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24 (1).svg" alt="season parking" />
-        </div>
-        <div class="sidebar-icon-wrapper<?php if(is_active('settings', $current, $active_map)) echo ' active'; ?>">
-          <img class="sidebar-icon" src="assets/img/settings_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="settings" />
-        </div>
+        <?php foreach ($sidebar_items as $item): 
+          // Active if current session page or current file matches any in 'pages'
+          $is_active = in_array($current, $item['pages']) || in_array($current_file, $item['pages']) ? ' active' : '';
+        ?>
+          <a href="<?= $item['href'] ?>">
+            <div class="sidebar-icon-wrapper<?= $is_active ?>">
+              <img class="sidebar-icon" src="<?= $item['icon'] ?>" alt="<?= $item['alt'] ?>" />
+            </div>
+          </a>
+        <?php endforeach; ?>
       </div>
     </div>
   </body>

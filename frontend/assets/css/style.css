@@ -438,8 +438,8 @@ body {
 
 /* Sidebar icon image (for all icons) */
 .sidebar-icon {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
   display: block;
 }
@@ -448,7 +448,7 @@ body {
 .sidebar-icon-wrapper.active {
   background: linear-gradient(
     270deg,
-    rgba(9, 51, 83, 1)%,
+    rgba(9, 51, 83, 1) 0%,
     rgba(21, 114, 185, 1) 100%
   ) !important;
 }
