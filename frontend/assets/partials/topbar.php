@@ -14,7 +14,7 @@
         <img class="divider" src="data:image/svg+xml;utf8,<svg width='2' height='44' xmlns='http://www.w3.org/2000/svg'><rect width='2' height='44' fill='%23E4E4E4'/></svg>" />
         <div class="walkin">
           <div class="walk-in">
-            <?php echo isset($topbar_title) ? htmlspecialchars($topbar_title) : 'Dashboard'; ?>
+            <?php echo isset($topbar_title) ? htmlspecialchars($topbar_title) : 'Error 404 Page Not Found'; ?>
           </div>
         </div>
       </div>
