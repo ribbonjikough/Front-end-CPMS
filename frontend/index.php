@@ -33,7 +33,7 @@ $topbar_title = 'Dashboard';
                     <div class="page-subtext">This is your dashboard overview. Here you can see a summary of your parking management system.</div>
                 </div>
                 <!-- Your main page content here -->
-                <div style="padding: 32px;">
+                <div class="content">
                     <?php for ($i = 1; $i <= 30; $i++): ?>
                         <div style="margin-bottom: 24px; font-size: 16px;">
                             Example content row <?= $i ?>. Scroll to test fixed sidebars and top menu.
