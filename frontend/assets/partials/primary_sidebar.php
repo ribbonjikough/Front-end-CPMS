@@ -24,28 +24,28 @@ $sidebar_items = [
         'icon' => 'assets/img/directions_car_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg',
         'alt'  => 'parking',
         'href' => 'car_in_park.php',
-        'pages' => ['car_in_park.php',],
+        'pages' => ['car_in_park.php', 'parking_manual.php', 'parking_history.php', 'parking_lpr.php'],
     ],
     [
         'key'  => 'report',
         'icon' => 'assets/img/monitoring_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg',
         'alt'  => 'report',
         'href' => 'transactions.php',
-        'pages' => ['transactions.php'],
+        'pages' => ['transactions.php', 'daily_sales.php', 'hourly_traffic.php', 'monthly_sales.php', 'length_of_stay.php', 'manual_open_barrier.php', 'redemption_transactions.php'],
     ],
     [
         'key'  => 'season',
         'icon' => 'assets/img/featured_seasonal_and_gifts_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24 (1).svg',
         'alt'  => 'season parking',
         'href' => 'season_parking_list.php',
-        'pages' => ['season_parking_list.php'],
+        'pages' => ['season_parking_list.php', 'season_applications.php', 'season_refunds.php', 'season_einvoice.php', 'season_reporting.php', 'season_access_cards.php'],
     ],
     [
         'key'  => 'settings',
         'icon' => 'assets/img/settings_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg',
         'alt'  => 'settings',
         'href' => 'settings.php',
-        'pages' => ['settings.php'],
+        'pages' => ['settings.php', 'parking_rate_adjustment.php', 'season_parking_adjustment.php', 'privileges.php', 'redemptions.php'],
     ],
 ];
 

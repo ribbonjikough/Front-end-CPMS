@@ -378,6 +378,27 @@ body {
   display: block;
 }
 
+/* Sidebar menu item hover effect */
+.menu-item:hover {
+  background: linear-gradient(
+    90deg,
+    hsla(207, 90%, 54%, 0.308) 63%,
+    hsla(212, 80%, 42%, 0.26) 100%
+  );
+  box-shadow: 0 2px 8px rgba(21, 114, 185, 0.10);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.menu-item:hover .transactions {
+  color: #fff;
+}
+
+.menu-item:hover .radio-circle {
+  border-color: #2196f3;
+}
+
 
 
 

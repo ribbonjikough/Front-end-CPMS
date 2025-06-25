@@ -14,25 +14,25 @@
     ?>
     <div class="side-menu">
       <div class="frame">
-        <a href="parking_car.php" class="menu-item<?= $current_file === 'car_in_park.php' ? ' active' : '' ?>">
+        <a href="car_in_park.php" class="menu-item<?= $current_file === 'car_in_park.php' ? ' active' : '' ?>" title="Car in Park">
           <div class="radio-btn">
             <div class="radio-circle<?= $current_file === 'car_in_park.php' ? ' active' : '' ?>"></div>
           </div>
           <div class="transactions">Car in Park</div>
         </a>
-        <a href="parking_manual.php" class="menu-item<?= $current_file === 'parking_manual.php' ? ' active' : '' ?>">
+        <a href="parking_manual.php" class="menu-item<?= $current_file === 'parking_manual.php' ? ' active' : '' ?>" title="Manual Gate Opening Record">
           <div class="radio-btn">
             <div class="radio-circle<?= $current_file === 'parking_manual.php' ? ' active' : '' ?>"></div>
           </div>
           <div class="transactions">Manual Gate Opening Record</div>
         </a>
-        <a href="parking_history.php" class="menu-item<?= $current_file === 'parking_history.php' ? ' active' : '' ?>">
+        <a href="parking_history.php" class="menu-item<?= $current_file === 'parking_history.php' ? ' active' : '' ?>" title="Parking History">
           <div class="radio-btn">
             <div class="radio-circle<?= $current_file === 'parking_history.php' ? ' active' : '' ?>"></div>
           </div>
           <div class="transactions">Parking History</div>
         </a>
-        <a href="parking_lpr.php" class="menu-item<?= $current_file === 'parking_lpr.php' ? ' active' : '' ?>">
+        <a href="parking_lpr.php" class="menu-item<?= $current_file === 'parking_lpr.php' ? ' active' : '' ?>" title="LPR Logs">
           <div class="radio-btn">
             <div class="radio-circle<?= $current_file === 'parking_lpr.php' ? ' active' : '' ?>"></div>
           </div>

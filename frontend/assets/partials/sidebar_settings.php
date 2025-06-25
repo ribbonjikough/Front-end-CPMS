@@ -14,29 +14,35 @@
     ?>
     <div class="side-menu">
       <div class="frame">
-        <a href="parking_car.php" class="menu-item<?= $current_file === 'parking_car.php' ? ' active' : '' ?>">
+        <a href="parking_rate_adjustment.php" class="menu-item<?= $current_file === 'parking_rate_adjustment.php' ? ' active' : '' ?>" title="Go to Parking Rate Adjustment">
           <div class="radio-btn">
-            <div class="radio-circle<?= $current_file === 'parking_car.php' ? ' active' : '' ?>"></div>
+            <div class="radio-circle<?= $current_file === 'parking_rate_adjustment.php' ? ' active' : '' ?>"></div>
           </div>
-          <div class="transactions">Car in Park</div>
+          <div class="transactions">Parking Rate Adjustment</div>
         </a>
-        <a href="parking_manual.php" class="menu-item<?= $current_file === 'parking_manual.php' ? ' active' : '' ?>">
+        <a href="season_parking_adjustment.php" class="menu-item<?= $current_file === 'season_parking_adjustment.php' ? ' active' : '' ?>" title="Go to Season Parking Adjustment">
           <div class="radio-btn">
-            <div class="radio-circle<?= $current_file === 'parking_manual.php' ? ' active' : '' ?>"></div>
+            <div class="radio-circle<?= $current_file === 'season_parking_adjustment.php' ? ' active' : '' ?>"></div>
           </div>
-          <div class="transactions">Manual Gate Opening Record</div>
+          <div class="transactions">Season Parking Adjustment</div>
         </a>
-        <a href="parking_history.php" class="menu-item<?= $current_file === 'parking_history.php' ? ' active' : '' ?>">
+        <a href="privileges.php" class="menu-item<?= $current_file === 'privileges.php' ? ' active' : '' ?>" title="Go to Privileges">
           <div class="radio-btn">
-            <div class="radio-circle<?= $current_file === 'parking_history.php' ? ' active' : '' ?>"></div>
+            <div class="radio-circle<?= $current_file === 'privileges.php' ? ' active' : '' ?>"></div>
           </div>
-          <div class="transactions">Parking History</div>
+          <div class="transactions">Privileges</div>
         </a>
-        <a href="parking_lpr.php" class="menu-item<?= $current_file === 'parking_lpr.php' ? ' active' : '' ?>">
+        <a href="redemptions.php" class="menu-item<?= $current_file === 'redemptions.php' ? ' active' : '' ?>" title="Go to Redemptions">
           <div class="radio-btn">
-            <div class="radio-circle<?= $current_file === 'parking_lpr.php' ? ' active' : '' ?>"></div>
+            <div class="radio-circle<?= $current_file === 'redemptions.php' ? ' active' : '' ?>"></div>
           </div>
-          <div class="transactions">LPR Logs</div>
+          <div class="transactions">Redemptions</div>
+        </a>
+        <a href="settings.php" class="menu-item<?= $current_file === 'settings.php' ? ' active' : '' ?>" title="Go to Settings">
+          <div class="radio-btn">
+            <div class="radio-circle<?= $current_file === 'settings.php' ? ' active' : '' ?>"></div>
+          </div>
+          <div class="transactions">Settings</div>
         </a>
       </div>
     </div>

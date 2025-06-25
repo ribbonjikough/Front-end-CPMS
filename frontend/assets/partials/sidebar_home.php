@@ -12,13 +12,13 @@
     ?>
     <div class="side-menu">
       <div class="frame">
-        <a href="index.php" class="menu-item<?= $current_file === 'index.php' ? ' active' : '' ?>">
+        <a href="index.php" class="menu-item<?= $current_file === 'index.php' ? ' active' : '' ?>" title="Go to Global Overview">
           <div class="radio-btn">
             <div class="radio-circle<?= $current_file === 'index.php' ? ' active' : '' ?>"></div>
           </div>
           <div class="transactions">Global Overview</div>
         </a>
-        <a href="dashboard_season.php" class="menu-item<?= $current_file === 'dashboard_season.php' ? ' active' : '' ?>">
+        <a href="dashboard_season.php" class="menu-item<?= $current_file === 'dashboard_season.php' ? ' active' : '' ?>" title="Go to Season Parking">
           <div class="radio-btn">
             <div class="radio-circle<?= $current_file === 'dashboard_season.php' ? ' active' : '' ?>"></div>
           </div>
