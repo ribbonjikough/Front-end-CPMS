@@ -1,5 +1,7 @@
 <?php
 $topbar_title = 'Dashboard';
+$page_title = 'Global Overview';
+$page_subtext = 'This is your dashboard overview. Here you can see a summary of your parking management system.';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,24 +18,154 @@ $topbar_title = 'Dashboard';
 </div>
 
 <div class="main-wrapper">
-    <div class="top-menu-fixed">
-        <?php include 'assets/partials/topbar.php'; ?>
-    </div>
 
-        <div class="primary-side-menu-fixed">
-            <?php include 'assets/partials/primary_sidebar.php'; ?>
-        </div>
-        <div class="side-menu-fixed">
-            <?php include 'assets/partials/sidebar_home.php'; ?>
-        </div>
+    <?php include 'assets/partials/topbar.php'; ?>
+    
+    <div class="main-row">
+
+        <?php include 'assets/partials/primary_sidebar.php'; ?>
+        <?php include 'assets/partials/sidebar_home.php'; ?>
+
         <div class="page-wrapper">
             <div class="main-content">
                 <div class="page-header">
-                    <div class="page-title">Global Overview</div>
-                    <div class="page-subtext">This is your dashboard overview. Here you can see a summary of your parking management system.</div>
+                    <div class="page-title"><?= htmlspecialchars($page_title) ?></div>
+                    <div class="page-subtext"><?= htmlspecialchars($page_subtext) ?></div>
                 </div>
-                <!-- Your main page content here -->
                 <div class="content">
+                    <div class="row row-greeting-filters">
+                        <div class="col-greeting">
+                            <span class="greeting-text">Welcome, John Doe!</span>
+                        </div>
+                        <div class="col-filters">
+                            <div class="filter-frame">
+                                <select class="filter-select">
+                                    <option>Location A</option>
+                                    <option>Location B</option>
+                                    <option>Location C</option>
+                                </select>
+                                <span class="polygon">&#9662;</span>
+                            </div>
+                            <div class="filter-frame">
+                                <select class="filter-select">
+                                    <option>Bay 1</option>
+                                    <option>Bay 2</option>
+                                    <option>Bay 3</option>
+                                </select>
+                                <span class="polygon">&#9662;</span>
+                            </div>
+                            <div class="filter-frame">
+                                <select class="filter-select">
+                                    <option><?= date('d M Y') ?></option>
+                                </select>
+                                <span class="polygon">&#9662;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="dash-widget">
+                                <div class="dash-widgetimg">
+                                    <span><img src="assets/img/icons/dash1.svg" alt="img"></span>
+                                </div>
+                                <div class="dash-widgetcontent">
+                                    <h5>RM<span class="counters" data-count="307144.00">307,144.00</span></h5>
+                                    <h6>Global Total Sales</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="dash-widget dash1">
+                                <div class="dash-widgetimg">
+                                    <span><img src="assets/img/icons/dash2.svg" alt="img"></span>
+                                </div>
+                                <div class="dash-widgetcontent">
+                                    <h5><span class="counters" data-count="4385.00">4,385.00</span></h5>
+                                    <h6>Global Total Transactions</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="dash-widget dash2">
+                                <div class="dash-widgetimg">
+                                    <span><img src="assets/img/icons/dash3.svg" alt="img"></span>
+                                </div>
+                                <div class="dash-widgetcontent">
+                                    <h5><span class="counters" data-count="385656.50">385,656.50</span></h5>
+                                    <h6>Total Redemptions Applied</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="dash-widget dash3">
+                                <div class="dash-widgetimg">
+                                    <span><img src="assets/img/icons/dash4.svg" alt="img"></span>
+                                </div>
+                                <div class="dash-widgetcontent">
+                                    <h5>RM<span class="counters" data-count="40000.00">400.00</span></h5>
+                                    <h6>Estimated Tax Collected</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="row row-big-cards">
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="big-card">
+                                <div class="big-card-header">
+                                    <img src="assets/img/icons/users.svg" alt="Users" class="big-card-icon">
+                                    <span class="big-card-title">Active Users</span>
+                                </div>
+                                <div class="big-card-number">12,345</div>
+                                <div class="big-card-subtext positive">+5.2% from last month</div>
+                                <button class="big-card-btn">
+                                    View details
+                                    <span class="big-card-arrow">&#8594;</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="big-card">
+                                <div class="big-card-header">
+                                    <img src="assets/img/icons/parking.svg" alt="Parking" class="big-card-icon">
+                                    <span class="big-card-title">Total Parkings</span>
+                                </div>
+                                <div class="big-card-number">8,210</div>
+                                <div class="big-card-subtext negative">-1.3% from last week</div>
+                                <button class="big-card-btn alt">
+                                    View details
+                                    <span class="big-card-arrow">&#8594;</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="big-card">
+                                <div class="big-card-header">
+                                    <img src="assets/img/icons/invoice.svg" alt="Invoices" class="big-card-icon">
+                                    <span class="big-card-title">Invoices Issued</span>
+                                </div>
+                                <div class="big-card-number">2,450</div>
+                                <div class="big-card-subtext positive">+2.8% this month</div>
+                                <button class="big-card-btn">
+                                    View details
+                                    <span class="big-card-arrow">&#8594;</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="big-card">
+                                <div class="big-card-header">
+                                    <img src="assets/img/icons/refund.svg" alt="Refunds" class="big-card-icon">
+                                    <span class="big-card-title">Refunds Processed</span>
+                                </div>
+                                <div class="big-card-number">320</div>
+                                <div class="big-card-subtext neutral">0% change</div>
+                                <button class="big-card-btn alt">
+                                    View details
+                                    <span class="big-card-arrow">&#8594;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                     <?php for ($i = 1; $i <= 30; $i++): ?>
                         <div style="margin-bottom: 24px; font-size: 16px;">
                             Example content row <?= $i ?>. Scroll to test fixed sidebars and top menu.
@@ -42,6 +174,7 @@ $topbar_title = 'Dashboard';
                 </div>
             </div>
         </div>
+    </div>
 </div>
 <script src="assets/js/script.js"></script>
 </body>

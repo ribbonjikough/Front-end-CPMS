@@ -10,7 +10,7 @@
   <body>
     <div class="top-menu">
       <div class="logo-walkin-search">
-        <img class="image" src="assets/img/company-logo.png" />
+        <img class="image" src="assets/img/company-logo2.png" />
         <img class="divider" src="data:image/svg+xml;utf8,<svg width='2' height='44' xmlns='http://www.w3.org/2000/svg'><rect width='2' height='44' fill='%23E4E4E4'/></svg>" />
         <div class="walkin">
           <div class="walk-in">
