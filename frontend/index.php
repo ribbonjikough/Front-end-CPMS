@@ -40,11 +40,11 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                         <div class="col-filters">
                             <div class="filter-frame">
                                 <select class="filter-select">
-                                    <option>Location A</option>
+                                    <option>KL Sentral</option>
                                     <option>Location B</option>
                                     <option>Location C</option>
                                 </select>
-                                <span class="polygon">&#9662;</span>
+                                <span class="polygon"></span>
                             </div>
                             <div class="filter-frame">
                                 <select class="filter-select">
@@ -52,13 +52,13 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                                     <option>Bay 2</option>
                                     <option>Bay 3</option>
                                 </select>
-                                <span class="polygon">&#9662;</span>
+                                <span class="polygon"></span>
                             </div>
                             <div class="filter-frame">
                                 <select class="filter-select">
                                     <option><?= date('d M Y') ?></option>
                                 </select>
-                                <span class="polygon">&#9662;</span>
+                                <span class="polygon"></span>
                             </div>
                         </div>
                     </div>
@@ -131,7 +131,7 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                                 </div>
                                 <div class="big-card-number">8,210</div>
                                 <div class="big-card-subtext negative">-1.3% from last week</div>
-                                <button class="big-card-btn alt">
+                                <button class="big-card-btn">
                                     View details
                                     <span class="big-card-arrow">&#8594;</span>
                                 </button>
@@ -159,7 +159,7 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                                 </div>
                                 <div class="big-card-number">320</div>
                                 <div class="big-card-subtext neutral">0% change</div>
-                                <button class="big-card-btn alt">
+                                <button class="big-card-btn">
                                     View details
                                     <span class="big-card-arrow">&#8594;</span>
                                 </button>
