@@ -66,7 +66,7 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="dash-widget">
                                 <div class="dash-widgetimg">
-                                    <span><img src="assets/img/icons/dash1.svg" alt="img"></span>
+                                    <span><img src="assets/img/credit_card_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="img"></span>
                                 </div>
                                 <div class="dash-widgetcontent">
                                     <h5>RM<span class="counters" data-count="307144.00">307,144.00</span></h5>
@@ -77,7 +77,7 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="dash-widget dash1">
                                 <div class="dash-widgetimg">
-                                    <span><img src="assets/img/icons/dash2.svg" alt="img"></span>
+                                    <span><img src="assets/img/payments_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="img"></span>
                                 </div>
                                 <div class="dash-widgetcontent">
                                     <h5><span class="counters" data-count="4385.00">4,385.00</span></h5>
@@ -88,7 +88,7 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="dash-widget dash2">
                                 <div class="dash-widgetimg">
-                                    <span><img src="assets/img/icons/dash3.svg" alt="img"></span>
+                                    <span><img src="assets/img/credit_card_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="img"></span>
                                 </div>
                                 <div class="dash-widgetcontent">
                                     <h5><span class="counters" data-count="385656.50">385,656.50</span></h5>
@@ -99,7 +99,7 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="dash-widget dash3">
                                 <div class="dash-widgetimg">
-                                    <span><img src="assets/img/icons/dash4.svg" alt="img"></span>
+                                    <span><img src="assets/img/paid_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="img"></span>
                                 </div>
                                 <div class="dash-widgetcontent">
                                     <h5>RM<span class="counters" data-count="40000.00">400.00</span></h5>
@@ -112,10 +112,10 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="big-card">
                                 <div class="big-card-header">
-                                    <img src="assets/img/icons/users.svg" alt="Users" class="big-card-icon">
-                                    <span class="big-card-title">Active Users</span>
+                                    <img src="assets/img/paid_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Users" class="big-card-icon">
+                                    <span class="big-card-title">Revenue This Month</span>
                                 </div>
-                                <div class="big-card-number">12,345</div>
+                                <div class="big-card-number">RM12,345</div>
                                 <div class="big-card-subtext positive">+5.2% from last month</div>
                                 <button class="big-card-btn">
                                     View details
@@ -126,10 +126,10 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="big-card">
                                 <div class="big-card-header">
-                                    <img src="assets/img/icons/parking.svg" alt="Parking" class="big-card-icon">
-                                    <span class="big-card-title">Total Parkings</span>
+                                    <img src="assets/img/paid_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Parking" class="big-card-icon">
+                                    <span class="big-card-title">Revenue Today</span>
                                 </div>
-                                <div class="big-card-number">8,210</div>
+                                <div class="big-card-number">RM8,210</div>
                                 <div class="big-card-subtext negative">-1.3% from last week</div>
                                 <button class="big-card-btn">
                                     View details
@@ -140,8 +140,8 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="big-card">
                                 <div class="big-card-header">
-                                    <img src="assets/img/icons/invoice.svg" alt="Invoices" class="big-card-icon">
-                                    <span class="big-card-title">Invoices Issued</span>
+                                    <img src="assets/img/directions_car_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Invoices" class="big-card-icon">
+                                    <span class="big-card-title">Today Vehicles</span>
                                 </div>
                                 <div class="big-card-number">2,450</div>
                                 <div class="big-card-subtext positive">+2.8% this month</div>
@@ -154,10 +154,10 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="big-card">
                                 <div class="big-card-header">
-                                    <img src="assets/img/icons/refund.svg" alt="Refunds" class="big-card-icon">
-                                    <span class="big-card-title">Refunds Processed</span>
+                                    <img src="assets/img/schedule_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Refunds" class="big-card-icon">
+                                    <span class="big-card-title">Average Parking Duration</span>
                                 </div>
-                                <div class="big-card-number">320</div>
+                                <div class="big-card-number">2h 30m</div>
                                 <div class="big-card-subtext neutral">0% change</div>
                                 <button class="big-card-btn">
                                     View details
@@ -166,6 +166,42 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                             </div>
                         </div>
                     </div>
+            <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Real Time Logs</h4>
+                <div class="card-subtext">updates every 10 seconds</div>
+                <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Time</th>
+                        <th>Event Type</th>
+                        <th>Details</th>
+                        <th>Performed By</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Example row, replace with dynamic content as needed -->
+                    <tr>
+                        <td>1</td>
+                        <td>2024-06-30 14:23:10</td>
+                        <td>Login</td>
+                        <td>User logged in</td>
+                        <td>John Doe</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2024-06-30 14:23:20</td>
+                        <td>Update</td>
+                        <td>Changed password</td>
+                        <td>Jane Smith</td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+            </div>
                     <?php for ($i = 1; $i <= 30; $i++): ?>
                         <div style="margin-bottom: 24px; font-size: 16px;">
                             Example content row <?= $i ?>. Scroll to test fixed sidebars and top menu.

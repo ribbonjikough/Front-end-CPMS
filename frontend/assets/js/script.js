@@ -76,3 +76,67 @@ function hideSpinner() {
   document.getElementById('loading-spinner').style.display = 'none';
 }
 
+// === Table Sorting for All Tables with .table class ===
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.table').forEach(function(table) {
+    const thead = table.querySelector('thead');
+    if (!thead) return;
+    const headers = thead.querySelectorAll('th');
+    headers.forEach((th, colIdx) => {
+      // Add sort button if not already present
+      if (!th.querySelector('.sort-btn')) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'sort-btn';
+        btn.style.background = 'none';
+        btn.style.border = 'none';
+        btn.style.cursor = 'pointer';
+        btn.style.padding = '0 4px';
+        btn.style.marginLeft = '4px';
+        btn.style.fontSize = '1em';
+        btn.innerHTML = '⇅';
+        btn.setAttribute('aria-label', 'Sort');
+        th.appendChild(btn);
+
+        let asc = true;
+        // Make the whole th clickable for sorting
+        th.style.cursor = 'pointer';
+        th.addEventListener('click', function(e) {
+          // Prevent double sort if button is clicked
+          if (e.target === btn) e.stopPropagation();
+          sortTable(table, colIdx, asc);
+          asc = !asc;
+          btn.innerHTML = asc ? '⇅' : (asc ? '↑' : '↓');
+        });
+        // Also keep the button working for accessibility
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          sortTable(table, colIdx, asc);
+          asc = !asc;
+          btn.innerHTML = asc ? '⇅' : (asc ? '↑' : '↓');
+        });
+      }
+    });
+  });
+
+  function sortTable(table, col, asc = true) {
+    const tbody = table.querySelector('tbody');
+    if (!tbody) return;
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    const getCellValue = (row, idx) => row.children[idx]?.innerText || '';
+    const isNumeric = rows.every(row => !isNaN(getCellValue(row, col).replace(/,/g, '')));
+    rows.sort((a, b) => {
+      let vA = getCellValue(a, col).trim();
+      let vB = getCellValue(b, col).trim();
+      if (isNumeric) {
+        vA = parseFloat(vA.replace(/,/g, ''));
+        vB = parseFloat(vB.replace(/,/g, ''));
+        return asc ? vA - vB : vB - vA;
+      } else {
+        return asc ? vA.localeCompare(vB) : vB.localeCompare(vA);
+      }
+    });
+    rows.forEach(row => tbody.appendChild(row));
+  }
+});
+
