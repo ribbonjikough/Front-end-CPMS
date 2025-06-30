@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="assets/css/globals.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/styleguide.css"/>
   </head>
   <body>
     <?php
@@ -28,4 +29,16 @@
       </div>
     </div>
   </body>
+
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const frame = document.querySelector('.frame');
+    if (!frame || frame.offsetWidth === 0) {
+      console.warn('Frame is invisible or width is 0 on this screen size');
+    } else {
+      console.log('Frame is visible with width:', frame.offsetWidth);
+    }
+  });
+</script>
+
 </html>

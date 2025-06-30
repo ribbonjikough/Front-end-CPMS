@@ -11,6 +11,7 @@ body, html {
   background: #f4f8fb;
   display: flex;
   flex-direction: column;
+  position: fixed;
 }
 
 .top-menu {
@@ -26,17 +27,6 @@ body, html {
   flex: 1 1 auto;
   min-height: 0;
 }
-
-/* Top menu remains fixed at the top */ 
-.top-menu-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 1001;
-}
-
-
 
 /* --- Topbar Styles --- */
 .top-menu {
@@ -570,7 +560,7 @@ body, html {
 }
 
 /* Large screens: 4 columns */
-@media (min-width: 992px) {
+@media (min-width: 1000px) {
   .col-lg-3 {
     flex: 0 0 25%;
     max-width: 25%;
@@ -578,7 +568,7 @@ body, html {
 }
 
 /* Medium screens: 2 columns */
-@media (min-width: 576px) and (max-width: 991.98px) {
+@media (min-width: 600px) and (max-width: 1000px) {
   .col-sm-6 {
     flex: 0 0 50%;
     max-width: 50%;
@@ -586,7 +576,7 @@ body, html {
 }
 
 /* Small screens: 1 column */
-@media (max-width: 575.98px) {
+@media (max-width: 600px) {
   .col-12 {
     flex: 0 0 100%;
     max-width: 100%;
@@ -839,7 +829,7 @@ body, html {
 .big-card-subtext.neutral { color: #888; }
 
 /* Responsive: Stack main-row vertically on small screens */
-@media (max-width: 991.98px) {
+@media (max-width: 1000px) {
   .main-row {
     flex-direction: column;
   }
@@ -879,7 +869,7 @@ body, html {
 }
 
 /* Responsive: Hide sidebar by default, show with hamburger */
-@media (max-width: 767.98px) {
+@media (max-width: 600px) {
   .primary-side-menu,
   .side-menu {
     display: none;
@@ -921,11 +911,12 @@ body, html {
     margin-left: 0;
     width: 100vw;
     min-width: 0;
+    height: auto;
   }
 }
 
 /* Responsive: Cards and content */
-@media (max-width: 991.98px) {
+@media (max-width: 1000px) {
   .row,
   .row-big-cards {
     flex-direction: column;
@@ -950,7 +941,7 @@ body, html {
 }
 
 /* Responsive: Page header and greeting */
-@media (max-width: 575.98px) {
+@media (max-width: 600px) {
   .page-header {
     padding: 18px 0 12px 0;
   }
@@ -980,19 +971,254 @@ body, html {
   }
 }
 
-/* Hamburger button style */
-.sidebar-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 28px;
-  color: #1572B9;
-  cursor: pointer;
-  margin-right: 16px;
+/* Tablet: 600px–999px */
+@media (min-width: 600px) and (max-width: 999px) {
+  /* Primary sidebar: horizontal list, frame hugs content, icons clickable */
+  .primary-side-menu {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100vw;
+    min-width: 0;
+    height: 70px;
+    padding: 0 12px;
+    gap: 0;
+    background: #000;
+  }
+  .primary-side-menu .frame {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 18px;
+    width: auto;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .primary-side-menu a {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    min-width: 44px;
+    margin: 0 4px;
+    border-radius: 50%;
+    background: transparent;
+    transition: background 0.2s;
+  }
+  .primary-side-menu .sidebar-icon-wrapper {
+    width: 100%;
+    height: 100%;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: transparent;
+    transition: background 0.2s;
+  }
+  .primary-side-menu .sidebar-icon-wrapper.active {
+    background: linear-gradient(270deg, #093353 0%, #1572B9 100%) !important;
+  }
+  .primary-side-menu .sidebar-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Side menu (sidebar-home): horizontal, scrollable, text horizontal */
+  .side-menu {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100vw;
+    min-width: 0;
+    height: 56px;
+    padding: 0 8px;
+    background: #4d4f51;
+    border-right: none;
+    border-bottom: 0.5px solid #000;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: nowrap !important;
+    box-sizing: border-box;
+  }
+  .side-menu .frame {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px;
+    width: auto !important;
+    min-width: 0 !important;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .side-menu .menu-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px;
+    padding: 8px 18px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    background: transparent;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 15px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    transition: background 0.2s, color 0.2s;
+    margin: 0 2px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .side-menu .menu-item.active {
+    background: linear-gradient(90deg, #1572B9 63%, #093353 100%);
+    color: #fff;
+  }
+  .side-menu .menu-item .transactions {
+    color: inherit;
+    font-size: 15px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 17.6px;
+    flex: none;
+    white-space: nowrap;
+  }
+  .side-menu .radio-btn {
+    margin-right: 6px;
+  }
+
+  .side-menu .menu-item:hover {
+    background: linear-gradient(
+      90deg,
+      hsla(207, 90%, 54%, 0.308) 63%,
+      hsla(212, 80%, 42%, 0.26) 100%
+    );
+    box-shadow: 0 2px 8px rgba(21, 114, 185, 0.10);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+  .side-menu .menu-item:hover .radio-circle {
+    border-color: #2196f3;
+  }
 }
-@media (max-width: 767.98px) {
+
+/* Mobile only: Topbar layout with hamburger and title at left, logo centered, profile at right */
+@media (max-width: 600px) {
+  .top-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    padding: 0 8px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+  }
   .sidebar-toggle {
+    display: inline-block !important;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #1572B9;
+    cursor: pointer;
+    margin-right: 4px;
+    order: 0;
+  }
+  .logo-walkin-search {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 0;
+    width: auto;
+    order: 1;
+  }
+  .logo-walkin-search .image {
+    width: auto;
+    height: 32px;
+    margin: 0;
+  }
+  .logo-walkin-search .divider,
+  .logo-walkin-search .walkin {
+    display: none;
+  }
+  .frame {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    order: 2;
+  }
+  .frame .image-wrapper .img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+  .frame .div {
+    display: none; /* Hide name/role on mobile, shown in dropdown */
+  }
+  .frame .polygon {
+    width: 18px;
+    height: 18px;
+    margin-left: 0;
+    cursor: pointer;
+  }
+  /* Inserted page title next to hamburger */
+  .mobile-title {
     display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #212b36;
+    margin-left: 8px;
+    margin-right: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    order: 0;
+  }
+  /* Profile dropdown for mobile */
+  #profileDropdown {
+    position: absolute;
+    top: 56px;
+    right: 0;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(21,114,185,0.12);
+    z-index: 2002;
+    min-width: 140px;
+    display: none;
+  }
+  #profileDropdown .dropdown-content {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  #profileDropdown .profile-name {
+    font-weight: 600;
+    color: #212b36;
+  }
+  #profileDropdown .profile-role {
+    font-size: 13px;
+    color: #888;
   }
 }
 

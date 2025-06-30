@@ -24,7 +24,7 @@
           <div class="text-wrapper">John Doe</div>
           <div class="text-wrapper-2">Global Admin</div>
         </div>
-        <img class="polygon" src="data:image/svg+xml;utf8,<svg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L6 7L11 1' stroke='%23333' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+        <img class="polygon" src="data:image/svg+xml;utf8,<svg width='12' height='8' viewBox='0 0 12 8  ' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L6 7L11 1' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
       </div>
     </div>
     <!-- Add this button for mobile sidebar toggle -->
