@@ -881,11 +881,16 @@ body, html {
   }
   .col-lg-3, .col-sm-6, .col-12 {
     flex: 0 0 50%;
-    max-width: 50%;
+    max-width: 50% !important;
     padding-left: 12px;
     padding-right: 12px;
     box-sizing: border-box;
     margin-bottom: 24px;
+  }
+  .big-card, .dash-widget {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 18px;
   }
 }
 
@@ -1177,7 +1182,7 @@ body, html {
   padding: 10px 10px 6px 10px;
   margin-bottom: 0;
   position: relative;
-  fill : #f39f02;
+  fill : #f30202;
 }
 .filter-label {
   font-weight: bold;
@@ -1260,10 +1265,20 @@ body, html {
   }
 }
 
+/* === Table Responsive Wrapper === */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100vw;
+  display: block;
+}
+
 /* === Table Styles === */
 .table {
   width: 100%;
-  table-layout: fixed;
+  min-width: max-content; /* Prevent table from being squished */
+  table-layout: auto;     /* Let columns size to content */
   border-collapse: separate;
   border-spacing: 0;
   background: #fff;
@@ -1272,7 +1287,6 @@ body, html {
 }
 .table th,
 .table td {
-  min-width: 80px;
   padding: 12px 10px;
   border: 1px solid #e0e3e7;
   background: #fff;
@@ -1280,6 +1294,7 @@ body, html {
   word-break: break-word;
   text-overflow: ellipsis;
   overflow: hidden;
+  white-space: nowrap; /* Prevent cell squish, hug content */
 }
 .table th {
   background: #f4f8fb;
@@ -1336,6 +1351,123 @@ body, html {
     width: 80px;
     height: 40px;
   }
+}
+
+.dropdown-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+
+.dropdown {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e0e3e7;
+  border-radius: 4px;
+  font-size: 15px;
+  background: #fff;
+  color: #212b36;
+  box-sizing: border-box;
+  appearance: none;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.dropdown:focus {
+  border-color: #2196f3;
+}
+
+/* Dropdown polygon for select */
+.dropdown-polygon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  background: url("data:image/svg+xml;utf8,<svg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M2 2L8 8L14 2' stroke='%23333' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat;
+}
+
+/* Style for filter-search input box */
+.filter-search .search {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e0e3e7;
+  border-radius: 4px;
+  font-size: 15px;
+  background: #fff;
+  color: #212b36;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+  outline: none;
+}
+.filter-search .search:focus {
+  border-color: #2196f3;
+  background: #f4f8fb;
+}
+
+/* General button styles */
+.btn {
+  padding: 8px 20px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+/* Search button */
+.btn-search {
+  background: #2196f3;
+  color: #fff;
+  border: 1px solid #2196f3;
+}
+.btn-search:hover {
+  background: #1565c0;
+  border-color: #1565c0;
+}
+
+/* Export button */
+.btn-export {
+  background: transparent;
+  color: #2196f3;
+  box-shadow: none;
+  outline: none;
+}
+.btn-export:hover {
+  background: #e3f2fd;
+}
+
+/* Table action buttons inside table cells */
+.table-action-btn {
+  color: #2196f3;
+  position: left;
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin-right: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.table-action-btn:hover {
+  background: #2196f3;
+  color: #fff;
+}
+
+.table-action-arrow {
+  margin-left: 6px;
+  font-size: 15px;
+}
+
+.table td .action-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: stretch;
 }
 
 

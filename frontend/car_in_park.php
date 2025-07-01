@@ -99,9 +99,11 @@ $page_subtext = 'This page logs all vehicles that is currently in the bay';
                                             <td>None</td>
                                             <td>RFID</td>
                                             <td>
+                                              <div class="action-btn-group">
                                                 <button class="table-action-btn">Void <span class="table-action-arrow">&#8594;</span></button>
                                                 <button class="table-action-btn">Pay <span class="table-action-arrow">&#8594;</span></button>
                                                 <button class="table-action-btn">Switch Tariff <span class="table-action-arrow">&#8594;</span></button>
+                                              </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -117,9 +119,11 @@ $page_subtext = 'This page logs all vehicles that is currently in the bay';
                                             <td>Promo10</td>
                                             <td>Ticket</td>
                                             <td>
+                                              <div class="action-btn-group">
                                                 <button class="table-action-btn">Void <span class="table-action-arrow">&#8594;</span></button>
                                                 <button class="table-action-btn">Pay <span class="table-action-arrow">&#8594;</span></button>
                                                 <button class="table-action-btn">Switch Tariff <span class="table-action-arrow">&#8594;</span></button>
+                                              </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -135,9 +139,11 @@ $page_subtext = 'This page logs all vehicles that is currently in the bay';
                                             <td>None</td>
                                             <td>RFID</td>
                                             <td>
+                                              <div class="action-btn-group">
                                                 <button class="table-action-btn">Void <span class="table-action-arrow">&#8594;</span></button>
                                                 <button class="table-action-btn">Pay <span class="table-action-arrow">&#8594;</span></button>
                                                 <button class="table-action-btn">Switch Tariff <span class="table-action-arrow">&#8594;</span></button>
+                                              </div>
                                             </td>
                                         </tr>
                                     </tbody>

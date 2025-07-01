@@ -110,7 +110,7 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                             </div>
                         </div>
                     </div>
-                                        <div class="row row-big-cards">
+                    <div class="row">
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="big-card">
                                 <div class="big-card-header">
@@ -175,7 +175,7 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
   </div>
   <div class="card-body">
     <div class="table-responsive">
-      <table class="table real-time-logs-table">
+      <table class="table">
         <thead>
             <tr>
               <th>ID</th>

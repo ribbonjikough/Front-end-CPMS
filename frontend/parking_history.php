@@ -29,7 +29,7 @@ $page_subtext = 'This page views the complete record of all vehicle entries, exi
                     <div class="page-subtext"><?= htmlspecialchars($page_subtext) ?></div>
                 </div>
                 <div class="content">
-                    <div class="    parking-filters">
+                    <div class="parking-filters">
                         <div class="filter-search">
                             <div class="filter-label">Start Datetime</div>
                             <input type="datetime-local" class="search" name="start_datetime" />
