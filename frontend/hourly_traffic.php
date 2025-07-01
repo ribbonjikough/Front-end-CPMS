@@ -1,14 +1,14 @@
 <?php
-$topbar_title = 'Parking'; // or 'Report' if you want to match the sidebar
-$page_title = 'Hourly Traffic'; // Change this to the appropriate page title
-$page_subtext = 'This page tracks hourly vehicle entries and exits to identify peak traffic periods.'; // Change as needed
+$topbar_title = 'Report';
+$page_title = 'Hourly Traffic';
+$page_subtext = 'This page tracks hourly vehicle entries and exits to identify peak traffic periods.'; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($topbar_title) ?></title>
+    <title><?= htmlspecialchars($page_title) ?></title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>

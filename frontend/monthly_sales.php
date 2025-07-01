@@ -1,5 +1,5 @@
 <?php
-$topbar_title = 'Parking'; // or 'Report' if you want to match the sidebar
+$topbar_title = 'Report'; // or 'Report' if you want to match the sidebar
 $page_title = 'Monthly Sales'; // Change this to the appropriate page title
 $page_subtext = 'This page shows the total number of transactions, revenue, and tax collected for each month'; // Change as needed
 ?>
@@ -8,7 +8,7 @@ $page_subtext = 'This page shows the total number of transactions, revenue, and 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($topbar_title) ?></title>
+    <title><?= htmlspecialchars($page_title) ?></title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>

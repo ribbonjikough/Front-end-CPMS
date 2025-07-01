@@ -8,7 +8,7 @@ $page_subtext = 'This page logs all manually opened gates performed by admins du
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($topbar_title) ?></title>
+    <title><?= htmlspecialchars($page_title) ?></title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/globals.css">
     <link rel="stylesheet" href="assets/css/styleguide.css">

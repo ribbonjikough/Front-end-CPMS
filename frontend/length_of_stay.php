@@ -1,5 +1,5 @@
 <?php
-$topbar_title = 'Parking'; // or 'Report' if you want to match the sidebar
+$topbar_title = 'Report'; // or 'Report' if you want to match the sidebar
 $page_title = 'Length of Stay'; // Change this to the appropriate page title
 $page_subtext = 'This page shows how long vehicles typically stay in the parking area, categorized by time intervals'; // Change as needed
 ?>
@@ -8,7 +8,7 @@ $page_subtext = 'This page shows how long vehicles typically stay in the parking
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($topbar_title) ?></title>
+    <title><?= htmlspecialchars($page_title) ?></title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>

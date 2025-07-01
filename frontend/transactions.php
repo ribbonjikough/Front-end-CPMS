@@ -1,6 +1,5 @@
 <?php
-// Set your page variables
-$topbar_title = 'Parking';
+$topbar_title = 'Report';
 $page_title = 'Transactions';
 $page_subtext = 'This page shows all transactions made for all vehicles';
 ?>
@@ -9,7 +8,7 @@ $page_subtext = 'This page shows all transactions made for all vehicles';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($topbar_title) ?></title>
+    <title><?= htmlspecialchars($page_title) ?></title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
