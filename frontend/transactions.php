@@ -33,12 +33,38 @@ $page_subtext = 'This page shows all transactions made for all vehicles';
                     <div class="page-subtext"><?= htmlspecialchars($page_subtext) ?></div>
                 </div>
                 <div class="content">
-                    <!-- Content goes here -->
+                    <canvas id="myChart" width="400" height="200"></canvas>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="assets/js/script.js"></script>
+<script>
+  // Initialize the chart when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+  var txCanvas = document.getElementById('myChart');
+  if (txCanvas) {
+    var txChart = new Chart(txCanvas.getContext('2d'), {
+      type: 'bar',
+      data: { /* ... */ },
+      options: { /* ... */ }
+    });
+  }
+
+  // Chart for another page
+  var salesCanvas = document.getElementById('salesChart');
+  if (salesCanvas) {
+    var salesChart = new Chart(salesCanvas.getContext('2d'), {
+      type: 'line',
+      data: { /* ... */ },
+      options: { /* ... */ }
+    });
+  }
+
+  // Add more charts as needed...
+});
+</script>
 </body>
 </html>
