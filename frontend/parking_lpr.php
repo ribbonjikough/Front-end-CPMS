@@ -1,23 +1,129 @@
 <?php
-$topbar_title = 'Parking'; // Set the title for the topbar
-include 'assets/partials/topbar.php';
+$topbar_title = 'Parking';
+$page_title = 'LPR Logs';
+$page_subtext = 'This page displays all license plate recognition activity, capturing vehicle entries and exits in real time to help monitor parking usage and support incident tracking';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?= htmlspecialchars($topbar_title) ?></title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/globals.css">
+    <link rel="stylesheet" href="assets/css/styleguide.css">
 </head>
 <body>
-    
-</body>
-</html>
-
-<div class="sidebar-layout">
-    <?php include 'assets/partials/primary_sidebar.php'; ?>
-    <?php include 'assets/partials/sidebar_parking.php'; ?>
-    <div class="main-content">
-        <!-- Your main page content here -->
+<div id="loading-spinner" style="display:none;">
+  <div class="spinner"></div>
+</div>
+<div class="main-wrapper">
+    <?php include 'assets/partials/topbar.php'; ?>
+    <div class="main-row">
+        <?php include 'assets/partials/primary_sidebar.php'; ?>
+        <?php include 'assets/partials/sidebar_parking.php'; ?>
+        <div class="page-wrapper">
+            <div class="main-content">
+                <div class="page-header">
+                    <div class="page-title"><?= htmlspecialchars($page_title) ?></div>
+                    <div class="page-subtext"><?= htmlspecialchars($page_subtext) ?></div>
+                </div>
+                <div class="content">
+                    <div class="parking-filters">
+                        <div class="filter-search">
+                            <div class="filter-label">Start Datetime</div>
+                            <input type="datetime-local" class="search" name="start_datetime" />
+                        </div>
+                        <div class="filter-search">
+                            <div class="filter-label">End Datetime</div>
+                            <input type="datetime-local" class="search" name="end_datetime" />
+                        </div>
+                        <div class="filter-search">
+                            <div class="filter-label">Plate No</div>
+                            <input type="text" class="search" placeholder="Search Plate No" name="plate_no" />
+                        </div>
+                        <div class="filter-btns">
+                            <button class="btn btn-search" type="button">Search</button>
+                            <button class="btn btn-export" type="button">Export</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">LPR Logs</h4>
+                            <div class="card-subtext">All license plate recognition activity</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table lpr-logs">
+                                    <thead>
+                                        <tr>
+                                            <th>Ticket ID</th>
+                                            <th>Entry Lane</th>
+                                            <th>Entry Time</th>
+                                            <th>Image Entry</th>
+                                            <th>Plate Entry</th>
+                                            <th>Exit Lane</th>
+                                            <th>Exit Time</th>
+                                            <th>Image Exit</th>
+                                            <th>Plate Exit</th>
+                                            <th>Confidence Level (%)</th>
+                                            <th>Leave Status</th>
+                                            <th>Payment Scheme</th>
+                                            <th>Car Type</th>
+                                            <th>Remarks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>TKLPR001</td>
+                                            <td>Lane 1</td>
+                                            <td>2024-07-01 08:30</td>
+                                            <td>
+                                                <img src="assets/img/sample-entry.jpg" alt="Entry Plate" class="lpr-img" />
+                                            </td>
+                                            <td>ABC1234</td>
+                                            <td>Lane 2</td>
+                                            <td>2024-07-01 17:45</td>
+                                            <td>
+                                                <img src="assets/img/sample-exit.jpg" alt="Exit Plate" class="lpr-img" />
+                                            </td>
+                                            <td>ABC1234</td>
+                                            <td>98</td>
+                                            <td>Exited</td>
+                                            <td>Standard</td>
+                                            <td>Sedan</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TKLPR002</td>
+                                            <td>Lane 3</td>
+                                            <td>2024-07-01 09:10</td>
+                                            <td>
+                                                <img src="assets/img/sample-entry2.jpg" alt="Entry Plate" class="lpr-img" />
+                                            </td>
+                                            <td>XYZ5678</td>
+                                            <td>Lane 1</td>
+                                            <td>2024-07-01 12:00</td>
+                                            <td>
+                                                <img src="assets/img/sample-exit2.jpg" alt="Exit Plate" class="lpr-img" />
+                                            </td>
+                                            <td>XYZ5678</td>
+                                            <td>95</td>
+                                            <td>Exited</td>
+                                            <td>Promo10</td>
+                                            <td>SUV</td>
+                                            <td>Promo used</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
