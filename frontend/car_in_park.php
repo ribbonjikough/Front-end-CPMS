@@ -100,9 +100,9 @@ $page_subtext = 'This page logs all vehicles that is currently in the bay';
                                             <td>RFID</td>
                                             <td>
                                               <div class="action-btn-group">
-                                                <button class="table-action-btn">Void <span class="table-action-arrow">&#8594;</span></button>
-                                                <button class="table-action-btn">Pay <span class="table-action-arrow">&#8594;</span></button>
-                                                <button class="table-action-btn">Switch Tariff <span class="table-action-arrow">&#8594;</span></button>
+                                                <a href="void.php?id=TK12345" class="table-action-btn">Void <span class="table-action-arrow">&#8594;</span></a>
+                                                <a href="pay.php?id=TK12345" class="table-action-btn">Pay <span class="table-action-arrow">&#8594;</span></a>
+                                                <a href="switch_tariff.php?id=TK12345" class="table-action-btn">Switch Tariff <span class="table-action-arrow">&#8594;</span></a>
                                               </div>
                                             </td>
                                         </tr>
@@ -120,10 +120,9 @@ $page_subtext = 'This page logs all vehicles that is currently in the bay';
                                             <td>Ticket</td>
                                             <td>
                                               <div class="action-btn-group">
-                                                <button class="table-action-btn">Void <span class="table-action-arrow">&#8594;</span></button>
-                                                <button class="table-action-btn">Pay <span class="table-action-arrow">&#8594;</span></button>
-                                                <button class="table-action-btn">Switch Tariff <span class="table-action-arrow">&#8594;</span></button>
-                                              </div>
+                                                <a href="void.php?id=TK12345" class="table-action-btn">Void <span class="table-action-arrow">&#8594;</span></a>
+                                                <a href="pay.php?id=TK12345" class="table-action-btn">Pay <span class="table-action-arrow">&#8594;</span></a>
+                                                <a href="switch_tariff.php?id=TK12345" class="table-action-btn">Switch Tariff <span class="table-action-arrow">&#8594;</span></a>                                              </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -140,10 +139,9 @@ $page_subtext = 'This page logs all vehicles that is currently in the bay';
                                             <td>RFID</td>
                                             <td>
                                               <div class="action-btn-group">
-                                                <button class="table-action-btn">Void <span class="table-action-arrow">&#8594;</span></button>
-                                                <button class="table-action-btn">Pay <span class="table-action-arrow">&#8594;</span></button>
-                                                <button class="table-action-btn">Switch Tariff <span class="table-action-arrow">&#8594;</span></button>
-                                              </div>
+                                                <a href="void.php?id=TK12345" class="table-action-btn">Void <span class="table-action-arrow">&#8594;</span></a>
+                                                <a href="pay.php?id=TK12345" class="table-action-btn">Pay <span class="table-action-arrow">&#8594;</span></a>
+                                                <a href="switch_tariff.php?id=TK12345" class="table-action-btn">Switch Tariff <span class="table-action-arrow">&#8594;</span></a>                                              </div>
                                             </td>
                                         </tr>
                                     </tbody>

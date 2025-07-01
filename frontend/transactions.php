@@ -1,8 +1,8 @@
 <?php
 // Set your page variables
 $topbar_title = 'Parking';
-$page_title = 'Page Main Title';
-$page_subtext = 'This is a summary or description for this page.';
+$page_title = 'Transactions';
+$page_subtext = 'This page shows all transactions made for all vehicles';
 ?>
 <!DOCTYPE html>
 <html lang="en">

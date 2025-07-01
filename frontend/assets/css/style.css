@@ -1441,18 +1441,7 @@ body, html {
   background: #e3f2fd;
 }
 
-/* Table action buttons inside table cells */
-.table-action-btn {
-  color: #2196f3;
-  position: left;
-  border-radius: 4px;
-  padding: 6px 12px;
-  margin-right: 4px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
+
 .table-action-btn:hover {
   background: #2196f3;
   color: #fff;
