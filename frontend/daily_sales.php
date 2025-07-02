@@ -77,7 +77,7 @@ $page_subtext = 'This page shows the total number of transactions, revenue, and 
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="big-card">
                                 <div class="big-card-header">
-                                    <img src="assets/img/schedule_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Average Sales" class="big-card-icon">
+                                    <img src="assets/img/payments_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Average Sales" class="big-card-icon">
                                     <span class="big-card-title">Highest Sales Day</span>
                                 </div>
                                 <div class="big-card-number">RM398.17</div>

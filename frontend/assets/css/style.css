@@ -1262,6 +1262,21 @@ body, html {
     justify-content: flex-start;
     margin-top: 8px;
   }
+  .summary-chart-box {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .summary-chart-box .col-lg-6,
+  .summary-chart-box .col-sm-12,
+  .summary-chart-box .col-12 {
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  .summary-chart-box canvas {
+    height: 220px !important;
+  }
+
 }
 
 /* === Table Responsive Wrapper === */

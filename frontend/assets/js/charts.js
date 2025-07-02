@@ -135,4 +135,79 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+
+  // You can place this in assets/js/charts.js or directly in the page
+  var chartDiv = document.querySelector("#hourly-traffic-apexchart");
+  if (chartDiv) {
+    var timeLabels = [
+      "00:00 - 00:59", "01:00 - 01:59", "02:00 - 02:59", "03:00 - 03:59",
+      "04:00 - 04:59", "05:00 - 05:59", "06:00 - 06:59", "07:00 - 07:59",
+      "08:00 - 08:59", "09:00 - 09:59", "10:00 - 10:59", "11:00 - 11:59",
+      "12:00 - 12:59", "13:00 - 13:59", "14:00 - 14:59", "15:00 - 15:59",
+      "16:00 - 16:59", "17:00 - 17:59", "18:00 - 18:59", "19:00 - 19:59",
+      "20:00 - 20:59", "21:00 - 21:59", "22:00 - 22:59", "23:00 - 23:59"
+    ];
+    var carsIn =  [0, 0, 2, 0, 0, 0, 2, 3, 28, 55, 35, 7, 7, 6, 4, 5, 4, 3, 2, 0, 4, 2, 1, 1];
+    var carsOut = [2, 1, 1, 2, 1, 1, 1, 0, 1, 3, 5, 5, 8, 0, 5, 9, 9, 10, 15, 12, 12, 6, 30, 21];
+
+    var options = {
+      chart: {
+        type: 'line',
+        height: 260,
+        toolbar: { show: false },
+        resetZoomButton: {
+          text: 'Reset Zoom',
+          position: 'top-right',
+          offsetX: -10,
+          offsetY: 0
+        }
+      },
+      series: [
+        {
+          name: "No. of Cars In",
+          data: carsIn
+        },
+        {
+          name: "No. of Cars Out",
+          data: carsOut
+        }
+      ],
+      xaxis: {
+        categories: timeLabels,
+        labels: {
+          rotate: -45,
+          style: { fontSize: '11px' }
+        },
+        title: { text: "Time Interval" }
+      },
+      yaxis: {
+        min: 0,
+        title: { text: "No. of Cars" }
+      },
+      stroke: {
+        width: 3
+      },
+      markers: {
+        size: 4
+      },
+      colors: ['#2196f3', '#f44336'],
+      legend: {
+        position: 'top'
+      },
+      tooltip: {
+        shared: true,
+        intersect: false
+      }
+    };
+
+    var chart = new ApexCharts(chartDiv, options);
+    chart.render();
+
+    var resetBtn = document.getElementById('resetZoomBtn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function() {
+        chart.resetZoom();
+      });
+    }
+  }
 });
