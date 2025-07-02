@@ -1529,6 +1529,19 @@ body, html {
   font-size: 18px;
   margin-left: 4px;
 }
+.summary-chart-box .row {
+  width: 100%;
+  margin: 0;
+}
+
+.summary-chart-box canvas {
+  width: 100% ;
+  max-width: 100% ;
+  padding: 5px 5px;
+  height: 450px !important;
+  display: block;
+  fill: #fff;
+}
 
 
 

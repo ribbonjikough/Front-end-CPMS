@@ -63,5 +63,76 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ...other charts...
+  // Bar chart: Weekly Transactions
+  var barCanvas = document.getElementById('weekly_transactions_bar');
+  if (barCanvas) {
+    new Chart(barCanvas.getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        datasets: [{
+          label: 'Transactions',
+          data: [120, 150, 170, 140, 180, 200, 160],
+          backgroundColor: 'rgba(33, 150, 243, 0.7)',
+          borderColor: 'rgba(33, 150, 243, 1)',
+          borderWidth: 1,
+          borderRadius: 4,
+          hoverBackgroundColor: '#1572B9',
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Transactions per Day (This Week)',
+            font: { size: 15, weight: 'bold' }
+          }
+        },
+        scales: {
+          x: { title: { display: true, text: 'Day' } },
+          y: { beginAtZero: true, title: { display: true, text: 'Transactions' } }
+        }
+      }
+    });
+  }
+
+  // Line chart: Weekly Sales
+  var lineCanvas = document.getElementById('weekly_sales_line');
+  if (lineCanvas) {
+    new Chart(lineCanvas.getContext('2d'), {
+      type: 'line',
+      data: {
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        datasets: [{
+          label: 'Sales (RM)',
+          data: [1200, 1500, 1700, 1400, 1800, 2000, 1600],
+          backgroundColor: 'rgba(33, 150, 243, 0.15)',
+          borderColor: 'rgba(33, 150, 243, 1)',
+          borderWidth: 2,
+          pointBackgroundColor: '#2196f3',
+          pointBorderColor: '#2196f3',
+          hoverBackgroundColor: '#1572B9',
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Daily Sales (This Week)',
+            font: { size: 15, weight: 'bold' }
+          }
+        },
+        scales: {
+          x: { title: { display: true, text: 'Day' } },
+          y: { beginAtZero: true, title: { display: true, text: 'Sales (RM)' } }
+        }
+      }
+    });
+  }
 });
