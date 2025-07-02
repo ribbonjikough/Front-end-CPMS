@@ -1555,7 +1555,34 @@ body, html {
   padding: 5px 5px;
   height: 450px !important;
   display: block;
-  fill: #fff;
+  background: #fff;
+}
+
+#monthly_sales_chart_1,
+#monthly_sales_chart_2 {
+  width: 100%;
+  min-width: 0;
+  height: 450px;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  padding: 5px 5px;
+  box-sizing: border-box;
+}
+
+/* Responsive: If you want them side by side on desktop, stack on mobile, use this: */
+@media (min-width: 1000px) {
+  .summary-charts-row {
+    flex-direction: column;
+  }
+}
+@media (max-width: 999px) {
+  .summary-charts-row {
+    flex-direction: column;
+  }
 }
 
 

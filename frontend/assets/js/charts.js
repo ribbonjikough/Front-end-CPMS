@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var options = {
       chart: {
         type: 'line',
-        height: 260,
+        height: 450,
         toolbar: { show: false },
         resetZoomButton: {
           text: 'Reset Zoom',
@@ -209,5 +209,119 @@ document.addEventListener('DOMContentLoaded', function () {
         chart.resetZoom();
       });
     }
+  }
+
+  // 1. Mixed Chart: Monthly Transactions (Bar) & Sales (Line)
+  var monthlyChartDiv = document.querySelector("#monthly_sales_chart_1");
+  if (monthlyChartDiv) {
+    var months = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+    var trxData = [1200, 1350, 1100, 1450, 1600, 1700, 1550, 1400, 1500, 1650, 1750, 1800];
+    var salesData = [12000, 13500, 11000, 14500, 16000, 17000, 15500, 14000, 15000, 16500, 17500, 18000];
+
+    var options1 = {
+      chart: {
+        height: 450,
+        type: 'line',
+        toolbar: { show: false },
+        width: '100%', // Ensures full width
+        animations: { enabled: true },
+        responsive: [
+          {
+            breakpoint: 600,
+            options: {
+              chart: { height: 450 }
+            }
+          }
+        ]
+      },
+      series: [
+        {
+          name: 'Transactions',
+          type: 'column',
+          data: trxData
+        },
+        {
+          name: 'Sales (RM)',
+          type: 'line',
+          data: salesData
+        }
+      ],
+      stroke: { width: [0, 4] },
+      plotOptions: {
+        bar: { columnWidth: '40%', borderRadius: 4 }
+      },
+      colors: ['#2196f3', '#f44336'],
+      dataLabels: { enabled: false },
+      labels: months,
+      xaxis: {
+        categories: months,
+        title: { text: "Month" }
+      },
+      yaxis: [
+        { title: { text: "Transactions" }, min: 0 },
+        { opposite: true, title: { text: "Sales (RM)" }, min: 0 }
+      ],
+      legend: { position: 'top' },
+      tooltip: { shared: true, intersect: false }
+    };
+
+    var monthlyChart = new ApexCharts(monthlyChartDiv, options1);
+    monthlyChart.render();
+  }
+
+  // 2. Bar Chart: Yearly Sales Comparison
+  var yearlyChartDiv = document.querySelector("#monthly_sales_chart_2");
+  if (yearlyChartDiv) {
+    var years = ["2022", "2023", "2024"];
+    var yearlySales = [150000, 172000, 185000];
+
+    var options2 = {
+      chart: {
+        type: 'bar',
+        height: 450,
+        width: '100%',
+        toolbar: { show: false },
+        animations: { enabled: true },
+        responsive: [
+          {
+            breakpoint: 600,
+            options: {
+              chart: { height: 459 }
+            }
+          }
+        ]
+      },
+      series: [{
+        name: 'Total Sales (RM)',
+        data: yearlySales
+      }],
+      colors: ['#1572B9'],
+      xaxis: {
+        categories: years,
+        title: { text: "Year" }
+      },
+      yaxis: {
+        title: { text: "Sales (RM)" },
+        min: 0
+      },
+      plotOptions: {
+        bar: { columnWidth: '40%', borderRadius: 4 }
+      },
+      dataLabels: { enabled: false },
+      legend: { show: false },
+      tooltip: {
+        y: {
+          formatter: function(val) {
+            return "RM " + val.toLocaleString();
+          }
+        }
+      }
+    };
+
+    var yearlyChart = new ApexCharts(yearlyChartDiv, options2);
+    yearlyChart.render();
   }
 });
