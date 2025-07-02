@@ -29,7 +29,7 @@ $page_subtext = 'This page displays all license plate recognition activity, capt
                     <div class="page-subtext"><?= htmlspecialchars($page_subtext) ?></div>
                 </div>
                 <div class="content">
-                    <div class="parking-filters">
+                    <div class="filters-row">
                         <div class="filter-search">
                             <div class="filter-label">Start Datetime</div>
                             <input type="datetime-local" class="search" name="start_datetime" />

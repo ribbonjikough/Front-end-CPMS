@@ -35,7 +35,7 @@ $page_subtext = 'This page logs all vehicles that is currently in the bay';
                     <div class="page-subtext"><?= htmlspecialchars($page_subtext) ?></div>
                 </div>
                 <div class="content">
-                    <div class="parking-filters">
+                    <div class="filters-row">
                         <div class="filter-dropdown">
                             <div class="filter-label">Insert Current Bay</div>
                             <div class="dropdown-wrapper">

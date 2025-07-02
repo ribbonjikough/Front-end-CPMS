@@ -29,7 +29,7 @@ $page_subtext = 'This page logs all manually opened gates performed by admins du
                     <div class="page-subtext"><?= htmlspecialchars($page_subtext) ?></div>
                 </div>
                 <div class="content">
-                    <div class="parking-filters">
+                    <div class="filters-row">
                         <div class="filter-search">
                             <div class="filter-label">MOpening ID</div>
                             <input type="text" class="search" placeholder="Search MOpening ID" name="mopening_id" />

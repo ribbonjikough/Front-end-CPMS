@@ -42,7 +42,7 @@ body, html {
   margin-left: 0;
 }
 .content {
-  width: 90%;
+  width: 98%;
   height: fit-content;
   margin: 0 auto 32px auto;
   border-radius: 12px;
@@ -1162,10 +1162,10 @@ body, html {
 
 
 /* === Car In Park Filter Row Styles === */
-.parking-filters {
+.filters-row {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: bottom;
   gap: 18px;
   padding-bottom: 16px;
   border-bottom: 1px solid #535353;
@@ -1182,7 +1182,6 @@ body, html {
   padding: 10px 10px 6px 10px;
   margin-bottom: 0;
   position: relative;
-  fill : #f30202;
 }
 .filter-label {
   font-weight: bold;
@@ -1205,7 +1204,7 @@ body, html {
 
 /* Desktop: ≥1000px */
 @media (min-width: 1000px) {
-  .parking-filters {
+  .filters-row {
     flex-direction: row;
     align-items: center;
     gap: 18px;
@@ -1225,7 +1224,7 @@ body, html {
 
 /* Tablet: 600px–999px */
 @media (min-width: 600px) and (max-width: 999px) {
-  .parking-filters {
+  .filters-row {
     flex-direction: row;
     align-items: center;
     gap: 14px;
@@ -1245,7 +1244,7 @@ body, html {
 
 /* Mobile: <600px */
 @media (max-width: 599px) {
-  .parking-filters {
+  .filters-row {
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
@@ -1363,9 +1362,9 @@ body, html {
 
 .dropdown {
   width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #e0e3e7;
-  border-radius: 4px;
+  height: fit-content;
+  padding: 5px 12px;
+  border: 1px solid #000000;
   font-size: 15px;
   background: #fff;
   color: #212b36;
@@ -1393,9 +1392,9 @@ body, html {
 /* Style for filter-search input box */
 .filter-search .search {
   width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #e0e3e7;
-  border-radius: 4px;
+  height: 100%;
+  padding: 5px 12px;
+  border: 1px solid #000000;
   font-size: 15px;
   background: #fff;
   color: #212b36;
@@ -1405,7 +1404,7 @@ body, html {
 }
 .filter-search .search:focus {
   border-color: #2196f3;
-  background: #f4f8fb;
+  background: #ffffff;
 }
 
 /* General button styles */
@@ -1457,6 +1456,78 @@ body, html {
   flex-direction: column;
   gap: 6px;
   align-items: stretch;
+}
+
+/* Report styles*/
+/* Wrapper for the two report cards */
+.report-cards-wrapper {
+  display: column;
+  align-items: stretch;
+  gap: 0;
+  position: relative;
+  margin-bottom: 32px;
+}
+
+/* Each report card */
+.report-card {
+  flex: 1 1 0;
+  margin: 0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(21, 114, 185, 0.06);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Title inside card header */
+.report-title {
+  font-weight: 600;
+  font-size: 18px;
+  color: #212b36;
+}
+
+.report-divider {
+  width: 100%;
+  height: 1.5px;
+  background: #222;
+  margin: 24px 0;
+  border-radius: 3px;
+  min-height: 0;
+  align-self: stretch;
+}
+
+.summary-chart-box {
+  background: #f4f6f8;
+  border-radius: 12px;
+  padding: 18px 16px;
+  margin-bottom: 18px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.summary-info {
+  font-size: 17px;
+  font-weight: 500;
+  color: #212b36;
+  margin: 8px 0 0 0;
+  padding: 0;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.summary-label {
+  color: #888;
+  font-weight: 500;
+}
+.summary-value {
+  color: #2196f3;
+  font-weight: 700;
+  font-size: 18px;
+  margin-left: 4px;
 }
 
 
