@@ -169,7 +169,7 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                             </div>
                         </div>
                     </div>
-                <div class="card">
+                <div class="card report-card">
                     <div class="card-header">
                         <span class="report-title">Visual Summary Panels</span>
                         <div class="card-subtext" style="margin-top:4px;">
@@ -177,10 +177,63 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                         </div>
                     </div>
                     <div class="card-body">
+                        <div class="summary-chart-box" style="gap:15px;">
+                            <!-- Left column: two stacked line charts -->
+                            <div class="col-lg-6 col-sm-12" style="display:flex;flex-direction:column;gap:18px;width:50%;">
+                                <!-- Daily Revenue Line Chart -->
+                                <div class="graph-container" style="height:220px;">
+                                    <div class="chart-header filter-box" style="display:flex;align-items:center;justify-content:space-between;width:100%;margin-bottom:8px;">
+                                        <span style="font-weight:600;font-size:16px;color:#212b36;">Daily Revenue</span>
+                                        <select class="filter-select" style="min-width:120px;">
+                                            <option>Today</option>
+                                            <option>Yesterday</option>
+                                            <option>This Week</option>
+                                        </select>
+                                    </div>
+                                    <div id="dashboard_graph_1" style="width:100%;height:160px;"></div>
+                                </div>
+                                <!-- Monthly Revenue Line Chart -->
+                                <div class="graph-container" style="height:220px;">
+                                    <div class="chart-header filter-box" style="display:flex;align-items:center;justify-content:space-between;width:100%;margin-bottom:8px;">
+                                        <span style="font-weight:600;font-size:16px;color:#212b36;">Monthly Revenue</span>
+                                        <select class="filter-select" style="min-width:120px;">
+                                            <option>2025</option>
+                                            <option>2024</option>
+                                            <option>2023</option>
+                                        </select>
+                                    </div>
+                                    <div id="dashboard_graph_2" style="width:100%;height:160px;"></div>
+                                </div>
+                            </div>
+                            <!-- Right column: pie chart -->
+                            <div class="col-lg-6 col-sm-12" style="display:flex;flex-direction:column;gap:18px;width:50%;height:100%;">
+                                <div class="graph-container" style="height:458px;">
+                                    <div class="chart-header filter-box" style="display:flex;align-items:center;justify-content:space-between;width:100%;margin-bottom:8px;">
+                                        <span style="font-weight:600;font-size:16px;color:#212b36;">Monthly Length of Stay</span>
+                                        <select class="filter-select" style="min-width:120px;">
+                                            <option>March 2025</option>
+                                            <option>February 2025</option>
+                                            <option>January 2025</option>
+                                        </select>
+                                    </div>
+                                    <div id="dashboard_graph_3" style="width:100%;height:400px;"></div>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="summary-chart-box" style="gap:24px;">
+                            <div class="col-lg-6 col-sm-12" style="display:flex;flex-direction:column;width:50%;">
+                                <div id="dashboard_graph_7" class="graph-container" style="height:320px;"></div>
+                            </div>
+                            <div class="col-lg-6 col-sm-12" style="display:flex;flex-direction:column;width:50%;">
+                                <div id="dashboard_graph_8" class="graph-container" style="height:320px;"></div>
+                            </div>
                         </div>
                     </div>
-                    
+                </div>
+
+                    <div class="report-divider"></div>
+
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Real Time Logs</h4>
@@ -215,7 +268,21 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                             </tr>
                         </tbody>
                     </table>
-                    </div>
+                    </div>                            
+                        <div class="table-footer-pagination">
+                            <div class="table-footer-left">
+                                Show
+                                <select id="entriesPerPage" class="entries-dropdown">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                </select>
+                                entries
+                                <span id="table-info" style="margin-left:16px;"></span>
+                            </div>
+                            <div class="table-footer-right" id="pagination-controls"></div>
+                        </div>
                 </div>
             </div>
         </div>

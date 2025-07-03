@@ -1595,6 +1595,7 @@ body, html {
   background: #fff;
 }
 
+/* === Chart Styles === */
 .graph-container,
 #monthly_sales_chart_1,
 #monthly_sales_chart_2,
@@ -1607,6 +1608,7 @@ body, html {
   background: #fff !important; /* Always white background */
   border-radius: 12px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #bbb;
@@ -1614,6 +1616,36 @@ body, html {
   box-sizing: border-box;
   margin-bottom: 18px;
   box-shadow: 0 2px 8px rgba(21, 114, 185, 0.06);
+}
+
+.chart-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  padding: 0 12px 0 0;
+  box-sizing: border-box;
+  min-height: 36px;
+  background: transparent;
+  z-index: 2;
+}
+
+.chart-header .filter-select {
+  min-width: 120px;
+  max-width: 180px;
+  padding: 4px 28px 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  background: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  color: #212b36;
+  box-shadow: none;
+  outline: none;
+  appearance: none;
+  margin-left: 12px;
 }
 
 .manual-barrier-stats-row {
@@ -1754,5 +1786,19 @@ body, html {
   width: 100% !important;
   height: 450px !important;
   display: block;
+}
+
+@media (max-width: 600px) {
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 0 0 0 0;
+  }
+  .chart-header .filter-select {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+  }
 }
 

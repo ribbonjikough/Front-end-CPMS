@@ -588,4 +588,69 @@ document.addEventListener('DOMContentLoaded', function () {
     var lineChart = new ApexCharts(lineDiv, lineOptions);
     lineChart.render();
   }
+
+  // --- Daily Revenue Line Chart (every 30 min) ---
+  var dailyLabels = [
+      "00:00", "00:30", "01:00", "01:30", "02:00", "02:30", "03:00", "03:30", "04:00", "04:30",
+      "05:00", "05:30", "06:00", "06:30", "07:00", "07:30", "08:00", "08:30", "09:00", "09:30",
+      "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30",
+      "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30",
+      "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00", "23:30"
+  ];
+  var dailyRevenue = Array.from({length: 48}, () => Math.floor(Math.random() * 500) + 100);
+
+  var dailyLine = {
+      chart: { type: 'line', height: 160, toolbar: { show: false } },
+      series: [{ name: 'Revenue', data: dailyRevenue }],
+      xaxis: { categories: dailyLabels, labels: { show: false } },
+      yaxis: { title: { text: 'RM' }, min: 0 },
+      stroke: { width: 3, curve: 'smooth' },
+      colors: ['#2196f3'],
+      dataLabels: { enabled: false },
+      legend: { show: false }
+  };
+  if (document.querySelector("#dashboard_graph_1")) {
+      new ApexCharts(document.querySelector("#dashboard_graph_1"), dailyLine).render();
+  }
+
+  // --- Monthly Revenue Line Chart (2025, 2024, 2023) ---
+  var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  var revenue2025 = [12000, 13500, 15000, 14000, 16000, 17000, 15500, 16500, 17500, 18000, 19000, 20000];
+  var revenue2024 = [10000, 11500, 13000, 12000, 14000, 15000, 13500, 14500, 15500, 16000, 17000, 18000];
+  var revenue2023 = [9000, 10500, 12000, 11000, 13000, 14000, 12500, 13500, 14500, 15000, 16000, 17000];
+
+  var monthlyLine = {
+      chart: { type: 'line', height: 160, toolbar: { show: false } },
+      series: [
+          { name: '2025', data: revenue2025 },
+          { name: '2024', data: revenue2024 },
+          { name: '2023', data: revenue2023 }
+      ],
+      xaxis: { categories: months },
+      yaxis: { title: { text: 'RM' }, min: 0 },
+      stroke: { width: 3, curve: 'smooth' },
+      colors: ['#2196f3', '#ff9800', '#8e24aa'],
+      dataLabels: { enabled: false },
+      legend: { position: 'top' }
+  };
+  if (document.querySelector("#dashboard_graph_2")) {
+      new ApexCharts(document.querySelector("#dashboard_graph_2"), monthlyLine).render();
+  }
+
+  // --- Monthly Length of Stay Pie Chart ---
+  var stayLabels = ["0h-3h", "3h-6h", "6h-9h", "9h-12h", "12h+"];
+  var stayData = [320, 410, 210, 90, 30];
+  var stayColors = ['#2196f3', '#4caf50', '#ff9800', '#8e24aa', '#f44336'];
+
+  var stayPie = {
+      chart: { type: 'pie', height: 400, toolbar: { show: false } },
+      labels: stayLabels,
+      series: stayData,
+      colors: stayColors,
+      legend: { position: 'bottom' },
+      dataLabels: { enabled: true },
+  };
+  if (document.querySelector("#dashboard_graph_3")) {
+      new ApexCharts(document.querySelector("#dashboard_graph_3"), stayPie).render();
+  }
 });
