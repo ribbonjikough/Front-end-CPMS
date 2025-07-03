@@ -181,6 +181,20 @@ $page_subtext = 'This page shows all transactions made for all vehicles';
                                             </tr>
                                         </tbody>
                                     </table>
+                                </div>                            
+                                <div class="table-footer-pagination">
+                                    <div class="table-footer-left">
+                                        Show
+                                        <select id="entriesPerPage" class="entries-dropdown">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                        </select>
+                                        entries
+                                        <span id="table-info" style="margin-left:16px;"></span>
+                                    </div>
+                                    <div class="table-footer-right" id="pagination-controls"></div>
                                 </div>
                             </div>
                         </div>

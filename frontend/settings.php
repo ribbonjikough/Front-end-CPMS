@@ -1,6 +1,6 @@
 <?php
 // Set your page variables
-$topbar_title = 'Parking';
+$topbar_title = 'Admin';
 $page_title = 'Page Main Title';
 $page_subtext = 'This is a summary or description for this page.';
 ?>

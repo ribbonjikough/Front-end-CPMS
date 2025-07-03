@@ -140,4 +140,61 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  // Pagination for Car In Park Table
+  const table = document.querySelector('.table');
+  const tbody = table.querySelector('tbody');
+  const rows = Array.from(tbody.querySelectorAll('tr'));
+  const info = document.getElementById('table-info');
+  const pagination = document.getElementById('pagination-controls');
+  const entriesSelect = document.getElementById('entriesPerPage');
 
+  let currentPage = 1;
+  let entriesPerPage = parseInt(entriesSelect.value);
+
+  function renderTable() {
+    // Hide all rows
+    rows.forEach(row => row.style.display = 'none');
+    // Calculate range
+    const total = rows.length;
+    const totalPages = Math.ceil(total / entriesPerPage);
+    const start = (currentPage - 1) * entriesPerPage;
+    const end = Math.min(start + entriesPerPage, total);
+    // Show only current page rows
+    rows.slice(start, end).forEach(row => row.style.display = '');
+    // Info text
+    info.textContent = `Showing ${start + 1}-${end} out of ${total} items`;
+    // Pagination buttons
+    pagination.innerHTML = '';
+    // Previous button
+    const prevBtn = document.createElement('button');
+    prevBtn.textContent = 'Previous';
+    prevBtn.className = 'pagination-btn';
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.onclick = () => { if (currentPage > 1) { currentPage--; renderTable(); }};
+    pagination.appendChild(prevBtn);
+    // Page numbers
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement('button');
+      btn.textContent = i;
+      btn.className = 'pagination-btn' + (i === currentPage ? ' active' : '');
+      btn.onclick = () => { currentPage = i; renderTable(); };
+      pagination.appendChild(btn);
+    }
+    // Next button
+    const nextBtn = document.createElement('button');
+    nextBtn.textContent = 'Next';
+    nextBtn.className = 'pagination-btn';
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.onclick = () => { if (currentPage < totalPages) { currentPage++; renderTable(); }};
+    pagination.appendChild(nextBtn);
+  }
+
+  entriesSelect.addEventListener('change', function () {
+    entriesPerPage = parseInt(this.value);
+    currentPage = 1;
+    renderTable();
+  });
+
+  renderTable();
+});

@@ -120,10 +120,10 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                                 </div>
                                 <div class="big-card-number">RM12,345</div>
                                 <div class="big-card-subtext positive">+5.2% from last month</div>
-                                <button class="big-card-btn">
+                                <a href="monthly_sales.php" class="big-card-btn">
                                     View details
                                     <span class="big-card-arrow">&#8594;</span>
-                                </button>
+                                </a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6 col-12">
@@ -134,10 +134,10 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                                 </div>
                                 <div class="big-card-number">RM8,210</div>
                                 <div class="big-card-subtext negative">-1.3% from last week</div>
-                                <button class="big-card-btn">
+                                <a href="daily_sales.php" class="big-card-btn">
                                     View details
                                     <span class="big-card-arrow">&#8594;</span>
-                                </button>
+                                </a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6 col-12">
@@ -148,10 +148,10 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                                 </div>
                                 <div class="big-card-number">2,450</div>
                                 <div class="big-card-subtext positive">+2.8% this month</div>
-                                <button class="big-card-btn">
+                                <a href="transactions.php" class="big-card-btn">
                                     View details
                                     <span class="big-card-arrow">&#8594;</span>
-                                </button>
+                                </a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6 col-12">
@@ -162,50 +162,64 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                                 </div>
                                 <div class="big-card-number">2h 30m</div>
                                 <div class="big-card-subtext neutral">0% change</div>
-                                <button class="big-card-btn">
+                                <a href="length_of_stay.php" class="big-card-btn">
                                     View details
                                     <span class="big-card-arrow">&#8594;</span>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
+                <div class="card">
+                    <div class="card-header">
+                        <span class="report-title">Visual Summary Panels</span>
+                        <div class="card-subtext" style="margin-top:4px;">
+                            A collection of key visualizations and analytics for quick insights.
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        </div>
+                    </div>
+                    
             <div class="card">
-  <div class="card-header">
-    <h4 class="card-title">Real Time Logs</h4>
-    <div class="card-subtext">updates every 10 seconds</div>
-  </div>
-  <div class="card-body">
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-            <tr>
-              <th>ID</th>
-              <th>Time</th>
-              <th>Event Type</th>
-              <th>Details</th>
-              <th>Performed By</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>2024-06-30 14:23:10</td>
-              <td>Login</td>
-              <td>User logged in</td>
-              <td>John Doe</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>2024-06-30 14:23:20</td>
-              <td>Update</td>
-              <td>Changed password</td>
-              <td>Jane Smith</td>
-            </tr>
-          </tbody>
-      </table>
-    </div>
-  </div>
-</div>
+                <div class="card-header">
+                    <h4 class="card-title">Real Time Logs</h4>
+                    <div class="card-subtext">updates every 10 seconds</div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                            <th>ID</th>
+                            <th>Time</th>
+                            <th>Event Type</th>
+                            <th>Details</th>
+                            <th>Performed By</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>1</td>
+                            <td>2024-06-30 14:23:10</td>
+                            <td>Login</td>
+                            <td>User logged in</td>
+                            <td>John Doe</td>
+                            </tr>
+                            <tr>
+                            <td>2</td>
+                            <td>2024-06-30 14:23:20</td>
+                            <td>Update</td>
+                            <td>Changed password</td>
+                            <td>Jane Smith</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
                     <?php for ($i = 1; $i <= 30; $i++): ?>
                         <div style="margin-bottom: 24px; font-size: 16px;">
                             Example content row <?= $i ?>. Scroll to test fixed sidebars and top menu.
@@ -216,6 +230,9 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="assets/js/script.js"></script>
+<script src="assets/js/charts.js"></script>
 </body>
 </html>

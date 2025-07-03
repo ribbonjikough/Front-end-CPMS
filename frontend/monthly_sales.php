@@ -56,7 +56,6 @@ $page_subtext = 'This page shows the total number of transactions, revenue, and 
                             </div>
                         </div>
                         <div class="report-divider"></div>
-                        <!-- Report Card -->
                         <div class="card report-card">
                             <div class="card-header">
                                 <span class="report-title"><?= htmlspecialchars($page_title) ?> Report</span>
