@@ -1541,19 +1541,25 @@ body, html {
   background: #fff;
 }
 
+.graph-container,
 #monthly_sales_chart_1,
-#monthly_sales_chart_2 {
+#monthly_sales_chart_2,
+#length_of_stay_chart,
+#manual_barrier_chart_1,
+#manual_barrier_chart_2 {
   width: 100%;
   min-width: 0;
   height: 450px;
-  background: #fff;
-  border-radius: 8px;
+  background: #fff !important; /* Always white background */
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #bbb;
-  padding: 5px 5px;
+  padding: 0;
   box-sizing: border-box;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(21, 114, 185, 0.06);
 }
 
 .manual-barrier-stats-row {
@@ -1678,5 +1684,21 @@ body, html {
   box-sizing: border-box;
 }
 
-/* Remove duplicate .row grid (was using display: grid) and summary-charts-row flex-direction rules */
+.apexcharts-canvas {
+  background: #fff !important;
+  border-radius: 12px;
+}
+
+.graph-container canvas,
+#monthly_sales_chart_1 canvas,
+#monthly_sales_chart_2 canvas,
+#length_of_stay_chart canvas,
+#manual_barrier_chart_1 canvas,
+#manual_barrier_chart_2 canvas {
+  background: #fff !important;
+  border-radius: 12px;
+  width: 100% !important;
+  height: 450px !important;
+  display: block;
+}
 

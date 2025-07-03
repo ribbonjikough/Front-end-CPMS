@@ -93,13 +93,21 @@ $page_subtext = 'This page shows records of manual gate operations, including to
                         </div>
                     </div>
 
-                    <!-- Two stacked graphs -->
+                                <div class="card report-card">
+                        <div class="card-header">
+                            <span class="report-title"><?= htmlspecialchars($page_title) ?> Report</span>
+                        </div>
+                        <div class="card-body">
                     <div class="summary-chart-box" style="flex-direction:column;gap:18px;">
-                        <div id="manual_barrier_chart_1" style="width:100%;height:260px;background:#e9ecef;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#bbb;margin-bottom:18px;">(Graph 1)</div>
-                        <div id="manual_barrier_chart_2" style="width:100%;height:260px;background:#e9ecef;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#bbb;">(Graph 2)</div>
+                        <div id="manual_barrier_chart_1" style="width:100%;height:260px;background:#ffffff;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#bbb;margin-bottom:12px;"></div>
+                        <div id="manual_barrier_chart_2" style="width:100%;height:260px;background:#ffffff;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#bbb;"></div>
+                    </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Report Card -->
+
+
                     <div class="card report-card">
                         <div class="card-header">
                             <span class="report-title"><?= htmlspecialchars($page_title) ?> Report</span>

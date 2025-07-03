@@ -43,7 +43,7 @@ $page_subtext = 'This page shows how long vehicles typically stay in the parking
                             </div>
                             <div class="card-body">
                                 <div class="summary-chart-box">
-                                    <div id="length_of_stay_chart" style="width:100%;height:260px;background:#e9ecef;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#bbb;">(Graph here)</div>
+                                    <div id="length_of_stay_chart" style="width:100%;height:260px;background:#e9ecef;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#bbb;"></div>
                                 </div>
                             </div>
                         </div>

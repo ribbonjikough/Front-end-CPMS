@@ -481,4 +481,111 @@ document.addEventListener('DOMContentLoaded', function () {
     var lineChart = new ApexCharts(lineChartDiv, lineOptions);
     lineChart.render();
   }
+
+  // --- Redemption by Type Pie Chart ---
+  var pieDiv = document.querySelector("#redemption_graph_1");
+  if (pieDiv) {
+    var pieOptions = {
+      chart: {
+        type: 'pie',
+        height: 220,
+        toolbar: { show: false }
+      },
+      labels: ['Early Bird', 'Flat Rate Friday', 'Spend & Redeem'],
+      series: [44, 32, 24], // Example data
+      colors: ['#2196f3', '#ff9800', '#8e24aa'],
+      legend: { position: 'bottom' },
+      title: { text: 'Redemption by Type', align: 'center', style: { fontSize: '16px' } }
+    };
+    var pieChart = new ApexCharts(pieDiv, pieOptions);
+    pieChart.render();
+  }
+
+  // --- Redemption Sales Bar Chart ---
+  var barDiv = document.querySelector("#redemption_graph_2");
+  if (barDiv) {
+    var barOptions = {
+      chart: {
+        type: 'bar',
+        height: 220,
+        toolbar: { show: false }
+      },
+      series: [
+        {
+          name: 'Paid Amount',
+          data: [1200, 900, 600]
+        },
+        {
+          name: 'Parking Fee',
+          data: [3100, 2100, 1800]
+        },
+        {
+          name: 'Discounted Amount',
+          data: [1900, 1200, 900]
+        }
+      ],
+      colors: ['#2196f3', '#ff9800', '#8e24aa'],
+      xaxis: {
+        categories: ['Early Bird', 'Flat Rate Friday', 'Spend & Redeem'],
+        title: { text: 'Redemption Type' }
+      },
+      plotOptions: {
+        bar: { columnWidth: '40%', borderRadius: 4 }
+      },
+      legend: { position: 'top' },
+      dataLabels: { enabled: false },
+      title: { text: 'Redemption Sales', align: 'center', style: { fontSize: '16px' } }
+    };
+    var barChart = new ApexCharts(barDiv, barOptions);
+    barChart.render();
+  }
+
+  // --- Daily Redemption Value Over Time Line Chart ---
+  var lineDiv = document.querySelector("#redemption_graph_3");
+  if (lineDiv) {
+    var days = Array.from({length: 30}, (_, i) => `2025-03-${(i+1).toString().padStart(2, '0')}`);
+    // Example data for each type
+    var earlyBird = days.map(() => Math.floor(Math.random() * 200) + 800);
+    var flatRate = days.map(() => Math.floor(Math.random() * 120) + 400);
+    var spendRedeem = days.map(() => Math.floor(Math.random() * 100) + 300);
+
+    var lineOptions = {
+      chart: {
+        type: 'line',
+        height: 458,
+        toolbar: { show: false }
+      },
+      series: [
+        {
+          name: 'Early Bird',
+          data: earlyBird
+        },
+        {
+          name: 'Flat Rate Friday',
+          data: flatRate
+        },
+        {
+          name: 'Spend & Redeem',
+          data: spendRedeem
+        }
+      ],
+      colors: ['#2196f3', '#ff9800', '#8e24aa'],
+      xaxis: {
+        categories: days,
+        title: { text: 'Date' },
+        labels: { rotate: -45, style: { fontSize: '11px' }, show: false }
+      },
+      yaxis: {
+        title: { text: 'Sales (RM)' },
+        min: 0
+      },
+      stroke: { width: 3, curve: 'smooth' },
+      legend: { position: 'top' },
+      dataLabels: { enabled: false },
+      title: { text: 'Daily Redemption Value Over Time', align: 'center', style: { fontSize: '16px' } },
+      tooltip: { shared: true, intersect: false }
+    };
+    var lineChart = new ApexCharts(lineDiv, lineOptions);
+    lineChart.render();
+  }
 });
