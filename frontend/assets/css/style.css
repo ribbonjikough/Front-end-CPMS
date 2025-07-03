@@ -389,12 +389,7 @@ body, html {
   margin-left: -12px;
   margin-bottom: 24px;
 }
-.col-lg-3, .col-sm-6, .col-12 {
-  padding-right: 12px;
-  padding-left: 12px;
-  margin-bottom: 24px;
-  box-sizing: border-box;
-}
+
 .dash-widget, .dash-count {
   background: #fff;
   border-radius: 12px;
@@ -879,14 +874,7 @@ body, html {
     margin-left: -12px;
     margin-right: -12px;
   }
-  .col-lg-3, .col-sm-6, .col-12 {
-    flex: 0 0 50%;
-    max-width: 50% !important;
-    padding-left: 12px;
-    padding-right: 12px;
-    box-sizing: border-box;
-    margin-bottom: 24px;
-  }
+
   .big-card, .dash-widget {
     width: 100%;
     min-width: 0;
@@ -938,12 +926,7 @@ body, html {
     margin-left: 0;
     margin-right: 0;
   }
-  .col-lg-3, .col-sm-6, .col-12 {
-    max-width: 100%;
-    flex: 0 0 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
+
   .content {
     width: 98%;
     padding: 8px;
@@ -1573,17 +1556,127 @@ body, html {
   box-sizing: border-box;
 }
 
-/* Responsive: If you want them side by side on desktop, stack on mobile, use this: */
+.manual-barrier-stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+.manual-barrier-stat-card {
+    flex: 0 0 16.66%;
+    max-width: 16.66%;
+    min-width: 180px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(21, 114, 185, 0.10);
+    padding: 18px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
+    box-sizing: border-box;
+    transition: box-shadow 0.2s;
+}
+.stat-card-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.stat-icon img {
+    width: 32px;
+    height: 32px;
+}
+.stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+.stat-label {
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 500;
+}
+.stat-green { background: linear-gradient(90deg, #189642 0%, #12a80d 100%); color: #fff; }
+.stat-red { background: linear-gradient(90deg, #791d0c 0%, #f12613 100%); color: #fff; }
+.stat-blue { background: linear-gradient(90deg, #0b2470 0%, #3150da 100%); color: #fff; }
+.stat-brown { background: linear-gradient(90deg, #8a4812 0%, #dd9c0f 100%); color: #fff; }
+.stat-purple { background: linear-gradient(90deg, #8f0eff 0%, #da22ff 100%); color: #fff; }
+.stat-grey { background: linear-gradient(90deg, #525357 0%, #8f95a0 100%); color: #fff; }
+
+/* Responsive: Tablet (2 per row) */
+@media (min-width: 600px) and (max-width: 999px) {
+    .manual-barrier-stats-row {
+        gap: 14px;
+    }
+    .manual-barrier-stat-card {
+        flex: 0 0 48%;
+        max-width: 48%;
+        min-width: 160px;
+    }
+}
+/* Responsive: Mobile (1 per row) */
+@media (max-width: 599px) {
+    .manual-barrier-stats-row {
+        gap: 10px;
+    }
+    .manual-barrier-stat-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+}
+
+/* --- Responsive Card Grid for .row --- */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -12px;
+  margin-right: -12px;
+  margin-bottom: 24px;
+}
+
+/* Desktop (≥1000px): 4 cards per row */
 @media (min-width: 1000px) {
-  .summary-charts-row {
-    flex-direction: column;
-  }
-}
-@media (max-width: 999px) {
-  .summary-charts-row {
-    flex-direction: column;
+  .row > .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-bottom: 24px;
+    box-sizing: border-box;
   }
 }
 
+/* Tablet (600px–999px): 2 cards per row */
+@media (min-width: 600px) and (max-width: 999px) {
+  .row > .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+  }
+}
 
+/* Mobile (<600px): 1 card per row */
+@media (max-width: 599px) {
+  .row > .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+  }
+}
+
+/* Remove duplicate/unused col classes */
+.col-lg-3, .col-sm-6, .col-12 {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Remove duplicate .row grid (was using display: grid) and summary-charts-row flex-direction rules */
 

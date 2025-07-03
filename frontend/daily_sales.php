@@ -224,6 +224,7 @@ $page_subtext = 'This page shows the total number of transactions, revenue, and 
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="assets/js/script.js"></script>
 <script src="assets/js/charts.js"></script>
 </body>

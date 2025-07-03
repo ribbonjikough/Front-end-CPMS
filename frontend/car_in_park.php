@@ -155,6 +155,9 @@ $page_subtext = 'This page logs all vehicles that is currently in the bay';
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="assets/js/script.js"></script>
+<script src="assets/js/charts.js"></script>
 </body>
 </html>

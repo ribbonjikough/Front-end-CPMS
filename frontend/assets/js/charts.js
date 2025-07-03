@@ -324,4 +324,161 @@ document.addEventListener('DOMContentLoaded', function () {
     var yearlyChart = new ApexCharts(yearlyChartDiv, options2);
     yearlyChart.render();
   }
+
+  // Mixed chart for Length of Stay
+  var losChartDiv = document.querySelector("#length_of_stay_chart");
+  if (losChartDiv) {
+    var durations = [
+      "<30 mins", "30 mins - 1 hr", "1 hr - 2 hr", "2 hr - 3 hr", "3 hr - 4 hr", "4 hr - 5 hr",
+      "5 hr - 6 hr", "6 hr - 7 hr", "7 hr - 8 hr", "8 hr - 9 hr", "9 hr - 10 hr", "10 hr - 11 hr",
+      "11 hr - 12 hr", "12 hr - 13 hr", "13 hr - 14 hr", "14 hr - 15 hr", "15 hr - 16 hr",
+      "16 hr - 17 hr", "17 hr - 18 hr", "18 hr - 19 hr", "19 hr - 20 hr", "20 hr - 21 hr",
+      "21 hr - 22 hr", "22 hr - 23 hr", "23 hr - 24 hr", "More than 24 hr"
+    ];
+    var cars = [34,56,80,36,32,27,14,16,24,35,136,83,35,16,12,7,2,4,1,0,1,0,0,0,0,41];
+    var sales = [0.00,270.00,518.00,314.00,246.00,329.00,158.00,196.00,319.00,469.00,1237.00,893.00,539.00,189.00,172.00,109.00,15.00,10.00,10.00,0.00,43.00,0.00,0.00,0.00,0.00,3076.00];
+
+    var options = {
+      chart: {
+        height: 450,
+        type: 'line',
+        toolbar: { show: false }
+      },
+      series: [
+        {
+          name: 'Number of Cars',
+          type: 'column',
+          data: cars
+        },
+        {
+          name: 'Sales (RM)',
+          type: 'line',
+          data: sales
+        }
+      ],
+      stroke: {
+        width: [0, 4]
+      },
+      plotOptions: {
+        bar: {
+          columnWidth: '40%',
+          borderRadius: 4
+        }
+      },
+      colors: ['#2196f3', '#f44336'],
+      dataLabels: { enabled: false },
+      labels: durations,
+      xaxis: {
+        categories: durations,
+        title: { text: "Duration of Stay" },
+        labels: { rotate: -45, style: { fontSize: '11px' } }
+      },
+      yaxis: [
+        {
+          title: { text: "Number of Cars" },
+          min: 0
+        },
+        {
+          opposite: true,
+          title: { text: "Sales (RM)" },
+          min: 0
+        }
+      ],
+      legend: { position: 'top' },
+      tooltip: { shared: true, intersect: false }
+    };
+
+    var losChart = new ApexCharts(losChartDiv, options);
+    losChart.render();
+  }
+
+  // Data from your table
+  var weekLabels = ["24 Mar", "25 Mar", "26 Mar", "27 Mar", "28 Mar", "29 Mar", "30 Mar"];
+  var totalEntries = [57,112,111,73,157,132,81];
+  var totalExits = [9,111,114,92,163,136,67];
+  var totalManual = [0,1,0,3,0,6,0];
+  var performance = [100.00,99.55,100.00,98.18,100.00,97.76,100.00];
+
+  // Stacked Column Chart
+  var stackedOptions = {
+    chart: {
+      type: 'bar',
+      height: 450,
+      stacked: true,
+      toolbar: { show: false }
+    },
+    series: [
+      {
+        name: 'Total Entries',
+        data: totalEntries
+      },
+      {
+        name: 'Total Exits',
+        data: totalExits
+      },
+      {
+        name: 'Total Manual Open Barrier',
+        data: totalManual
+      }
+    ],
+    colors: ['#2196f3', '#4caf50', '#f44336'],
+    xaxis: {
+      categories: weekLabels,
+      title: { text: "Date" }
+    },
+    yaxis: {
+      title: { text: "Count" },
+      min: 0
+    },
+    legend: { position: 'top' },
+    plotOptions: {
+      bar: { borderRadius: 4, columnWidth: '40%' }
+    },
+    tooltip: { shared: true, intersect: false }
+  };
+
+  var stackedChartDiv = document.querySelector("#manual_barrier_chart_1");
+  if (stackedChartDiv) {
+    var stackedChart = new ApexCharts(stackedChartDiv, stackedOptions);
+    stackedChart.render();
+  }
+
+  // Line Chart for Performance
+  var lineOptions = {
+    chart: {
+      type: 'line',
+      height: 450,
+      toolbar: { show: false }
+    },
+    series: [
+      {
+        name: 'Performance (%)',
+        data: performance
+      }
+    ],
+    colors: ['#2196f3'],
+    xaxis: {
+      categories: weekLabels,
+      title: { text: "Date" }
+    },
+    yaxis: {
+      min: 95,
+      max: 100,
+      title: { text: "Performance (%)" },
+      labels: {
+        formatter: function (val) { return val + "%"; }
+      }
+    },
+    stroke: { width: 4},
+    markers: { size: 6 },
+    dataLabels: { enabled: true, formatter: function(val){ return val + "%"; } },
+    tooltip: { y: { formatter: function(val){ return val + "%"; } } },
+    legend: { position: 'top' }
+  };
+
+  var lineChartDiv = document.querySelector("#manual_barrier_chart_2");
+  if (lineChartDiv) {
+    var lineChart = new ApexCharts(lineChartDiv, lineOptions);
+    lineChart.render();
+  }
 });

@@ -36,7 +36,6 @@ $page_subtext = 'This page tracks hourly vehicle entries and exits to identify p
                     <div class="page-subtext"><?= htmlspecialchars($page_subtext) ?></div>
                 </div>
                 <div class="content">
-                    <!-- Big cards row (reuse daily_sales style) -->
                     <div class="row">
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="big-card">
@@ -107,13 +106,11 @@ $page_subtext = 'This page tracks hourly vehicle entries and exits to identify p
                             </div>
                         </div>
                         <div class="report-divider"></div>
-                        <!-- Report Card -->
                         <div class="card report-card">
                             <div class="card-header">
                                 <span class="report-title"><?= htmlspecialchars($page_title) ?> Report</span>
                             </div>
                             <div class="card-body">
-                                <!-- Filter row: one dropdown and two search -->
                                 <div class="filters-row" style="margin-bottom:18px;">
                                     <div class="filter-dropdown">
                                         <div class="filter-label">Insert Date</div>
