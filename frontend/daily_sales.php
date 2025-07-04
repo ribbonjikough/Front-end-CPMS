@@ -99,11 +99,11 @@ $page_subtext = 'This page shows the total number of transactions, revenue, and 
                                     </div>
                                 </div>
                                 <div class="summary-chart-box">
-                                    <div class="col-lg-6 col-sm-12 col-12">
-                                        <canvas id="weekly_transactions_bar"></canvas>
+                                    <div class="col-12" style="width:100%;padding:0;margin-bottom:18px;">
+                                        <canvas id="weekly_transactions_bar" style="width:100%;height:260px;display:block;"></canvas>
                                     </div>
-                                    <div class="col-lg-6 col-sm-12 col-12" >
-                                        <canvas id="weekly_sales_line"></canvas>
+                                    <div class="col-12" style="width:100%;padding:0;">
+                                        <canvas id="weekly_sales_line" style="width:100%;height:260px;display:block;"></canvas>
                                     </div>
                                 </div>
                             </div>

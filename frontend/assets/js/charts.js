@@ -604,7 +604,7 @@ document.addEventListener('DOMContentLoaded', function () {
       series: [{ name: 'Revenue', data: dailyRevenue }],
       xaxis: { categories: dailyLabels, labels: { show: false } },
       yaxis: { title: { text: 'RM' }, min: 0 },
-      stroke: { width: 3, curve: 'smooth' },
+      stroke: { width: 3},
       colors: ['#2196f3'],
       dataLabels: { enabled: false },
       legend: { show: false }
@@ -615,9 +615,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // --- Monthly Revenue Line Chart (2025, 2024, 2023) ---
   var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  var revenue2025 = [12000, 13500, 15000, 14000, 16000, 17000, 15500, 16500, 17500, 18000, 19000, 20000];
-  var revenue2024 = [10000, 11500, 13000, 12000, 14000, 15000, 13500, 14500, 15500, 16000, 17000, 18000];
-  var revenue2023 = [9000, 10500, 12000, 11000, 13000, 14000, 12500, 13500, 14500, 15000, 16000, 17000];
+  var revenue2025 = [12000, 8000, 19500, 7000, 21000, 9000, 25000, 11000, 17000, 30000, 5000, 26000];
+  var revenue2024 = [10000, 22000, 13000, 6000, 18000, 14000, 9000, 24500, 15500, 9000, 27000, 8000];
+  var revenue2023 = [9000, 10500, 5000, 21000, 13000, 4000, 22500, 13500, 14500, 12000, 16000, 17000];
 
   var monthlyLine = {
       chart: { type: 'line', height: 160, toolbar: { show: false } },
@@ -628,7 +628,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ],
       xaxis: { categories: months },
       yaxis: { title: { text: 'RM' }, min: 0 },
-      stroke: { width: 3, curve: 'smooth' },
+      stroke: { width: 3, curve: 'straight' }, // No curve
       colors: ['#2196f3', '#ff9800', '#8e24aa'],
       dataLabels: { enabled: false },
       legend: { position: 'top' }
@@ -653,4 +653,94 @@ document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector("#dashboard_graph_3")) {
       new ApexCharts(document.querySelector("#dashboard_graph_3"), stayPie).render();
   }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    // --- Peak Hour Bar Chart ---
+    var peakLabels = Array.from({length: 24}, (_, i) => i.toString().padStart(2, '0'));
+    var tngData = [2, 4, 6, 8, 10, 12, 15, 20, 25, 30, 40, 65, 60, 40, 30, 25, 20, 15, 10, 8, 6, 4, 3, 2];
+    var visaData = [1, 2, 3, 4, 5, 8, 10, 15, 20, 25, 35, 50, 55, 35, 25, 20, 15, 10, 8, 6, 4, 3, 2, 1];
+    var mcData = [0, 1, 1, 2, 2, 3, 4, 6, 8, 10, 15, 20, 22, 15, 10, 8, 6, 4, 3, 2, 1, 1, 1, 0];
+
+    var peakBar = {
+        chart: { type: 'bar', height: 240, toolbar: { show: false } },
+        series: [
+            { name: 'TNG', data: tngData },
+            { name: 'Visa', data: visaData },
+            { name: 'Mastercard', data: mcData }
+        ],
+        colors: ['#ffb300', '#43a047', '#8e24aa'],
+        xaxis: { categories: peakLabels, title: { text: 'Hour' } },
+        yaxis: { title: { text: 'Transactions' }, min: 0 },
+        plotOptions: { bar: { columnWidth: '60%', borderRadius: 3 } },
+        legend: { position: 'top' },
+        dataLabels: { enabled: false }
+    };
+    if (document.querySelector("#dashboard_graph_7")) {
+        new ApexCharts(document.querySelector("#dashboard_graph_7"), peakBar).render();
+    }
+
+    // --- Transactions Doughnut: Car Count ---
+    var carCount = [322, 191, 33];
+    var carCountDonut = {
+        chart: { type: 'donut', height: 120, toolbar: { show: false } },
+        labels: ['TNG', 'Visa', 'Mastercard'],
+        series: carCount,
+        colors: ['#ffb300', '#43a047', '#8e24aa'],
+        legend: { show: false },
+        dataLabels: { enabled: false },
+        plotOptions: {
+            pie: {
+                donut: {
+                    size: '70%',
+                    labels: {
+                        show: true,
+                        total: {
+                            show: true,
+                            label: 'Car Count',
+                            fontSize: '15px',
+                            fontWeight: 600,
+                            color: '#212b36',
+                            formatter: function () { return 546; }
+                        }
+                    }
+                }
+            }
+        }
+    };
+    if (document.querySelector("#dashboard_graph_8a")) {
+        new ApexCharts(document.querySelector("#dashboard_graph_8a"), carCountDonut).render();
+    }
+
+    // --- Transactions Doughnut: Revenue (Today) ---
+    var revenueToday = [1175, 489, 143];
+    var revenueDonut = {
+        chart: { type: 'donut', height: 120, toolbar: { show: false } },
+        labels: ['TNG', 'Visa', 'Mastercard'],
+        series: revenueToday,
+        colors: ['#ffb300', '#43a047', '#8e24aa'],
+        legend: { show: false },
+        dataLabels: { enabled: false },
+        plotOptions: {
+            pie: {
+                donut: {
+                    size: '70%',
+                    labels: {
+                        show: true,
+                        total: {
+                            show: true,
+                            label: 'Revenue (Today)',
+                            fontSize: '15px',
+                            fontWeight: 600,
+                            color: '#212b36',
+                            formatter: function () { return 'RM1807'; }
+                        }
+                    }
+                }
+            }
+        }
+    };
+    if (document.querySelector("#dashboard_graph_8b")) {
+        new ApexCharts(document.querySelector("#dashboard_graph_8b"), revenueDonut).render();
+    }
 });

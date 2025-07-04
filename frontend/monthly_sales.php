@@ -43,15 +43,9 @@ $page_subtext = 'This page shows the total number of transactions, revenue, and 
                                 <span class="report-title"><?= htmlspecialchars($page_title) ?> Summary</span>
                             </div>
                             <div class="card-body">
-                                <div class="summary-chart-box">
-                                    <div class="row summary-charts-row" style="width:100%;margin:0;flex-direction:column;gap:18px;">
-                                        <div class="col-12">
-                                            <div id="monthly_sales_chart_1"></div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div id="monthly_sales_chart_2"></div>
-                                        </div>
-                                    </div>
+                                <div class="summary-chart-box" style="flex-direction: column;">
+                                    <div id="monthly_sales_chart_1" style="width: 100%"></div>
+                                    <div id="monthly_sales_chart_2" style="width: 100%"></div>
                                 </div>
                             </div>
                         </div>

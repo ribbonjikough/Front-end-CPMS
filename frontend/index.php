@@ -66,7 +66,7 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="col-12">
                             <div class="dash-widget">
                                 <div class="dash-widgetimg">
                                     <span><img src="assets/img/credit_card_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="img"></span>
@@ -77,7 +77,7 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="col-12">
                             <div class="dash-widget dash1">
                                 <div class="dash-widgetimg">
                                     <span><img src="assets/img/payments_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="img"></span>
@@ -88,7 +88,7 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="col-12">
                             <div class="dash-widget dash2">
                                 <div class="dash-widgetimg">
                                     <span><img src="assets/img/credit_card_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="img"></span>
@@ -99,7 +99,7 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="col-12">
                             <div class="dash-widget dash3">
                                 <div class="dash-widgetimg">
                                     <span><img src="assets/img/paid_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="img"></span>
@@ -177,32 +177,32 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="summary-chart-box" style="gap:15px;">
+                        <div class="summary-chart-box">
                             <!-- Left column: two stacked line charts -->
                             <div class="col-lg-6 col-sm-12" style="display:flex;flex-direction:column;gap:18px;width:50%;">
                                 <!-- Daily Revenue Line Chart -->
                                 <div class="graph-container" style="height:220px;">
-                                    <div class="chart-header filter-box" style="display:flex;align-items:center;justify-content:space-between;width:100%;margin-bottom:8px;">
-                                        <span style="font-weight:600;font-size:16px;color:#212b36;">Daily Revenue</span>
-                                        <select class="filter-select" style="min-width:120px;">
+                                    <div class="chart-header filter-box">
+                                        <span class="chart-header-title">Daily Revenue</span>
+                                        <select class="filter-select">
                                             <option>Today</option>
                                             <option>Yesterday</option>
                                             <option>This Week</option>
                                         </select>
                                     </div>
-                                    <div id="dashboard_graph_1" style="width:100%;height:160px;"></div>
+                                    <div id="dashboard_graph_1" style="width:100%;height:100%;"></div>
                                 </div>
                                 <!-- Monthly Revenue Line Chart -->
                                 <div class="graph-container" style="height:220px;">
-                                    <div class="chart-header filter-box" style="display:flex;align-items:center;justify-content:space-between;width:100%;margin-bottom:8px;">
-                                        <span style="font-weight:600;font-size:16px;color:#212b36;">Monthly Revenue</span>
+                                    <div class="chart-header filter-box">
+                                        <span class="chart-header-title">Monthly Revenue</span>
                                         <select class="filter-select" style="min-width:120px;">
                                             <option>2025</option>
                                             <option>2024</option>
                                             <option>2023</option>
                                         </select>
                                     </div>
-                                    <div id="dashboard_graph_2" style="width:100%;height:160px;"></div>
+                                    <div id="dashboard_graph_2" style="width:100%;height:100%;"></div>
                                 </div>
                             </div>
                             <!-- Right column: pie chart -->
@@ -216,18 +216,35 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                                             <option>January 2025</option>
                                         </select>
                                     </div>
-                                    <div id="dashboard_graph_3" style="width:100%;height:400px;"></div>
+                                    <div id="dashboard_graph_3" style="width:100%;height:100%;"></div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="summary-chart-box" style="gap:24px;">
-                            <div class="col-lg-6 col-sm-12" style="display:flex;flex-direction:column;width:50%;">
                                 <div id="dashboard_graph_7" class="graph-container" style="height:320px;"></div>
-                            </div>
-                            <div class="col-lg-6 col-sm-12" style="display:flex;flex-direction:column;width:50%;">
-                                <div id="dashboard_graph_8" class="graph-container" style="height:320px;"></div>
-                            </div>
+                        </div>
+                        <div class="summary-chart-box">
+                                <div class="graph-container graph-container-double-donut">
+                                    <div class="chart-header filter-box">
+                                        <span class="chart-header-title">Transactions</span>
+                                    </div>
+                                    <div class="double-donut-wrapper double-donut-horizontal">
+                                        <div class="donut-chart-block">
+                                            <div id="dashboard_graph_8a" class="donut-chart"></div>
+                                            <div class="donut-label">Car Count</div>
+                                        </div>
+                                        <div class="donut-chart-block">
+                                            <div id="dashboard_graph_8b" class="donut-chart"></div>
+                                            <div class="donut-label">Revenue (Today)</div>
+                                        </div>
+                                    </div>
+                                    <div class="donut-legend">
+                                        <div><span class="legend-dot tng"></span>TNG</div>
+                                        <div><span class="legend-dot visa"></span>VISA</div>
+                                        <div><span class="legend-dot mastercard"></span>MASTERCARD</div>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -287,11 +304,6 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
             </div>
         </div>
 
-                    <?php for ($i = 1; $i <= 30; $i++): ?>
-                        <div style="margin-bottom: 24px; font-size: 16px;">
-                            Example content row <?= $i ?>. Scroll to test fixed sidebars and top menu.
-                        </div>
-                    <?php endfor; ?>
                 </div>
             </div>
         </div>
