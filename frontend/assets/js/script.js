@@ -198,3 +198,106 @@ document.addEventListener('DOMContentLoaded', function () {
 
   renderTable();
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.innerWidth < 600) {
+    // Highlight the active nav icon based on current page
+    const navLinks = document.querySelectorAll('.mobile-bottom-nav .nav-icon');
+    const current = location.pathname.split('/').pop();
+    navLinks.forEach(link => {
+      if (link.getAttribute('href').includes(current)) {
+        link.classList.add('active');
+      }
+    });
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Only run on mobile
+  if (window.innerWidth >= 600) return;
+
+  const sidebarToggle = document.querySelector('.sidebar-toggle');
+  const overlay = document.querySelector('.sidebar-overlay');
+  const drawer = document.getElementById('mobile-side-drawer');
+
+  // Hide drawer and overlay if not mobile
+  function enforceMobileDrawerVisibility() {
+    if (!isMobile()) {
+      if (drawer) drawer.classList.remove('open');
+      if (overlay) overlay.classList.remove('active');
+      if (drawer) drawer.style.display = 'none';
+      if (overlay) overlay.style.display = 'none';
+      document.body.style.overflow = '';
+    } else {
+      if (drawer) drawer.style.display = 'block';
+      if (overlay) overlay.style.display = '';
+    }
+  }
+
+  // Only attach events if mobile
+  function setupMobileDrawerEvents() {
+    if (!isMobile()) return;
+
+    // Map primary section to sidebar partial
+    const sidebarMap = {
+      home: 'assets/partials/sidebar_home.php',
+      parking: 'assets/partials/sidebar_parking.php',
+      report: 'assets/partials/sidebar_report.php',
+      season: 'assets/partials/sidebar_season.php',
+      settings: 'assets/partials/sidebar_settings.php'
+    };
+
+    function getCurrentSection() {
+      const active = document.querySelector('.mobile-bottom-nav .nav-icon.active');
+      return active ? active.getAttribute('data-section') : 'home';
+    }
+
+    function loadSidebar(section) {
+      const url = sidebarMap[section] || sidebarMap.home;
+      fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const temp = document.createElement('div');
+          temp.innerHTML = html;
+          const sideMenu = temp.querySelector('.side-menu');
+          drawer.innerHTML = '';
+          if (sideMenu) {
+            drawer.appendChild(sideMenu);
+          } else {
+            drawer.innerHTML = '<div style="padding:24px;">Menu not found.</div>';
+          }
+        });
+    }
+
+    function openDrawer() {
+      if (!isMobile()) return;
+      const section = getCurrentSection();
+      loadSidebar(section);
+      drawer.classList.add('open');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    if (sidebarToggle) {
+      sidebarToggle.onclick = openDrawer;
+    }
+    if (overlay) {
+      overlay.onclick = closeDrawer;
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && isMobile()) closeDrawer();
+    });
+  }
+
+  enforceMobileDrawerVisibility();
+  window.addEventListener('resize', enforceMobileDrawerVisibility);
+
+  setupMobileDrawerEvents();
+  window.addEventListener('resize', setupMobileDrawerEvents);
+});

@@ -179,16 +179,19 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                     <div class="card-body">
                         <div class="summary-chart-box">
                             <!-- Left column: two stacked line charts -->
-                            <div class="col-lg-6 col-sm-12" style="display:flex;flex-direction:column;gap:18px;width:50%;">
+                            <div class="col-lg-6 col-sm-12" style="display:flex;flex-direction:column;gap:18px;width:100%;">
                                 <!-- Daily Revenue Line Chart -->
                                 <div class="graph-container" style="height:220px;">
-                                    <div class="chart-header filter-box">
+                                    <div class="chart-header filter-box" style="display:flex;align-items:center;justify-content:space-between;">
                                         <span class="chart-header-title">Daily Revenue</span>
-                                        <select class="filter-select">
-                                            <option>Today</option>
-                                            <option>Yesterday</option>
-                                            <option>This Week</option>
-                                        </select>
+                                        <div class="dropdown-wrapper">
+                                            <select class="dropdown">
+                                                <option>Today</option>
+                                                <option>Yesterday</option>
+                                                <option>This Week</option>
+                                            </select>
+                                            <span class="dropdown-polygon"></span>
+                                        </div>
                                     </div>
                                     <div id="dashboard_graph_1" style="width:100%;height:100%;"></div>
                                 </div>
@@ -196,25 +199,31 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                                 <div class="graph-container" style="height:220px;">
                                     <div class="chart-header filter-box">
                                         <span class="chart-header-title">Monthly Revenue</span>
-                                        <select class="filter-select" style="min-width:120px;">
-                                            <option>2025</option>
-                                            <option>2024</option>
-                                            <option>2023</option>
-                                        </select>
+                                        <div class="dropdown-wrapper">
+                                            <select class="dropdown" style="min-width:120px;">
+                                                <option>2025</option>
+                                                <option>2024</option>
+                                                <option>2023</option>
+                                            </select>
+                                            <span class="dropdown-polygon"></span>
+                                        </div>
                                     </div>
                                     <div id="dashboard_graph_2" style="width:100%;height:100%;"></div>
                                 </div>
                             </div>
                             <!-- Right column: pie chart -->
-                            <div class="col-lg-6 col-sm-12" style="display:flex;flex-direction:column;gap:18px;width:50%;height:100%;">
+                            <div class="col-lg-6 col-sm-12" style="display:flex;flex-direction:column;gap:18px;height:100%;width:100%;">
                                 <div class="graph-container" style="height:458px;">
                                     <div class="chart-header filter-box" style="display:flex;align-items:center;justify-content:space-between;width:100%;margin-bottom:8px;">
                                         <span style="font-weight:600;font-size:16px;color:#212b36;">Monthly Length of Stay</span>
-                                        <select class="filter-select" style="min-width:120px;">
-                                            <option>March 2025</option>
-                                            <option>February 2025</option>
-                                            <option>January 2025</option>
-                                        </select>
+                                        <div class="dropdown-wrapper">
+                                            <select class="dropdown" style="min-width:120px;">
+                                                <option>March 2025</option>
+                                                <option>February 2025</option>
+                                                <option>January 2025</option>
+                                            </select>
+                                            <span class="dropdown-polygon"></span>
+                                        </div>
                                     </div>
                                     <div id="dashboard_graph_3" style="width:100%;height:100%;"></div>
                                 </div>
@@ -222,7 +231,19 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                         </div>
 
                         <div class="summary-chart-box" style="gap:24px;">
-                                <div id="dashboard_graph_7" class="graph-container" style="height:320px;"></div>
+                                <div class="graph-container" style="height:320px;">
+                                    <div class="chart-header filter-box">
+                                        <span class="chart-header-title">Peak Hour</span>
+                                        <div class="dropdown-wrapper">
+                                            <select class="dropdown">
+                                                <option>Today</option>
+                                                <option>Yesterday</option>
+                                            </select>
+                                            <span class="dropdown-polygon"></span>
+                                        </div>
+                                    </div>
+                                    <div id="dashboard_graph_7" style="width:100%;height:100%;"></div>
+                                </div>
                         </div>
                         <div class="summary-chart-box">
                                 <div class="graph-container graph-container-double-donut">

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
+  <div id="mobile-side-drawer" class="mobile-side-drawer"></div>
+  
     <div class="top-menu">
       <div class="logo-walkin-search">
         <img class="image" src="assets/img/company-logo2.png" />
@@ -33,5 +35,27 @@
     </button>
     <!-- Add this overlay for mobile sidebar -->
     <div class="sidebar-overlay"></div>
+        <nav class="mobile-bottom-nav">
+      <a href="index.php" class="nav-icon" data-section="home">
+        <img src="assets/img/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Home">
+        <span>Home</span>
+      </a>
+      <a href="car_in_park.php" class="nav-icon" data-section="parking">
+        <img src="assets/img/directions_car_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Parking">
+        <span>Parking</span>
+      </a>
+      <a href="transactions.php" class="nav-icon" data-section="report">
+        <img src="assets/img/monitoring_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Report">
+        <span>Report</span>
+      </a>
+      <a href="season_parking_list.php" class="nav-icon" data-section="season">
+        <img src="assets/img/featured_seasonal_and_gifts_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24 (1).svg" alt="Season">
+        <span>Season</span>
+      </a>
+      <a href="settings.php" class="nav-icon" data-section="settings">
+        <img src="assets/img/settings_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Settings">
+        <span>Settings</span>
+      </a>
+    </nav>
   </body>
 </html>
