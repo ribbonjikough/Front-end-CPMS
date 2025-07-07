@@ -279,7 +279,7 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                    <table class="table">
+                    <table class="table live-update-table">
                         <thead>
                             <tr>
                             <th>ID</th>

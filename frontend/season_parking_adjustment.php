@@ -37,6 +37,10 @@ $page_subtext = 'This page allows administrators to review and manage adjustment
                     <div class="page-subtext"><?= htmlspecialchars($page_subtext) ?></div>
                 </div>
                 <div class="content">
+                <div class="big-center-title">
+                    ONLY GLOBAL ADMIN CAN UPDATE PARKING RATES
+                </div>
+
                     <!-- Content goes here -->
                 </div>
             </div>

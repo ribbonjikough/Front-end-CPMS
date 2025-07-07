@@ -1967,3 +1967,187 @@ html {
 .sidebar-toggle {
   display: none;
 }
+
+.big-center-title {
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #222;
+  margin: 32px 0 24px 0;
+  letter-spacing: 0.5px;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+.config-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 12px;
+}
+
+.config-section-card {
+  background: #fff;
+  border: 1.5px solid #222;
+  border-radius: 14px;
+  padding: 22px 28px 18px 28px;
+  margin-bottom: 0;
+  box-shadow: 0 2px 8px rgba(21,114,185,.06);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Title for each config section */
+.config-section-title {
+  font-size: 1.18rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #222;
+}
+
+/* Subcard for nested config (e.g. flat rate, overnight) */
+.config-section-subcard {
+  background: #fff;
+  border: 1.2px solid #888;
+  border-radius: 12px;
+  padding: 18px 22px 12px 22px;
+  margin-bottom: 18px;
+  margin-top: 18px;
+}
+
+/* Subtitle for subcards */
+.config-section-subtitle {
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #222;
+}
+
+/* Row for label/input pairs */
+.config-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 14px;
+  justify-content: flex-start;
+}
+
+/* Label styling */
+.config-row label {
+  flex: 1 0 180px;
+  font-size: 15px;
+  color: #222;
+  font-weight: 500;
+}
+
+/* Input styling */
+.config-row input[type="text"] {
+  flex: 2 1 320px;
+  padding: 8px 12px;
+  font-size: 15px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background: #f7f7f7;
+  color: #222;
+  outline: none;
+  transition: border .2s;
+}
+
+.config-row input[type="text"]:focus {
+  border: 1.5px solid #2196f3;
+  background: #fff;
+}
+
+/* Submit button styling */
+.config-row button.btn-primary {
+  background: #223a5f;
+  color: #fff;
+  border-radius: 7px;
+  padding: 8px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  transition: background .2s;
+}
+
+.config-row button.btn-primary:hover {
+  background: #1572b9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .config-section-card,
+  .config-section-subcard {
+    padding: 14px 8vw 10px 8vw;
+  }
+  .config-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .config-row label,
+  .config-row input[type="text"] {
+    width: 100%;
+    flex: none;
+  }
+}
+/* Audit log table style for parking rate adjustment */
+.live-update-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.live-update-table th,
+.live-update-table td {
+  border: none;
+  padding: 14px 12px;
+  font-size: 15px;
+  text-align: left;
+}
+
+.live-update-table th {
+  background: #f5f5f5;
+  font-weight: 600;
+  border-bottom: 2px solid #bbb;
+}
+
+.live-update-table tr {
+  border-bottom: 1.5px solid #bbb;
+}
+
+.live-update-table tr:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 800px) {
+  .live-update-table th,
+  .live-update-table td {
+    font-size: 13px;
+    padding: 8px 6px;
+  }
+}
+
+.role-global-admin {
+  color: #ea5455 !important;
+  font-weight: 600;
+}
+.role-admin {
+  color: #2196f3 !important;
+  font-weight: 600;
+}
+
+/* Status color classes */
+.status-active {
+  color: #28c76f !important;
+  font-weight: 600;
+}
+.status-inactive {
+  color: #ea5455 !important;
+  font-weight: 600;
+}
