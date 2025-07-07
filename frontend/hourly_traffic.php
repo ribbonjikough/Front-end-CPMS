@@ -100,7 +100,7 @@ $page_subtext = 'This page tracks hourly vehicle entries and exits to identify p
                                     </div>
                                 </div>
                                 <div class="summary-chart-box">
-                                    <div id="hourly-traffic-apexchart" style="width:100%;height:260px;"></div>
+                                    <div id="hourly-traffic-apexchart" style="width:100%;height:260px;background-color: #ffffff;"></div>
                                 </div>
                                 <button id="resetZoomBtn" type="button" class="btn btn-secondary" style="margin-bottom:10px;">Reset Zoom</button>
                             </div>

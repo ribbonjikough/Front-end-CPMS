@@ -211,8 +211,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // 1. Mixed Chart: Monthly Transactions (Bar) & Sales (Line)
-  var monthlyChartDiv = document.querySelector("#monthly_sales_chart_1");
+  // --- Monthly Transactions & Sales Mixed Chart ---
+  var monthlyChartDiv = document.getElementById("monthly_sales_chart_1");
   if (monthlyChartDiv) {
     var months = [
       "January", "February", "March", "April", "May", "June",
@@ -221,110 +221,137 @@ document.addEventListener('DOMContentLoaded', function () {
     var trxData = [1200, 1350, 1100, 1450, 1600, 1700, 1550, 1400, 1500, 1650, 1750, 1800];
     var salesData = [12000, 13500, 11000, 14500, 16000, 17000, 15500, 14000, 15000, 16500, 17500, 18000];
 
-    var options1 = {
-      chart: {
-        height: 450,
-        type: 'line',
-        toolbar: { show: false },
-        width: '100%', // Ensures full width
-        animations: { enabled: true },
-        responsive: [
+    // Create a canvas for Chart.js if not already present
+    if (!monthlyChartDiv.querySelector('canvas')) {
+      var canvas = document.createElement('canvas');
+      canvas.style.width = "100%";
+      canvas.style.height = "450px";
+      monthlyChartDiv.appendChild(canvas);
+    } else {
+      var canvas = monthlyChartDiv.querySelector('canvas');
+    }
+
+    new Chart(canvas.getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: months,
+        datasets: [
           {
-            breakpoint: 600,
-            options: {
-              chart: { height: 450 }
-            }
+            label: 'Transactions',
+            data: trxData,
+            backgroundColor: 'rgba(33, 150, 243, 0.7)',
+            borderColor: 'rgba(33, 150, 243, 1)',
+            borderWidth: 1,
+            borderRadius: 4,
+            yAxisID: 'y',
+            order: 2
+          },
+          {
+            label: 'Sales (RM)',
+            data: salesData,
+            type: 'line',
+            borderColor: '#f44336',
+            backgroundColor: 'rgba(244,67,54,0.15)',
+            borderWidth: 3,
+            pointBackgroundColor: '#f44336',
+            pointBorderColor: '#f44336',
+            fill: false,
+            tension: 0,
+            yAxisID: 'y1',
+            order: 1
           }
         ]
       },
-      series: [
-        {
-          name: 'Transactions',
-          type: 'column',
-          data: trxData
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'top' },
+          title: {
+            display: true,
+            text: 'Monthly Transactions & Sales',
+            font: { size: 16, weight: 'bold' }
+          }
         },
-        {
-          name: 'Sales (RM)',
-          type: 'line',
-          data: salesData
+        scales: {
+          x: {
+            title: { display: true, text: "Month" }
+          },
+          y: {
+            title: { display: true, text: "Transactions" },
+            beginAtZero: true,
+            position: 'left'
+          },
+          y1: {
+            title: { display: true, text: "Sales (RM)" },
+            beginAtZero: true,
+            position: 'right',
+            grid: { drawOnChartArea: false }
+          }
         }
-      ],
-      stroke: { width: [0, 4] },
-      plotOptions: {
-        bar: { columnWidth: '40%', borderRadius: 4 }
-      },
-      colors: ['#2196f3', '#f44336'],
-      dataLabels: { enabled: false },
-      labels: months,
-      xaxis: {
-        categories: months,
-        title: { text: "Month" }
-      },
-      yaxis: [
-        { title: { text: "Transactions" }, min: 0 },
-        { opposite: true, title: { text: "Sales (RM)" }, min: 0 }
-      ],
-      legend: { position: 'top' },
-      tooltip: { shared: true, intersect: false }
-    };
-
-    var monthlyChart = new ApexCharts(monthlyChartDiv, options1);
-    monthlyChart.render();
+      }
+    });
   }
 
-  // 2. Bar Chart: Yearly Sales Comparison
-  var yearlyChartDiv = document.querySelector("#monthly_sales_chart_2");
+  // --- Yearly Sales Comparison Bar Chart ---
+  var yearlyChartDiv = document.getElementById("monthly_sales_chart_2");
   if (yearlyChartDiv) {
     var years = ["2022", "2023", "2024"];
     var yearlySales = [150000, 172000, 185000];
 
-    var options2 = {
-      chart: {
-        type: 'bar',
-        height: 450,
-        width: '100%',
-        toolbar: { show: false },
-        animations: { enabled: true },
-        responsive: [
-          {
-            breakpoint: 600,
-            options: {
-              chart: { height: 459 }
+    // Create a canvas for Chart.js if not already present
+    if (!yearlyChartDiv.querySelector('canvas')) {
+      var canvas2 = document.createElement('canvas');
+      canvas2.style.width = "100%";
+      canvas2.style.height = "450px";
+      yearlyChartDiv.appendChild(canvas2);
+    } else {
+      var canvas2 = yearlyChartDiv.querySelector('canvas');
+    }
+
+    new Chart(canvas2.getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: years,
+        datasets: [{
+          label: 'Total Sales (RM)',
+          data: yearlySales,
+          backgroundColor: '#1572B9',
+          borderRadius: 4,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Yearly Sales Comparison',
+            font: { size: 16, weight: 'bold' }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return "RM " + context.parsed.y.toLocaleString();
+              }
             }
           }
-        ]
-      },
-      series: [{
-        name: 'Total Sales (RM)',
-        data: yearlySales
-      }],
-      colors: ['#1572B9'],
-      xaxis: {
-        categories: years,
-        title: { text: "Year" }
-      },
-      yaxis: {
-        title: { text: "Sales (RM)" },
-        min: 0
-      },
-      plotOptions: {
-        bar: { columnWidth: '40%', borderRadius: 4 }
-      },
-      dataLabels: { enabled: false },
-      legend: { show: false },
-      tooltip: {
-        y: {
-          formatter: function(val) {
-            return "RM " + val.toLocaleString();
+        },
+        scales: {
+          x: {
+            title: { display: true, text: "Year" }
+          },
+          y: {
+            title: { display: true, text: "Sales (RM)" },
+            beginAtZero: true
           }
         }
       }
-    };
-
-    var yearlyChart = new ApexCharts(yearlyChartDiv, options2);
-    yearlyChart.render();
+    });
   }
-
+  
   // Mixed chart for Length of Stay
   var losChartDiv = document.querySelector("#length_of_stay_chart");
   if (losChartDiv) {
@@ -653,10 +680,8 @@ document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector("#dashboard_graph_3")) {
       new ApexCharts(document.querySelector("#dashboard_graph_3"), stayPie).render();
   }
-});
 
-document.addEventListener('DOMContentLoaded', function () {
-    // --- Peak Hour Bar Chart ---
+   // --- Peak Hour Bar Chart ---
     var peakLabels = Array.from({length: 24}, (_, i) => i.toString().padStart(2, '0'));
     var tngData = [2, 4, 6, 8, 10, 12, 15, 20, 25, 30, 40, 65, 60, 40, 30, 25, 20, 15, 10, 8, 6, 4, 3, 2];
     var visaData = [1, 2, 3, 4, 5, 8, 10, 15, 20, 25, 35, 50, 55, 35, 25, 20, 15, 10, 8, 6, 4, 3, 2, 1];

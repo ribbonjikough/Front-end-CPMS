@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,10 +9,13 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-  <div id="mobile-side-drawer" class="mobile-side-drawer"></div>
-  
+    <div id="mobile-side-drawer" class="mobile-side-drawer"></div>
+    <!-- Topbar -->
     <div class="top-menu">
       <div class="logo-walkin-search">
+                <button class="sidebar-toggle" aria-label="Open sidebar">
+          &#9776;
+        </button>
         <img class="image" src="assets/img/company-logo2.png" />
         <img class="divider" src="data:image/svg+xml;utf8,<svg width='2' height='44' xmlns='http://www.w3.org/2000/svg'><rect width='2' height='44' fill='%23E4E4E4'/></svg>" />
         <div class="walkin">
@@ -29,13 +33,9 @@
         <img class="polygon" src="data:image/svg+xml;utf8,<svg width='12' height='8' viewBox='0 0 12 8  ' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L6 7L11 1' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
       </div>
     </div>
-    <!-- Add this button for mobile sidebar toggle -->
-    <button class="sidebar-toggle" aria-label="Open sidebar" style="background:none;border:none;font-size:28px;cursor:pointer;display:none;">
-      &#9776;
-    </button>
-    <!-- Add this overlay for mobile sidebar -->
+    <!-- Overlay for mobile sidebar -->
     <div class="sidebar-overlay"></div>
-        <nav class="mobile-bottom-nav">
+    <nav class="mobile-bottom-nav">
       <a href="index.php" class="nav-icon" data-section="home">
         <img src="assets/img/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Home">
         <span>Home</span>
