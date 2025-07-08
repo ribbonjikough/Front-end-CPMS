@@ -38,12 +38,12 @@ $page_subtext = 'This page lets you view and update system settings';
                 </div>
                 <div class="content">
 
-                    <div class="card-body" style="margin-bottom:32px;">
+                    <div class="card-body">
                         <div class="row-greeting-filters">
                             <div class="col-greeting">
                                 <span class="greeting-text">Welcome, John Doe!</span>
                             </div>
-                            <div class="filter-search" style="max-width:320px;width:100%;">
+                            <div class="filter-search">
                                 <input class="search" type="text" placeholder="Search for anything..." />
                             </div>
                         </div>
@@ -51,7 +51,7 @@ $page_subtext = 'This page lets you view and update system settings';
                             <div class="col-lg-3 col-sm-6 col-12">
                                 <div class="big-card">
                                     <div class="big-card-header">
-                                        <img src="assets/img/notifications_24dp.svg" alt="Notifications" class="big-card-icon">
+                                        <img src="assets/img/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Notifications" class="big-card-icon">
                                         <span class="big-card-title">Notifications</span>
                                     </div>
                                     <div class="big-card-number">4</div>
@@ -62,7 +62,7 @@ $page_subtext = 'This page lets you view and update system settings';
                             <div class="col-lg-3 col-sm-6 col-12">
                                 <div class="big-card">
                                     <div class="big-card-header">
-                                        <img src="assets/img/warning_24dp.svg" alt="Warning" class="big-card-icon">
+                                        <img src="assets/img/warning_24dp_EA5455_FILL0_wght400_GRAD0_opsz24.svg" alt="Warning" class="big-card-icon">
                                         <span class="big-card-title" style="color:#ea5455;">Warning</span>
                                     </div>
                                     <div class="big-card-number" style="color:#ea5455;">1</div>
@@ -73,7 +73,7 @@ $page_subtext = 'This page lets you view and update system settings';
                             <div class="col-lg-3 col-sm-6 col-12">
                                 <div class="big-card">
                                     <div class="big-card-header">
-                                        <img src="assets/img/pending_24dp.svg" alt="Pending" class="big-card-icon">
+                                        <img src="assets/img/pending_actions_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Pending" class="big-card-icon">
                                         <span class="big-card-title">Pending</span>
                                     </div>
                                     <div class="big-card-number">5</div>
@@ -84,18 +84,18 @@ $page_subtext = 'This page lets you view and update system settings';
                             <div class="col-lg-3 col-sm-6 col-12">
                                 <div class="big-card">
                                     <div class="big-card-header">
-                                        <img src="assets/img/settings_24dp.svg" alt="Quick Access" class="big-card-icon">
+                                        <img src="assets/img/folder_copy_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Quick Access" class="big-card-icon">
                                         <span class="big-card-title">Quick Access Settings</span>
                                     </div>
-                                    <div style="padding:0 22px 18px 22px;width:100%;">
-                                        <button class="big-card-btn" style="margin-bottom:8px;">Rate Adjustment <span class="big-card-arrow">&#8250;</span></button>
-                                        <button class="big-card-btn" style="margin-bottom:8px;">Privileges & Admin Roles <span class="big-card-arrow">&#8250;</span></button>
-                                        <button class="big-card-btn">Redemption Settings <span class="big-card-arrow">&#8250;</span></button>
+                                    <div class="quick-access-settings">
+                                        <a href="parking_rate_adjustment.php" class="quick-access-settings-btn">Rate Adjustment <span class="big-card-arrow">&#8250;</span></a>
+                                        <a href="privileges.php" class="quick-access-settings-btn">Privileges & Admin Roles <span class="big-card-arrow">&#8250;</span></a>
+                                        <a href="redemptions.php" class="quick-access-settings-btn">Redemption Settings <span class="big-card-arrow">&#8250;</span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card" style="margin-top:32px;">
+                        <div class="card">
                             <div class="card-header">
                                 <span class="report-title">Global Audit Log Tab</span>
                             </div>

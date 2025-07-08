@@ -78,7 +78,9 @@ $page_subtext = 'This page manages and configures different types of parking fee
                                 </div>
                                 <div class="config-row">
                                     <label>Status</label>
-                                    <input type="text" value="Enable/Disable" style="background:#4cff4c;color:#222;font-weight:bold;" readonly>
+                                    <button type="button" class="status-toggle-btn status-enabled" id="redemptionStatusBtn">
+                                        <span class="status-enable">Enable</span>/<span class="status-disable">Disable</span>
+                                    </button>
                                 </div>
                                 <div class="config-row" style="justify-content: flex-end;">
                                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -87,12 +89,12 @@ $page_subtext = 'This page manages and configures different types of parking fee
                         </div>
                     </div>
                     <div class="card" style="margin-bottom:32px;">
-                        <div class="card-header" style="display:flex;align-items:center;gap:12px;">
+                        <div class="card-header">
                             <h4 class="card-title" style="margin:0;">Redemption List</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table redemption-table">
+                                <table class="table">
                                     <thead>
                                         <tr>
                                             <th>Name</th>

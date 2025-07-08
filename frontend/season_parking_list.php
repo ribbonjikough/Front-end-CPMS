@@ -1,8 +1,7 @@
 <?php
-// Set your page variables
-$topbar_title = 'Parking';
-$page_title = 'Page Main Title';
-$page_subtext = 'This is a summary or description for this page.';
+$topbar_title = 'Season Parking';
+$page_title = 'Season Parking List';
+$page_subtext = 'This page shows current list of individual and corporate that applied for season parking ';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +42,9 @@ $page_subtext = 'This is a summary or description for this page.';
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="assets/js/script.js"></script>
+<script src="assets/js/charts.js"></script>
 </body>
 </html>

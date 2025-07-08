@@ -294,3 +294,18 @@ document.addEventListener('DOMContentLoaded', function () {
   enforceMobileDrawerVisibility();
   window.addEventListener('resize', enforceMobileDrawerVisibility);
 });
+
+// Status toggle button logic (reusable for any .status-toggle-btn)
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.status-toggle-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      if (btn.classList.contains('status-enabled')) {
+        btn.classList.remove('status-enabled');
+        btn.classList.add('status-disabled');
+      } else {
+        btn.classList.remove('status-disabled');
+        btn.classList.add('status-enabled');
+      }
+    });
+  });
+});

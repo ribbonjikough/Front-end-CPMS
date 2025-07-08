@@ -2126,3 +2126,93 @@ html {
   color: #ea5455 !important;
   font-weight: 600;
 }
+/* General status toggle button for forms */
+.status-toggle-btn {
+  width: 220px;
+  padding: 7px 18px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  display: inline-block;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  text-align: left;
+  background: #4cff4c;
+  color: #222;
+}
+
+.status-toggle-btn.status-enabled {
+  background: #4cff4c;
+  color: #222;
+}
+
+.status-toggle-btn.status-disabled {
+  background: #ffb3b3;
+  color: #222;
+}
+
+.status-toggle-btn .status-enable {
+  font-weight: bold;
+  color: #222;
+}
+
+.status-toggle-btn .status-disable {
+  font-weight: normal;
+  color: #888;
+}
+
+.status-toggle-btn.status-disabled .status-enable {
+  font-weight: normal;
+  color: #888;
+}
+
+.status-toggle-btn.status-disabled .status-disable {
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+.quick-access-settings {
+  padding: 0 22px 18px 22px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quick-access-settings-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f0f1f3;
+  color: #2196f3;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .2s, color .2s;
+  box-shadow: none;
+  width: 100%;
+}
+
+.quick-access-settings-btn:hover {
+  background: #2196f3;
+  color: #fff;
+}
+
+.quick-access-settings-btn .big-card-arrow {
+  font-size: 18px;
+  margin-left: 22px;
+  display: inline-block;
+  transition: transform .2s;
+}
+
+.quick-access-settings-btn:hover .big-card-arrow {
+  transform: translateX(4px);
+}

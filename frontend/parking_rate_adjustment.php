@@ -145,7 +145,9 @@ $page_subtext = 'This page allows top administrators to configure and update par
                             <form>
                                 <div class="config-row">
                                     <label>Enable Weekend Rate</label>
-                                    <input type="text" value="Enable/Disable" style="background:#4cff4c;color:#222;font-weight:bold;" readonly>
+                                    <button type="button" class="status-toggle-btn status-enabled" id="weekendRateStatusBtn">
+                                        <span class="status-enable">Enable</span>/<span class="status-disable">Disable</span>
+                                    </button>
                                 </div>
                                 <div class="config-row">
                                     <label>First 1 Hour Fee</label>
