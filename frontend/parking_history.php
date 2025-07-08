@@ -22,7 +22,7 @@ $page_subtext = 'This page views the complete record of all vehicle entries, exi
     <?php include 'assets/partials/topbar.php'; ?>
     <div class="main-row">
         <?php include 'assets/partials/primary_sidebar.php'; ?>
-        <?php include 'assets/partials/sidebar_parking.php'; ?>
+        <?php include 'assets/partials/sidebar.php'; ?>
         <div class="page-wrapper">
             <div class="main-content">
                 <div class="page-header">

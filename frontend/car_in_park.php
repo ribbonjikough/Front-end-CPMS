@@ -27,7 +27,7 @@ $page_subtext = 'This page logs all vehicles that is currently in the bay';
     <div class="main-row">
 
         <?php include 'assets/partials/primary_sidebar.php'; ?>
-        <?php include 'assets/partials/sidebar_parking.php'; ?>
+        <?php include 'assets/partials/sidebar.php'; ?>
 
         <div class="page-wrapper">
             <div class="main-content">

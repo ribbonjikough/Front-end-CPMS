@@ -27,7 +27,7 @@ $page_subtext = 'This page shows summary overview of applications, invoices, ter
     <div class="main-row">
 
         <?php include 'assets/partials/primary_sidebar.php'; ?>
-        <?php include 'assets/partials/sidebar_home.php'; ?>
+        <?php include 'assets/partials/sidebar.php'; ?>
 
         <div class="page-wrapper">
             <div class="main-content">

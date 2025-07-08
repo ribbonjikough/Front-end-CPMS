@@ -28,7 +28,7 @@ $page_subtext = 'This page allows administrators to review and manage adjustment
     <div class="main-row">
 
         <?php include 'assets/partials/primary_sidebar.php'; ?>
-        <?php include 'assets/partials/sidebar_settings.php'; ?>
+        <?php include 'assets/partials/sidebar.php'; ?>
 
         <div class="page-wrapper">
             <div class="main-content">

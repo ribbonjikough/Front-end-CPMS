@@ -27,7 +27,7 @@ $page_subtext = 'This page shows current list of individual and corporate that a
     <div class="main-row">
 
         <?php include 'assets/partials/primary_sidebar.php'; ?>
-        <?php include 'assets/partials/sidebar_season.php'; ?>
+        <?php include 'assets/partials/sidebar.php'; ?>
 
         <div class="page-wrapper">
             <div class="main-content">

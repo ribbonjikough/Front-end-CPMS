@@ -27,7 +27,7 @@ $page_subtext = 'This page manage and monitor all season parking access cards.';
     <div class="main-row">
 
         <?php include 'assets/partials/primary_sidebar.php'; ?>
-        <?php include 'assets/partials/sidebar_season.php'; ?>
+        <?php include 'assets/partials/sidebar.php'; ?>
 
         <div class="page-wrapper">
             <div class="main-content">

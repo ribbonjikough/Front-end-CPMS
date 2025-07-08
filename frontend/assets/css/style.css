@@ -2190,12 +2190,25 @@ html {
 
 /* Status color classes */
 .status-active {
-  color: #28c76f !important;
+  background: #13a847;
+  color: #15803d !important; /* dark green */
   font-weight: 600;
+  border-radius: 16px;
+  padding: 4px 18px;
+  display: inline-block;
+  min-width: 70px;
+  text-align: center;
 }
+
 .status-inactive {
-  color: #ea5455 !important;
+  background: #cf5f5f;
+  color: #b91c1c !important; /* dark red */
   font-weight: 600;
+  border-radius: 16px;
+  padding: 4px 18px;
+  display: inline-block;
+  min-width: 70px;
+  text-align: center;
 }
 /* General status toggle button for forms */
 .status-toggle-btn {
