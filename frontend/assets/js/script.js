@@ -311,6 +311,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Holiday Date Overlay logic
   const openBtn = document.getElementById('openHolidayDateConfigBtn');
   const overlay = document.getElementById('holidayDateOverlay');
   const closeBtn = document.getElementById('closeHolidayDateOverlayBtn');
