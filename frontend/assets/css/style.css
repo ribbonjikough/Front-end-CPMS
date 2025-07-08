@@ -6,6 +6,77 @@ html {
   background: #f4f8fb;
   font-family: Roboto,Arial,Helvetica,sans-serif
 }
+@media (max-aspect-ratio: 4/3), (max-aspect-ratio: 3/2) {
+  body, html {
+    font-size: 14px;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 90%;
+  }
+  .page-title,
+  .card-title,
+  .big-card-title,
+  .config-section-title,
+  .config-section-subtitle,
+  .greeting-text,
+  .report-title,
+  .table,
+  .table th,
+  .table td,
+  .live-update-table th,
+  .live-update-table td,
+  .status-toggle-btn,
+  .quick-access-settings-btn,
+  .config-row label,
+  .config-row input[type="text"],
+  .btn,
+  .btn-search,
+  .btn-primary,
+  .entries-dropdown,
+  .pagination-btn,
+  .summary-label,
+  .summary-value,
+  .donut-label,
+  .donut-legend,
+  .stat-label,
+  .stat-value,
+  .status-badge,
+  .role-global-admin,
+  .role-admin,
+  .status-active,
+  .status-inactive,
+  .grace-applies-checkbox-label {
+    font-size: 90%;
+  }
+}
+
+/* Tablet: 600px - 999px */
+@media (min-width: 600px) and (max-width: 999px) {
+  body, html {
+    font-size: 15px;
+  }
+  .table,
+  .table th,
+  .table td,
+  .live-update-table th,
+  .live-update-table td {
+    font-size: 14px;
+  }
+}
+
+/* Phone: <600px */
+@media (max-width: 599px) {
+  body, html {
+    font-size: 13px;
+  }
+  .table,
+  .table th,
+  .table td,
+  .live-update-table th,
+  .live-update-table td {
+    font-size: 12px;
+  }
+}
 .d-flex {
   display: flex!important;
   align-items: stretch!important
@@ -2215,4 +2286,185 @@ html {
 
 .quick-access-settings-btn:hover .big-card-arrow {
   transform: translateX(4px);
+}
+
+/* Grace period applies-on section */
+.grace-applies-on-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: 0;
+}
+
+.grace-applies-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: #222;
+  font-weight: 400;
+  cursor: pointer;
+  user-select: none;
+}
+
+.grace-applies-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #2196f3;
+  margin-right: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1.5px solid #bbb;
+  transition: border-color 0.2s;
+}
+
+.grace-applies-checkbox:focus {
+  outline: 2px solid #2196f3;
+  outline-offset: 1px;
+}
+
+/* Overlay for holiday date config */
+.holiday-date-overlay {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  left: 0; top: 0; right: 0; bottom: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(33,43,54,0.32);
+  align-items: center;
+  justify-content: center;
+}
+
+.holiday-date-overlay.active {
+  display: flex;
+}
+
+.holiday-date-modal {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px rgba(21,114,185,.18);
+  padding: 24px 18px 18px 18px;
+  max-width: 900px;
+  width: 98vw;
+  max-height: 95vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.holiday-date-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.holiday-date-modal-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.holiday-date-modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: color .2s;
+}
+.holiday-date-modal-close:hover {
+  color: #ea5455;
+}
+
+.holiday-date-modal-body {
+  margin-bottom: 12px;
+}
+
+.holiday-date-options {
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #222;
+}
+
+.holiday-date-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .holiday-date-calendar-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .holiday-date-calendar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .holiday-date-calendar-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.holiday-date-calendar-card {
+  background: #f6f6f6;
+  border-radius: 10px;
+  padding: 12px 8px 8px 8px;
+  box-shadow: 0 1px 4px rgba(21,114,185,.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 160px;
+}
+
+.holiday-date-calendar-title {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.holiday-date-calendar-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.holiday-date-calendar-placeholder {
+  width: 100%;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-calendar-save {
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background .2s;
+}
+.btn-calendar-save:hover {
+  background: #1769ff;
+}
+
+.holiday-date-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
 }

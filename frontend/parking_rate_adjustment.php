@@ -51,25 +51,28 @@ $page_subtext = 'This page allows top administrators to configure and update par
                     <div class="card-body">
                         <!-- Weekday Table -->
                         <div style="margin-bottom:24px;">
-                            <table class="table" style="background:#bdb7f6;">
-                                <thead>
-                                    <tr>
-                                        <th style="text-align:left;">Weekday</th>
-                                        <th>Cost</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>1st hour or part thereof</td><td>RM3.00</td></tr>
-                                    <tr><td>Every subsequent hour or part thereof</td><td>RM5.00</td></tr>
-                                    <tr><td>Flat rate (after 5pm until 1am)</td><td>RM10.00/entry</td></tr>
-                                    <tr><td>Overnight (1am to 7am)</td><td>RM15.00/entry</td></tr>
-                                    <tr><td>Maximum parking fee per day</td><td>RM15.00</td></tr>
-                                    <tr><td>Grace Period</td><td>30 minutes</td></tr>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table" style="background:#bdb7f6;">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align:left;">Weekday</th>
+                                            <th>Cost</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>1st hour or part thereof</td><td>RM3.00</td></tr>
+                                        <tr><td>Every subsequent hour or part thereof</td><td>RM5.00</td></tr>
+                                        <tr><td>Flat rate (after 5pm until 1am)</td><td>RM10.00/entry</td></tr>
+                                        <tr><td>Overnight (1am to 7am)</td><td>RM15.00/entry</td></tr>
+                                        <tr><td>Maximum parking fee per day</td><td>RM15.00</td></tr>
+                                        <tr><td>Grace Period</td><td>30 minutes</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <!-- Saturday & Sunday Table -->
                         <div style="margin-bottom:24px;">
+                                <div class="table-responsive">
                             <table class="table" style="background:#f9f7b4;">
                                 <thead>
                                     <tr>
@@ -87,8 +90,10 @@ $page_subtext = 'This page allows top administrators to configure and update par
                                 </tbody>
                             </table>
                         </div>
+                        </div>
                         <!-- Public Holiday Table -->
                         <div>
+                                <div class="table-responsive">
                             <table class="table" style="background:#f7b4b4;">
                                 <thead>
                                     <tr>
@@ -105,6 +110,7 @@ $page_subtext = 'This page allows top administrators to configure and update par
                                     <tr><td>Grace Period</td><td>30 minutes</td></tr>
                                 </tbody>
                             </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -134,6 +140,10 @@ $page_subtext = 'This page allows top administrators to configure and update par
                                     <label>Max Rate</label>
                                     <input type="text" placeholder="Input (RM)">
                                 </div>
+                                <div class="config-row">
+                                    <label>Remarks</label>
+                                    <input type="text" placeholder="Enter remarks (optional)">
+                                </div>
                                 <div class="config-row" style="justify-content: flex-end;">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
@@ -161,6 +171,10 @@ $page_subtext = 'This page allows top administrators to configure and update par
                                     <label>Max Rate</label>
                                     <input type="text" placeholder="Input (RM)">
                                 </div>
+                                <div class="config-row">
+                                    <label>Remarks</label>
+                                    <input type="text" placeholder="Enter remarks (optional)">
+                                </div>
                                 <div class="config-row" style="justify-content: flex-end;">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
@@ -181,6 +195,14 @@ $page_subtext = 'This page allows top administrators to configure and update par
                                 <div class="config-row">
                                     <label>Max Rate</label>
                                     <input type="text" placeholder="Input (RM)">
+                                </div>
+                                <div class="config-row">
+                                    <label>Remarks</label>
+                                    <input type="text" placeholder="Enter remarks (optional)">
+                                </div>
+                                <div class="config-row">
+                                    <label>Set Date</label>
+                                    <button type="button" class="btn btn-primary" id="openHolidayDateConfigBtn">Press to configure Date</button>
                                 </div>
                                 <div class="config-row" style="justify-content: flex-end;">
                                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -206,6 +228,10 @@ $page_subtext = 'This page allows top administrators to configure and update par
                                         <label>Time window (end)</label>
                                         <input type="text" placeholder="1.00am">
                                     </div>
+                                    <div class="config-row">
+                                        <label>Remarks</label>
+                                        <input type="text" placeholder="Enter remarks (optional)">
+                                    </div>
                                     <div class="config-row" style="justify-content: flex-end;">
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
@@ -227,11 +253,53 @@ $page_subtext = 'This page allows top administrators to configure and update par
                                         <label>Time window (end)</label>
                                         <input type="text" placeholder="7.00am">
                                     </div>
+                                    <div class="config-row">
+                                        <label>Remarks</label>
+                                        <input type="text" placeholder="Enter remarks (optional)">
+                                    </div>
                                     <div class="config-row" style="justify-content: flex-end;">
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </form>
                             </div>
+                        </div>
+                        <!-- Grace Period Configuration -->
+                        <div class="config-section-card">
+                            <div class="config-section-title">
+                                Grace Period Configuration
+                            </div>
+                            <form>
+                                <div class="config-row">
+                                    <label>Enable Grace Period</label>
+                                    <button type="button" class="status-toggle-btn status-enabled" id="gracePeriodStatusBtn">
+                                        <span class="status-enable">Enable</span>/<span class="status-disable">Disable</span>
+                                    </button>
+                                </div>
+                                <div class="config-row">
+                                    <label>Set Grace Period</label>
+                                    <input type="text" value="30 minutes (default)" readonly>
+                                </div>
+                                <div class="config-row" style="align-items: flex-start;">
+                                    <label style="margin-top:6px;">Applies on:</label>
+                                    <div class="grace-applies-on-group">
+                                        <label class="grace-applies-checkbox-label">
+                                            <input type="checkbox" class="grace-applies-checkbox" checked>
+                                            Weekday
+                                        </label>
+                                        <label class="grace-applies-checkbox-label">
+                                            <input type="checkbox" class="grace-applies-checkbox">
+                                            Saturday & Sunday
+                                        </label>
+                                        <label class="grace-applies-checkbox-label">
+                                            <input type="checkbox" class="grace-applies-checkbox">
+                                            Public Holiday
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="config-row" style="justify-content: flex-end;">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -294,6 +362,52 @@ $page_subtext = 'This page allows top administrators to configure and update par
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<!-- Holiday Date Overlay -->
+<div id="holidayDateOverlay" class="holiday-date-overlay">
+    <div class="holiday-date-modal">
+        <div class="holiday-date-modal-header">
+            <span class="holiday-date-modal-title">Configure Public Holiday Dates</span>
+            <button class="holiday-date-modal-close" id="closeHolidayDateOverlayBtn">&times;</button>
+        </div>
+        <div class="holiday-date-modal-body">
+            <div class="holiday-date-options">
+                <label>
+                    <input type="checkbox" disabled>
+                    Auto Import Holidays (not available)
+                </label>
+                <div style="margin: 8px 0 4px 0;">Or</div>
+                <div>Manually Set Date:</div>
+            </div>
+            <div class="holiday-date-calendar-grid">
+                <!-- Example: Repeat this block for each month -->
+                <?php
+                $months = [
+                    'January', 'February', 'March', 'April',
+                    'May', 'June', 'July', 'August',
+                    'September', 'October', 'November', 'December'
+                ];
+                foreach ($months as $month) {
+                    echo '
+                    <div class="holiday-date-calendar-card">
+                        <div class="holiday-date-calendar-title">' . $month . '</div>
+                        <div class="holiday-date-calendar-content">
+                            <!-- Replace this with your calendar widget or static calendar as needed -->
+                            <div class="holiday-date-calendar-placeholder">
+                                <div style="font-size:13px;color:#888;margin-bottom:8px;">[Calendar Here]</div>
+                                <button class="btn btn-calendar-save">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    ';
+                }
+                ?>
+            </div>
+        </div>
+        <div class="holiday-date-modal-footer">
+            <button class="btn btn-primary" id="holidayDateAgreeBtn">Agree</button>
         </div>
     </div>
 </div>

@@ -309,3 +309,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const openBtn = document.getElementById('openHolidayDateConfigBtn');
+  const overlay = document.getElementById('holidayDateOverlay');
+  const closeBtn = document.getElementById('closeHolidayDateOverlayBtn');
+  const agreeBtn = document.getElementById('holidayDateAgreeBtn');
+
+  if (openBtn && overlay) {
+    openBtn.addEventListener('click', function() {
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+  if (closeBtn && overlay) {
+    closeBtn.addEventListener('click', function() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+  if (agreeBtn && overlay) {
+    agreeBtn.addEventListener('click', function() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+  // Optional: close overlay when clicking outside modal
+  if (overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+});
