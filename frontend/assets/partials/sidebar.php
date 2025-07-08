@@ -1,7 +1,10 @@
 <?php
-// Use $topbar_title to determine sidebar type
-$sidebar_type = isset($topbar_title) ? strtolower(trim($topbar_title)) : 'home';
-
+// Use $topbar_title or $_GET['section'] for AJAX/mobile
+if (isset($_GET['section'])) {
+    $sidebar_type = strtolower(trim($_GET['section']));
+} else {
+    $sidebar_type = isset($topbar_title) ? strtolower(trim($topbar_title)) : 'dashboard';
+}
 $current_file = basename($_SERVER['SCRIPT_NAME']);
 
 function is_active($file) {

@@ -220,25 +220,27 @@ document.addEventListener('DOMContentLoaded', function () {
   const overlay = document.querySelector('.sidebar-overlay');
   const drawer = document.getElementById('mobile-side-drawer');
 
-  const sidebarMap = {
-    home: 'assets/partials/sidebar_home.php',
-    parking: 'assets/partials/sidebar_parking.php',
-    report: 'assets/partials/sidebar_report.php',
-    season: 'assets/partials/sidebar_season.php',
-    settings: 'assets/partials/sidebar_settings.php'
-  };
-
+const sidebarMap = {
+  'dashboard': 'assets/partials/sidebar.php',
+  'parking': 'assets/partials/sidebar.php',
+  'season parking': 'assets/partials/sidebar.php',
+  'report': 'assets/partials/sidebar_report.php',
+  'settings': 'assets/partials/sidebar.php',
+  'admin': 'assets/partials/sidebar.php'
+};
   function getCurrentSection() {
-    const active = document.querySelector('.mobile-bottom-nav .nav-icon.active');
-    return active ? active.getAttribute('data-section') : 'home';
+    return document.body.getAttribute('data-section') || 'home';
   }
 
   function loadSidebar(section) {
-    const url = sidebarMap[section] || sidebarMap.home;
-    fetch(url)
+    const url = sidebarMap[section] || sidebarMap['dashboard'];
+    // Always pass section for sidebar.php
+    const fetchUrl = url.includes('sidebar.php')
+      ? url + '?section=' + encodeURIComponent(section)
+      : url;
+    fetch(fetchUrl)
       .then(res => res.text())
       .then(html => {
-        // Use DOMParser to reliably extract .side-menu from a full HTML document
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
         const sideMenu = doc.querySelector('.side-menu');
