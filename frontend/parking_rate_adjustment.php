@@ -287,11 +287,11 @@ $page_subtext = 'This page allows top administrators to configure and update par
                                             Weekday
                                         </label>
                                         <label class="grace-applies-checkbox-label">
-                                            <input type="checkbox" class="grace-applies-checkbox">
+                                            <input type="checkbox" class="grace-applies-checkbox" checked>
                                             Saturday & Sunday
                                         </label>
                                         <label class="grace-applies-checkbox-label">
-                                            <input type="checkbox" class="grace-applies-checkbox">
+                                            <input type="checkbox" class="grace-applies-checkbox" checked>
                                             Public Holiday
                                         </label>
                                     </div>
