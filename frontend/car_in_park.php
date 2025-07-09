@@ -14,9 +14,9 @@ $page_subtext = 'This page logs all vehicles that is currently in the bay';
     <link rel="stylesheet" href="assets/css/globals.css">
     <link rel="stylesheet" href="assets/css/styleguide.css">
 </head>
-<body>
+<body data-section="<?= strtolower(trim($topbar_title)) ?>">
 
-<div id="loading-spinner" style="display:none;">
+<div id="loading-spinner">
   <div class="spinner"></div>
 </div>
 
@@ -630,6 +630,8 @@ $page_subtext = 'This page logs all vehicles that is currently in the bay';
             </div>
         </div>
     </div>
+</div>
+<div id="mobile-side-drawer" class="mobile-side-drawer">
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,7 +8,6 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <div id="mobile-side-drawer" class="mobile-side-drawer"></div>
     <!-- Topbar -->
     <div class="top-menu">
       <div class="logo-walkin-search">
@@ -24,7 +22,7 @@
           </div>
         </div>
       </div>
-      <div class="frame">
+      <div class="top-right-frame" id="mobileProfileArea">
         <div class="image-wrapper"><img class="img" src="assets/img/pfp.png" /></div>
         <div class="div">
           <div class="text-wrapper">John Doe</div>
@@ -33,8 +31,6 @@
         <img class="polygon" src="data:image/svg+xml;utf8,<svg width='12' height='8' viewBox='0 0 12 8  ' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L6 7L11 1' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
       </div>
     </div>
-    <!-- Overlay for mobile sidebar -->
-    <div class="sidebar-overlay"></div>
     <nav class="mobile-bottom-nav">
       <a href="index.php" class="nav-icon" data-section="home">
         <img src="assets/img/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Home">

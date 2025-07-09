@@ -16,7 +16,7 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
 </head>
 <body data-section="<?= strtolower(trim($topbar_title)) ?>">
 
-<div id="loading-spinner" style="display:none;">
+<div id="loading-spinner">
   <div class="spinner"></div>
 </div>
 
@@ -329,7 +329,9 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
             </div>
         </div>
     </div>
+<div id="mobile-side-drawer" class="mobile-side-drawer"></div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="assets/js/script.js"></script>

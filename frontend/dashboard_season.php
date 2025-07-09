@@ -14,9 +14,9 @@ $page_subtext = 'This page shows summary overview of applications, invoices, ter
     <link rel="stylesheet" href="assets/css/globals.css">
     <link rel="stylesheet" href="assets/css/styleguide.css">
 </head>
-<body>
+<body data-section="<?= strtolower(trim($topbar_title)) ?>">
 
-<div id="loading-spinner" style="display:none;">
+<div id="loading-spinner">
   <div class="spinner"></div>
 </div>
 

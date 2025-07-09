@@ -14,7 +14,7 @@ $page_subtext = 'This page tracks hourly vehicle entries and exits to identify p
     <link rel="stylesheet" href="assets/css/globals.css">
     <link rel="stylesheet" href="assets/css/styleguide.css">
 </head>
-<body>
+<body data-section="<?= strtolower(trim($topbar_title)) ?>">
 
 <div id="loading-spinner" style="display:none;">
   <div class="spinner"></div>
@@ -101,9 +101,6 @@ $page_subtext = 'This page tracks hourly vehicle entries and exits to identify p
                                 </div>
                                 <div class="summary-chart-box">
                                     <div id="hourly-traffic-apexchart" style="width:100%;height:260px;background-color: #ffffff;"></div>
-                                </div>
-                                <button id="resetZoomBtn" type="button" class="btn btn-secondary" style="margin-bottom:10px;">Reset Zoom</button>
-                            </div>
                         </div>
                         <div class="report-divider"></div>
                         <div class="card report-card">

@@ -12,8 +12,8 @@
     if (!isset($sidebar_active)) $sidebar_active = 'car';
     $current_file = basename($_SERVER['SCRIPT_NAME']);
     ?>
-    <div class="side-menu">
-      <div class="frame">
+<div class="side-menu side-menu-mobile">
+  <div class="frame frame-mobile">
         <a href="transactions.php" class="menu-item<?= $current_file === 'transactions.php' ? ' active' : '' ?>" title="Go to Transactions">
           <div class="radio-btn">
             <div class="radio-circle<?= $current_file === 'transactions.php' ? ' active' : '' ?>"></div>

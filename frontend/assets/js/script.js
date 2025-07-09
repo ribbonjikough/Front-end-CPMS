@@ -14,11 +14,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Profile dropdown for mobile only
-  const frame = document.querySelector('.top-menu .frame');
+  const profileArea = document.getElementById('mobileProfileArea');
   let dropdown = document.getElementById('profileDropdown');
+
   function handleProfileDropdown() {
     if (window.innerWidth < 600) {
-      if (!dropdown && frame) {
+      if (!dropdown && profileArea) {
         dropdown = document.createElement('div');
         dropdown.id = 'profileDropdown';
         dropdown.innerHTML = `
@@ -27,10 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="profile-role">Global Admin</div>
           </div>
         `;
-        frame.appendChild(dropdown);
+        profileArea.appendChild(dropdown);
       }
-      if (frame && dropdown) {
-        frame.onclick = function(e) {
+      if (profileArea && dropdown) {
+        profileArea.onclick = function(e) {
           e.stopPropagation();
           dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
         };
@@ -43,15 +44,17 @@ document.addEventListener('DOMContentLoaded', function() {
       if (dropdown) {
         dropdown.style.display = 'none';
       }
-      if (frame) {
-        frame.onclick = null;
+      if (profileArea) {
+        profileArea.onclick = null;
       }
       document.removeEventListener('click', hideDropdownOnClick);
     }
   }
+
   function hideDropdownOnClick() {
     if (dropdown) dropdown.style.display = 'none';
   }
+
   handleProfileDropdown();
   window.addEventListener('resize', handleProfileDropdown);
 

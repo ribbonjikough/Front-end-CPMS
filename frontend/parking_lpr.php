@@ -14,7 +14,8 @@ $page_subtext = 'This page displays all license plate recognition activity, capt
     <link rel="stylesheet" href="assets/css/globals.css">
     <link rel="stylesheet" href="assets/css/styleguide.css">
 </head>
-<body>
+<body data-section="<?= strtolower(trim($topbar_title)) ?>">
+    
 <div id="loading-spinner" style="display:none;">
   <div class="spinner"></div>
 </div>

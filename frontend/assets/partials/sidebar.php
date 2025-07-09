@@ -12,8 +12,8 @@ function is_active($file) {
     return $current_file === $file ? ' active' : '';
 }
 ?>
-<div class="side-menu">
-  <div class="frame">
+<div class="side-menu side-menu-mobile">
+  <div class="frame frame-mobile">
     <?php
     switch ($sidebar_type) {
       case 'dashboard': // Global Overview
