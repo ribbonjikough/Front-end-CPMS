@@ -36,7 +36,243 @@ $page_subtext = 'This page shows current list of individual and corporate that a
                     <div class="page-subtext"><?= htmlspecialchars($page_subtext) ?></div>
                 </div>
                 <div class="content">
-                    <!-- Content goes here -->
+    <div class="filters-row">
+        <div class="filter-dropdown">
+            <div class="filter-label">Insert Branch</div>
+            <div class="dropdown-wrapper">
+                <select class="dropdown" name="branch">
+                    <option value="">PLAZA SENTRAL</option>
+                    <option value="">KL SENTRAL</option>
+                    <option value="">BANDAR SENTRAL</option>
+                </select>
+                <span class="dropdown-polygon"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account Type Toggle -->
+    <div class="account-type-toggle-group">
+        <button type="button" class="account-type-toggle active" data-type="individual">Individual</button>
+        <button type="button" class="account-type-toggle" data-type="corporate">Corporate</button>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title" id="account-table-title">Current Individual List</h4>
+            <div class="card-subtext" id="account-table-subtext">All current individual records</div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <!-- Individual Table -->
+                <table class="table" id="individual-table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Date Added</th>
+                            <th>Full Name</th>
+                            <th>Company</th>
+                            <th>Email</th>
+                            <th>Commencement Date</th>
+                            <th>Phone</th>
+                            <th>Company Phone</th>
+                            <th>IC No</th>
+                            <th>Taxpayer ID</th>
+                            <th>Vehicle 1</th>
+                            <th>Vehicle 2</th>
+                            <th>Parking Type</th>
+                            <th>Tenant Type</th>
+                            <th>Vehicle Type</th>
+                            <th>Address</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2024-07-01</td>
+                            <td>John Doe</td>
+                            <td>ABC Sdn Bhd</td>
+                            <td>john@example.com</td>
+                            <td>2024-07-10</td>
+                            <td>012-3456789</td>
+                            <td>03-12345678</td>
+                            <td>900101-01-1234</td>
+                            <td>TXP123456</td>
+                            <td>ABC1234</td>
+                            <td>XYZ5678</td>
+                            <td>Season</td>
+                            <td>Tenant</td>
+                            <td>Car</td>
+                            <td>123, Jalan Sentral</td>
+                            <td><span class="status-active">Approved</span></td>
+                            <td>
+                                <a href="#" style="color:#1976d2;">View</a>
+                                <button class="btn" style="background:#4cff4c;color:#222;margin-left:4px;">Approve</button>
+                                <button class="btn" style="background:#f76c6c;color:#fff;margin-left:4px;">Reject</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2024-07-02</td>
+                            <td>Jane Smith</td>
+                            <td>XYZ Sdn Bhd</td>
+                            <td>jane@example.com</td>
+                            <td>2024-07-11</td>
+                            <td>013-9876543</td>
+                            <td>03-87654321</td>
+                            <td>880202-02-5678</td>
+                            <td>TXP654321</td>
+                            <td>DEF5678</td>
+                            <td>LMN4321</td>
+                            <td>Visitor</td>
+                            <td>Subtenant</td>
+                            <td>Van</td>
+                            <td>456, Jalan XYZ</td>
+                            <td><span class="status-inactive">Rejected</span></td>
+                            <td>
+                                <a href="#" style="color:#1976d2;">View</a>
+                                <button class="btn" style="background:#4cff4c;color:#222;margin-left:4px;">Approve</button>
+                                <button class="btn" style="background:#f76c6c;color:#fff;margin-left:4px;">Reject</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Corporate Table -->
+                <table class="table" id="corporate-table" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Company Name</th>
+                            <th>Name PIC of the Company</th>
+                            <th>Email PIC</th>
+                            <th>PIC Phone No</th>
+                            <th>Company Address</th>
+                            <th>Company SSM File</th>
+                            <th>Tenancy Agreement Cover Page</th>
+                            <th>Tenancy Agreement Square Feet</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Simple Sdn Bhd</td>
+                            <td>Kamarul Baman</td>
+                            <td>kamarul@gmail.com</td>
+                            <td>012-343282</td>
+                            <td>Level 2, Tower 3, Plaza Sentral</td>
+                            <td><a href="Simple-SSM.pdf" style="color:#1976d2;" target="_blank">Simple-SSM.pdf</a></td>
+                            <td><a href="TACP-Simple.pdf" style="color:#1976d2;" target="_blank">TACP-Simple.pdf</a></td>
+                            <td><a href="TASF-Simple.pdf" style="color:#1976d2;" target="_blank">TASF-Simple.pdf</a></td>
+                            <td><span class="status-active">Approved</span></td>
+                            <td>
+                                <a href="#" style="color:#1976d2;">View</a>
+                                <button class="btn" style="background:#4cff4c;color:#222;margin-left:4px;">Approve</button>
+                                <button class="btn" style="background:#f76c6c;color:#fff;margin-left:4px;">Reject</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Alpha Corp</td>
+                            <td>Nurul Aini</td>
+                            <td>nurul@alpha.com</td>
+                            <td>013-8888888</td>
+                            <td>Suite 8, Level 5, KL Sentral</td>
+                            <td><a href="Alpha-SSM.pdf" style="color:#1976d2;" target="_blank">Alpha-SSM.pdf</a></td>
+                            <td><a href="TACP-Alpha.pdf" style="color:#1976d2;" target="_blank">TACP-Alpha.pdf</a></td>
+                            <td><a href="TASF-Alpha.pdf" style="color:#1976d2;" target="_blank">TASF-Alpha.pdf</a></td>
+                            <td><span class="status-inactive">Rejected</span></td>
+                            <td>
+                                <a href="#" style="color:#1976d2;">View</a>
+                                <button class="btn" style="background:#4cff4c;color:#222;margin-left:4px;">Approve</button>
+                                <button class="btn" style="background:#f76c6c;color:#fff;margin-left:4px;">Reject</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Beta Holdings</td>
+                            <td>Lim Wei</td>
+                            <td>lim.wei@beta.com</td>
+                            <td>017-2223344</td>
+                            <td>Block B, Bandar Sentral</td>
+                            <td><a href="Beta-SSM.pdf" style="color:#1976d2;" target="_blank">Beta-SSM.pdf</a></td>
+                            <td><a href="TACP-Beta.pdf" style="color:#1976d2;" target="_blank">TACP-Beta.pdf</a></td>
+                            <td><a href="TASF-Beta.pdf" style="color:#1976d2;" target="_blank">TASF-Beta.pdf</a></td>
+                            <td><span class="status-active">Approved</span></td>
+                            <td>
+                                <a href="#" style="color:#1976d2;">View</a>
+                                <button class="btn" style="background:#4cff4c;color:#222;margin-left:4px;">Approve</button>
+                                <button class="btn" style="background:#f76c6c;color:#fff;margin-left:4px;">Reject</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Delta Ventures</td>
+                            <td>Azman Rahim</td>
+                            <td>azman@delta.com</td>
+                            <td>019-5556677</td>
+                            <td>Lot 10, Bandar Sentral</td>
+                            <td><a href="Delta-SSM.pdf" style="color:#1976d2;" target="_blank">Delta-SSM.pdf</a></td>
+                            <td><a href="TACP-Delta.pdf" style="color:#1976d2;" target="_blank">TACP-Delta.pdf</a></td>
+                            <td><a href="TASF-Delta.pdf" style="color:#1976d2;" target="_blank">TASF-Delta.pdf</a></td>
+                            <td><span class="status-active">Approved</span></td>
+                            <td>
+                                <a href="#" style="color:#1976d2;">View</a>
+                                <button class="btn" style="background:#4cff4c;color:#222;margin-left:4px;">Approve</button>
+                                <button class="btn" style="background:#f76c6c;color:#fff;margin-left:4px;">Reject</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.querySelectorAll('.account-type-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.account-type-toggle').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            if (btn.dataset.type === 'individual') {
+                document.getElementById('individual-table').style.display = '';
+                document.getElementById('corporate-table').style.display = 'none';
+                document.getElementById('account-table-title').textContent = 'Current Individual List';
+                document.getElementById('account-table-subtext').textContent = 'All current individual records';
+            } else {
+                document.getElementById('individual-table').style.display = 'none';
+                document.getElementById('corporate-table').style.display = '';
+                document.getElementById('account-table-title').textContent = 'Current Corporate List';
+                document.getElementById('account-table-subtext').textContent = 'All current corporate records';
+            }
+        });
+    });
+    </script>
+
+    <style>
+    .account-type-toggle-group {
+        margin-bottom: 18px;
+        display: flex;
+        gap: 8px;
+    }
+    .account-type-toggle {
+        padding: 7px 18px;
+        border-radius: 8px;
+        border: 1.5px solid #1976d2;
+        background: #fff;
+        color: #1976d2;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.18s, color 0.18s;
+    }
+    .account-type-toggle.active,
+    .account-type-toggle:hover {
+        background: #1976d2;
+        color: #fff;
+    }
+    </style>
                 </div>
             </div>
         </div>

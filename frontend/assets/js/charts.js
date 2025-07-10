@@ -785,3 +785,121 @@ if (revenueCtx && typeof Chart !== "undefined") {
     });
 }
 });
+
+// --- Monthly Application Trends Line Chart ---
+const appTrendCtx = document.getElementById('season_app_trend_chart');
+if (appTrendCtx) {
+    new Chart(appTrendCtx, {
+        type: 'line',
+        data: {
+            labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+            datasets: [
+                {
+                    label: 'Individual',
+                    data: [50,40,40,30,30,10,10,20,30,40,60,30],
+                    borderColor: '#7ed957',
+                    backgroundColor: 'rgba(126,217,87,0.08)',
+                    tension: 0,
+                    pointRadius: 3,
+                    fill: false
+                },
+                {
+                    label: 'Corporate',
+                    data: [30,30,25,25,20,15,20,15,10,10,10,5],
+                    borderColor: '#f7e967',
+                    backgroundColor: 'rgba(247,233,103,0.08)',
+                    tension: 0,
+                    pointRadius: 3,
+                    fill: false
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom',
+                    labels: { font: { size: 14 }, color: '#222', boxWidth: 16 }
+                }
+            },
+            scales: {
+                x: {
+                    grid: { color: '#e0e0e0' },
+                    title: { display: false }
+                },
+                y: {
+                    beginAtZero: true,
+                    grid: { color: '#e0e0e0' },
+                    title: { display: false }
+                }
+            }
+        }
+    });
+}
+
+// --- Corporate vs Individual Donut Chart ---
+const donutCtx = document.getElementById('season_app_donut_chart');
+if (donutCtx) {
+    new Chart(donutCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Individual', 'Corporate'],
+            datasets: [{
+                data: [402, 208],
+                backgroundColor: ['#7ed957', '#f7e967'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            cutout: '70%',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.label}: ${context.parsed}`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// --- Refund Status Breakdown Bar Chart ---
+const refundBarCtx = document.getElementById('season_refund_bar_chart');
+if (refundBarCtx) {
+    new Chart(refundBarCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Pending', 'Accepted', 'Rejected'],
+            datasets: [{
+                label: 'Count',
+                data: [19, 24, 15],
+                backgroundColor: ['#8ed6fb', '#7ed957', '#f76c6c'],
+                borderRadius: 6,
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                x: {
+                    grid: { color: '#e0e0e0' }
+                },
+                y: {
+                    beginAtZero: true,
+                    grid: { color: '#e0e0e0' }
+                }
+            }
+        }
+    });
+}

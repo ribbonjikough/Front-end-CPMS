@@ -112,7 +112,7 @@ $page_subtext = 'This page logs all manually opened gates performed by admins du
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  
         </div>
     </div>
 </div>

@@ -2593,3 +2593,312 @@ html {
   }
 
 }
+
+.navigate-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0;
+}
+
+.navigate-button {
+  background: #8d9cf7;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 22px;
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  min-width: 140px;
+}
+
+.navigate-button:hover,
+.navigate-button:focus {
+  background: #6b7be6;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .navigate-button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .navigate-button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+.season-trends-left {
+  flex: 1 1 0;
+  min-width: 320px;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Panel Styles */
+.trend-panel {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(21,114,185,.06);
+  padding: 18px 18px 18px 18px;
+  margin-bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.trend-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.trend-panel-title {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #222;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.trend-panel-filter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+.trend-panel-select {
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 7px;
+  border: 1.2px solid #bbb;
+  padding: 5px 28px 5px 10px;
+  background: #fff;
+  color: #222;
+  appearance: none;
+  outline: none;
+  min-width: 80px;
+}
+.trend-panel-polygon {
+  position: absolute;
+  right: 8px;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  background: url("data:image/svg+xml;utf8,<svg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M2 2L8 8L14 2' stroke='%23333' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat;
+}
+
+/* Donut Chart Center Label */
+.trend-donut-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 8px;
+}
+.trend-donut-chart {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trend-donut-chart canvas {
+  width: 210px !important;
+  height: 210px !important;
+}
+.trend-donut-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+.trend-donut-center-label {
+  font-size: 15px;
+  color: #888;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.trend-donut-center-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+  margin-top: 2px;
+}
+.trend-donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 18px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+}
+.trend-dot {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.trend-dot-individual { background: #7ed957; }
+.trend-dot-corporate { background: #f7e967; }
+.trend-dot-pending { background: #8ed6fb; }
+.trend-dot-accepted { background: #7ed957; }
+.trend-dot-rejected { background: #f76c6c; }
+
+/* Refund Bar Chart Legend */
+.trend-bar-legend {
+  display: flex;
+  gap: 18px;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
+  justify-content: flex-start;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .season-trends-grid {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .season-trends-left{
+    max-width: 100%;
+    min-width: 0;
+  }
+  .trend-donut-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .trend-donut-legend {
+    margin-left: 0;
+    margin-top: 8px;
+    flex-direction: row;
+    gap: 18px;
+  }
+}
+@media (max-width: 060px) {
+  .trend-panel {
+    padding: 10px 4vw 10px 4vw;
+  }
+  .trend-donut-chart, .trend-donut-chart canvas {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  .trend-donut-center-value {
+    font-size: 1.5rem;
+  }
+}
+
+.trend-panel canvas,
+#season_app_trend_chart,
+#season_app_donut_chart,
+#season_refund_bar_chart {
+  height: 260px !important;
+  max-height: 260px;
+  min-height: 220px;
+  width: 100% !important;
+  display: block;
+  margin: 0 auto;
+}
+.trend-donut-chart {
+  height: 210px;
+  width: 210px;
+  min-width: 150px;
+  min-height: 150px;
+}
+
+.season-trends-flex {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.season-trends-left {
+  flex: 1 1 0;
+  min-width: 320px;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.season-trends-right-stack {
+  flex: 1.2 1 0;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+}
+
+.season-trends-right-stack .graph-container {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.season-trends-left .graph-container {
+  height: 100%;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.trend-panel-fullheight {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.trend-panel-chart-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#season_app_trend_chart {
+  height: 420px !important;
+  min-height: 320px;
+  max-height: 480px;
+  width: 100% !important;
+  display: block;
+  margin: 0 auto;
+}
+
+#season_app_donut_chart,
+#season_refund_bar_chart {
+  height: 220px !important;
+  max-height: 240px;
+  min-height: 180px;
+  width: 100% !important;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+  .season-trends-flex {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .season-trends-left, .season-trends-right-stack {
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+  }
+}
