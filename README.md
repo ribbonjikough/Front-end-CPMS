@@ -1,10 +1,10 @@
-# 🚗 Front-end-CPMS
+#  Front-end-CPMS
 Front-end (and potentially back-end) for the **Car Parking Management System (CPMS)**.  
 Combines layout, design, responsive interface, and interactive components.
 
 ---
 
-## 🔄 Agile Sprinting Development Method  
+##  Agile Sprinting Development Method  
 **1 Sprint = 1 Week**
 
 Agile-based development using a lightweight sprint structure.  
@@ -56,7 +56,7 @@ Each sprint focuses on completing vertical slices of front-end features.
 
 ---
 
-## 📊 Charting Tools Used
+##  Charting Tools Used
 | Chart Library | Used For | Status |
 |---------------|----------|--------|
 | ApexCharts     | Dashboards, Reports | ✅ Working |
@@ -65,7 +65,7 @@ Each sprint focuses on completing vertical slices of front-end features.
 
 ---
 
-## 📱 Responsive Design Targets
+##  Responsive Design Targets
 
 | Device Type | Width Range     | Behavior                           |
 |-------------|------------------|------------------------------------|
