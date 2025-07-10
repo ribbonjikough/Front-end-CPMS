@@ -705,67 +705,83 @@ document.addEventListener('DOMContentLoaded', function () {
         new ApexCharts(document.querySelector("#dashboard_graph_7"), peakBar).render();
     }
 
-    // --- Transactions Doughnut: Car Count ---
-    var carCount = [322, 191, 33];
-    var carCountDonut = {
-        chart: { type: 'donut', height: 120, toolbar: { show: false } },
-        labels: ['TNG', 'Visa', 'Mastercard'],
-        series: carCount,
-        colors: ['#ffb300', '#43a047', '#8e24aa'],
-        legend: { show: false },
-        dataLabels: { enabled: false },
-        plotOptions: {
-            pie: {
-                donut: {
-                    size: '70%',
+// Car Count Pie Chart
+const carCountCtx = document.getElementById('car_count_pie');
+if (carCountCtx && typeof Chart !== "undefined") {
+    const carCountData = {
+        labels: ['TNG', 'VISA', 'MASTERCARD'],
+        datasets: [{
+            data: [322, 191, 33],
+            backgroundColor: ['#ffb300', '#43a047', '#8e24aa'],
+            borderWidth: 0
+        }]
+    };
+    new Chart(carCountCtx, {
+        type: 'pie',
+        data: carCountData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom',
                     labels: {
-                        show: true,
-                        total: {
-                            show: true,
-                            label: 'Car Count',
-                            fontSize: '15px',
-                            fontWeight: 600,
-                            color: '#212b36',
-                            formatter: function () { return 546; }
+                        font: { size: 15, weight: 'bold' },
+                        color: '#212b36',
+                        padding: 18,
+                        boxWidth: 18
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.label}: ${context.parsed}`;
                         }
                     }
                 }
             }
         }
-    };
-    if (document.querySelector("#dashboard_graph_8a")) {
-        new ApexCharts(document.querySelector("#dashboard_graph_8a"), carCountDonut).render();
-    }
+    });
+}
 
-    // --- Transactions Doughnut: Revenue (Today) ---
-    var revenueToday = [1175, 489, 143];
-    var revenueDonut = {
-        chart: { type: 'donut', height: 120, toolbar: { show: false } },
-        labels: ['TNG', 'Visa', 'Mastercard'],
-        series: revenueToday,
-        colors: ['#ffb300', '#43a047', '#8e24aa'],
-        legend: { show: false },
-        dataLabels: { enabled: false },
-        plotOptions: {
-            pie: {
-                donut: {
-                    size: '70%',
+// Revenue Pie Chart
+const revenueCtx = document.getElementById('revenue_pie');
+if (revenueCtx && typeof Chart !== "undefined") {
+    const revenueData = {
+        labels: ['TNG', 'VISA', 'MASTERCARD'],
+        datasets: [{
+            data: [1175, 489, 143],
+            backgroundColor: ['#ffb300', '#43a047', '#8e24aa'],
+            borderWidth: 0
+        }]
+    };
+    new Chart(revenueCtx, {
+        type: 'pie',
+        data: revenueData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom',
                     labels: {
-                        show: true,
-                        total: {
-                            show: true,
-                            label: 'Revenue (Today)',
-                            fontSize: '15px',
-                            fontWeight: 600,
-                            color: '#212b36',
-                            formatter: function () { return 'RM1807'; }
+                        font: { size: 15, weight: 'bold' },
+                        color: '#212b36',
+                        padding: 18,
+                        boxWidth: 18
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.label}: RM${context.parsed}`;
                         }
                     }
                 }
             }
         }
-    };
-    if (document.querySelector("#dashboard_graph_8b")) {
-        new ApexCharts(document.querySelector("#dashboard_graph_8b"), revenueDonut).render();
-    }
+    });
+}
 });

@@ -245,28 +245,36 @@ $page_subtext = 'This is your dashboard overview. Here you can see a summary of 
                                     <div id="dashboard_graph_7" style="width:100%;height:100%;"></div>
                                 </div>
                         </div>
-                        <div class="summary-chart-box">
-                                <div class="graph-container graph-container-double-donut">
+                            <div class="summary-chart-box" style="gap:32px;">
+                                <div class="graph-container">
                                     <div class="chart-header filter-box">
-                                        <span class="chart-header-title">Transactions</span>
-                                    </div>
-                                    <div class="double-donut-wrapper double-donut-horizontal">
-                                        <div class="donut-chart-block">
-                                            <div id="dashboard_graph_8a" class="donut-chart"></div>
-                                            <div class="donut-label">Car Count</div>
-                                        </div>
-                                        <div class="donut-chart-block">
-                                            <div id="dashboard_graph_8b" class="donut-chart"></div>
-                                            <div class="donut-label">Revenue (Today)</div>
+                                        <span class="chart-header-title">Car Count by Transaction Type</span>
+                                        <div class="dropdown-wrapper">
+                                            <select class="dropdown">
+                                                <option>Today</option>
+                                                <option>Yesterday</option>
+                                                <option>This Week</option>
+                                            </select>
+                                            <span class="dropdown-polygon"></span>
                                         </div>
                                     </div>
-                                    <div class="donut-legend">
-                                        <div><span class="legend-dot tng"></span>TNG</div>
-                                        <div><span class="legend-dot visa"></span>VISA</div>
-                                        <div><span class="legend-dot mastercard"></span>MASTERCARD</div>
-                                    </div>
+                                        <canvas id="car_count_pie"></canvas>
                                 </div>
-                        </div>
+                                <div class="graph-container">
+                                    <div class="chart-header filter-box">
+                                        <span class="chart-header-title">Revenue by Transaction Type</span>
+                                        <div class="dropdown-wrapper">
+                                            <select class="dropdown">
+                                                <option>Today</option>
+                                                <option>Yesterday</option>
+                                                <option>This Week</option>
+                                            </select>
+                                            <span class="dropdown-polygon"></span>
+                                        </div>
+                                    </div>
+                                        <canvas id="revenue_pie"></canvas>
+                                </div>
+                            </div>
                     </div>
                 </div>
 
