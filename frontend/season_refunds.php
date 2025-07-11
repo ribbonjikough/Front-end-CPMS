@@ -36,145 +36,146 @@ $page_subtext = 'This page tracks, processes, and manages refunds or termination
                     <div class="page-subtext"><?= htmlspecialchars($page_subtext) ?></div>
                 </div>
                 <div class="content">
-    <div class="card report-card">
-        <div class="card-header">
-            <span class="report-title"><?= htmlspecialchars($page_title) ?> Panel</span>
-        </div>
-        <div class="card-body">
-            <div class="filters-row" style="margin-bottom:18px;">
-                <div class="filter-dropdown">
-                    <div class="filter-label">Type</div>
-                    <div class="dropdown-wrapper">
-                        <select class="dropdown" name="type">
-                            <option value="individual">Individual</option>
-                            <option value="corporate">Corporate</option>
-                        </select>
-                        <span class="dropdown-polygon"></span>
-                    </div>
-                </div>
-                <div class="filter-dropdown">
-                    <div class="filter-label">Status</div>
-                    <div class="dropdown-wrapper">
-                        <select class="dropdown" name="status">
-                            <option value="approved">Approved</option>
-                            <option value="not_reviewed">Not Reviewed</option>
-                            <option value="pending">Pending</option>
-                            <option value="rejected">Rejected</option>
-                        </select>
-                        <span class="dropdown-polygon"></span>
-                    </div>
-                </div>
-                <div class="filter-dropdown">
-                    <div class="filter-label">Insert Branch</div>
-                    <div class="dropdown-wrapper">
-                        <select class="dropdown" name="branch">
-                            <option value="">PLAZA SENTRAL</option>
-                            <option value="">KL SENTRAL</option>
-                            <option value="">BANDAR SENTRAL</option>
-                        </select>
-                        <span class="dropdown-polygon"></span>
-                    </div>
-                </div>
-                <div class="filter-btns">
-                    <button class="btn btn-search" type="button">Search</button>
-                </div>
-            </div>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Request ID</th>
-                            <th>Name/Company</th>
-                            <th>Type</th>
-                            <th>Reason</th>
-                            <th>Amount (RM)</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>RF-1001</td>
-                            <td>Ali Bin Abu</td>
-                            <td>Individual</td>
-                            <td>Termination</td>
-                            <td>120.00</td>
-                            <td><span class="status-approved">Approved</span></td>
-                            <td>
-    <button class="table-action-view">View</button>
-    <button class="table-action-approve">Approve</button>
-    <button class="table-action-reject">Reject</button>
-</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>RF-1002</td>
-                            <td>Beta Holdings</td>
-                            <td>Corporate</td>
-                            <td>Overpayment</td>
-                            <td>350.00</td>
-                            <td><span class="status-not-reviewed">Not Reviewed</span></td>
-                            <td>
-    <button class="table-action-view">View</button>
-    <button class="table-action-approve">Approve</button>
-    <button class="table-action-reject">Reject</button>
-</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>RF-1003</td>
-                            <td>Siti Aminah</td>
-                            <td>Individual</td>
-                            <td>Termination</td>
-                            <td>80.00</td>
-                            <td><span class="status-pending">Pending</span></td>
-                            <td>
-    <button class="table-action-view">View</button>
-    <button class="table-action-approve">Approve</button>
-    <button class="table-action-reject">Reject</button>
-</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>RF-1004</td>
-                            <td>Delta Ventures</td>
-                            <td>Corporate</td>
-                            <td>Double Payment</td>
-                            <td>200.00</td>
-                            <td><span class="status-rejected">Rejected</span></td>
-                            <td>
-    <button class="table-action-view">View</button>
-    <button class="table-action-approve">Approve</button>
-    <button class="table-action-reject">Reject</button>
-</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-                                            <div class="table-footer-pagination">
-                                    <div class="table-footer-left">
-                                        Show
-                                        <select id="entriesPerPage" class="entries-dropdown">
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                        <option value="100">100</option>
+                    <div class="card report-card">
+                        <div class="card-header">
+                            <span class="report-title"><?= htmlspecialchars($page_title) ?> Panel</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="filters-row" style="margin-bottom:18px;">
+                                <div class="filter-dropdown">
+                                    <div class="filter-label">Type</div>
+                                    <div class="dropdown-wrapper">
+                                        <select class="dropdown" name="type">
+                                            <option value="individual">Individual</option>
+                                            <option value="corporate">Corporate</option>
                                         </select>
-                                        entries
-                                        <span id="table-info" style="margin-left:16px;"></span>
+                                        <span class="dropdown-polygon"></span>
                                     </div>
-                                    <div class="table-footer-right" id="pagination-controls"></div>
                                 </div>
+                                <div class="filter-dropdown">
+                                    <div class="filter-label">Status</div>
+                                    <div class="dropdown-wrapper">
+                                        <select class="dropdown" name="status">
+                                            <option value="approved">Approved</option>
+                                            <option value="not_reviewed">Not Reviewed</option>
+                                            <option value="pending">Pending</option>
+                                            <option value="rejected">Rejected</option>
+                                        </select>
+                                        <span class="dropdown-polygon"></span>
+                                    </div>
+                                </div>
+                                <div class="filter-dropdown">
+                                    <div class="filter-label">Insert Branch</div>
+                                    <div class="dropdown-wrapper">
+                                        <select class="dropdown" name="branch">
+                                            <option value="">PLAZA SENTRAL</option>
+                                            <option value="">KL SENTRAL</option>
+                                            <option value="">BANDAR SENTRAL</option>
+                                        </select>
+                                        <span class="dropdown-polygon"></span>
+                                    </div>
+                                </div>
+                                <div class="filter-btns">
+                                    <button class="btn btn-search" type="button">Search</button>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Request ID</th>
+                                            <th>Name/Company</th>
+                                            <th>Type</th>
+                                            <th>Reason</th>
+                                            <th>Amount (RM)</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>RF-1001</td>
+                                            <td>Ali Bin Abu</td>
+                                            <td>Individual</td>
+                                            <td>Termination</td>
+                                            <td>120.00</td>
+                                            <td><span class="status-approved">Approved</span></td>
+                                            <td>
+                    <button class="table-action-view">View</button>
+                    <button class="table-action-approve">Approve</button>
+                    <button class="table-action-reject">Reject</button>
+                </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>RF-1002</td>
+                                            <td>Beta Holdings</td>
+                                            <td>Corporate</td>
+                                            <td>Overpayment</td>
+                                            <td>350.00</td>
+                                            <td><span class="status-not-reviewed">Not Reviewed</span></td>
+                                            <td>
+                    <button class="table-action-view">View</button>
+                    <button class="table-action-approve">Approve</button>
+                    <button class="table-action-reject">Reject</button>
+                </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>RF-1003</td>
+                                            <td>Siti Aminah</td>
+                                            <td>Individual</td>
+                                            <td>Termination</td>
+                                            <td>80.00</td>
+                                            <td><span class="status-pending">Pending</span></td>
+                                            <td>
+                    <button class="table-action-view">View</button>
+                    <button class="table-action-approve">Approve</button>
+                    <button class="table-action-reject">Reject</button>
+                </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>RF-1004</td>
+                                            <td>Delta Ventures</td>
+                                            <td>Corporate</td>
+                                            <td>Double Payment</td>
+                                            <td>200.00</td>
+                                            <td><span class="status-rejected">Rejected</span></td>
+                                            <td>
+                    <button class="table-action-view">View</button>
+                    <button class="table-action-approve">Approve</button>
+                    <button class="table-action-reject">Reject</button>
+                </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                                                            <div class="table-footer-pagination">
+                                                    <div class="table-footer-left">
+                                                        Show
+                                                        <select id="entriesPerPage" class="entries-dropdown">
+                                                        <option value="10">10</option>
+                                                        <option value="25">25</option>
+                                                        <option value="50">50</option>
+                                                        <option value="100">100</option>
+                                                        </select>
+                                                        entries
+                                                        <span id="table-info" style="margin-left:16px;"></span>
+                                                    </div>
+                                                    <div class="table-footer-right" id="pagination-controls"></div>
+                                                </div>
 
-        </div>
-    </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div id="mobile-side-drawer" class="mobile-side-drawer"></div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="assets/js/script.js"></script>

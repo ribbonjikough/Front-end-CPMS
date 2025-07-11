@@ -198,6 +198,7 @@ $page_subtext = 'This page controls which admins can access specific features. P
         </div>
     </div>
 </div>
+<div id="mobile-side-drawer" class="mobile-side-drawer"></div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="assets/js/script.js"></script>

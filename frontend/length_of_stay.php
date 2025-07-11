@@ -157,6 +157,7 @@ $page_subtext = 'This page shows how long vehicles typically stay in the parking
         </div>
     </div>
 </div>
+<div id="mobile-side-drawer" class="mobile-side-drawer"></div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="assets/js/script.js"></script>
