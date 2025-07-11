@@ -1118,6 +1118,7 @@ html {
     position: sticky;
     top: 0;
     z-index: 1001;
+    border-bottom: 2px solid #7a7a7a;
     box-shadow: 0 2px 8px rgba(21,114,185,.06);
   }
   .sidebar-toggle {
