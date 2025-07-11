@@ -105,11 +105,11 @@ $page_subtext = 'This page reviews, approves, and manages all season parking app
                             <td>Tenant</td>
                             <td>Car</td>
                             <td>123, Jalan Sentral</td>
-                            <td><span class="status-active">Pending</span></td>
+                            <td><span class="status-pending">Pending</span></td>
                             <td>
-                                <a href="#" style="color:#1976d2;">View</a>
-                                <button class="btn" style="background:#4cff4c;color:#222;margin-left:4px;">Approve</button>
-                                <button class="btn" style="background:#f76c6c;color:#fff;margin-left:4px;">Reject</button>
+                                <button class="table-action-view">View</button>
+                                <button class="table-action-approve">Approve</button>
+                                <button class="table-action-reject">Reject</button>
                             </td>
                         </tr>
                         <tr>
@@ -129,11 +129,86 @@ $page_subtext = 'This page reviews, approves, and manages all season parking app
                             <td>Subtenant</td>
                             <td>Van</td>
                             <td>456, Jalan XYZ</td>
-                            <td><span class="status-inactive">Pending</span></td>
+                            <td><span class="status-pending">Pending</span></td>
                             <td>
-                                <a href="#" style="color:#1976d2;">View</a>
-                                <button class="btn" style="background:#4cff4c;color:#222;margin-left:4px;">Approve</button>
-                                <button class="btn" style="background:#f76c6c;color:#fff;margin-left:4px;">Reject</button>
+                                <button class="table-action-view">View</button>
+                                <button class="table-action-approve">Approve</button>
+                                <button class="table-action-reject">Reject</button>
+                            </td>
+                        </tr>
+                        <!-- Added Example Row 1 -->
+                        <tr>
+                            <td>103</td>
+                            <td>2024-07-03</td>
+                            <td>Lim Wei</td>
+                            <td>Beta Holdings</td>
+                            <td>lim.wei@beta.com</td>
+                            <td>2024-07-12</td>
+                            <td>017-2223344</td>
+                            <td>03-2223344</td>
+                            <td>850303-03-3333</td>
+                            <td>TXP789012</td>
+                            <td>JKL3456</td>
+                            <td>OPQ7890</td>
+                            <td>Season</td>
+                            <td>Tenant</td>
+                            <td>Motorcycle</td>
+                            <td>789, Jalan Beta</td>
+                            <td><span class="status-pending">Pending</span></td>
+                            <td>
+                                <button class="table-action-view">View</button>
+                                <button class="table-action-approve">Approve</button>
+                                <button class="table-action-reject">Reject</button>
+                            </td>
+                        </tr>
+                        <!-- Added Example Row 2 -->
+                        <tr>
+                            <td>104</td>
+                            <td>2024-07-04</td>
+                            <td>Azman Rahim</td>
+                            <td>Delta Ventures</td>
+                            <td>azman@delta.com</td>
+                            <td>2024-07-13</td>
+                            <td>019-5556677</td>
+                            <td>03-5556677</td>
+                            <td>820404-04-4444</td>
+                            <td>TXP345678</td>
+                            <td>RST9012</td>
+                            <td>UVW3456</td>
+                            <td>Visitor</td>
+                            <td>Subtenant</td>
+                            <td>Car</td>
+                            <td>1010, Jalan Delta</td>
+                            <td><span class="status-pending">Pending</span></td>
+                            <td>
+                                <button class="table-action-view">View</button>
+                                <button class="table-action-approve">Approve</button>
+                                <button class="table-action-reject">Reject</button>
+                            </td>
+                        </tr>
+                        <!-- Added Example Row 3 -->
+                        <tr>
+                            <td>105</td>
+                            <td>2024-07-05</td>
+                            <td>Noraini Zainal</td>
+                            <td>Gamma Sdn Bhd</td>
+                            <td>noraini@gamma.com</td>
+                            <td>2024-07-14</td>
+                            <td>018-8889999</td>
+                            <td>03-8889999</td>
+                            <td>910505-05-5555</td>
+                            <td>TXP567890</td>
+                            <td>XYZ1234</td>
+                            <td>ABC5678</td>
+                            <td>Season</td>
+                            <td>Tenant</td>
+                            <td>Van</td>
+                            <td>2020, Jalan Gamma</td>
+                            <td><span class="status-pending">Pending</span></td>
+                            <td>
+                                <button class="table-action-view">View</button>
+                                <button class="table-action-approve">Approve</button>
+                                <button class="table-action-reject">Reject</button>
                             </td>
                         </tr>
                     </tbody>
@@ -166,11 +241,11 @@ $page_subtext = 'This page reviews, approves, and manages all season parking app
                             <td><a href="Simple-SSM.pdf" style="color:#1976d2;" target="_blank">Simple-SSM.pdf</a></td>
                             <td><a href="TACP-Simple.pdf" style="color:#1976d2;" target="_blank">TACP-Simple.pdf</a></td>
                             <td><a href="TASF-Simple.pdf" style="color:#1976d2;" target="_blank">TASF-Simple.pdf</a></td>
-                            <td><span class="status-active">Pending</span></td>
+                            <td><span class="status-pending">Pending</span></td>
                             <td>
-                                <a href="#" style="color:#1976d2;">View</a>
-                                <button class="btn" style="background:#4cff4c;color:#222;margin-left:4px;">Approve</button>
-                                <button class="btn" style="background:#f76c6c;color:#fff;margin-left:4px;">Reject</button>
+                                <button class="table-action-view">View</button>
+                                <button class="table-action-approve">Approve</button>
+                                <button class="table-action-reject">Reject</button>
                             </td>
                         </tr>
                         <tr>
@@ -183,11 +258,11 @@ $page_subtext = 'This page reviews, approves, and manages all season parking app
                             <td><a href="Alpha-SSM.pdf" style="color:#1976d2;" target="_blank">Alpha-SSM.pdf</a></td>
                             <td><a href="TACP-Alpha.pdf" style="color:#1976d2;" target="_blank">TACP-Alpha.pdf</a></td>
                             <td><a href="TASF-Alpha.pdf" style="color:#1976d2;" target="_blank">TASF-Alpha.pdf</a></td>
-                            <td><span class="status-inactive">Pending</span></td>
+                            <td><span class="status-pending">Pending</span></td>
                             <td>
-                                <a href="#" style="color:#1976d2;">View</a>
-                                <button class="btn" style="background:#4cff4c;color:#222;margin-left:4px;">Approve</button>
-                                <button class="btn" style="background:#f76c6c;color:#fff;margin-left:4px;">Reject</button>
+                                <button class="table-action-view">View</button>
+                                <button class="table-action-approve">Approve</button>
+                                <button class="table-action-reject">Reject</button>
                             </td>
                         </tr>
                         <tr>
@@ -200,11 +275,11 @@ $page_subtext = 'This page reviews, approves, and manages all season parking app
                             <td><a href="Beta-SSM.pdf" style="color:#1976d2;" target="_blank">Beta-SSM.pdf</a></td>
                             <td><a href="TACP-Beta.pdf" style="color:#1976d2;" target="_blank">TACP-Beta.pdf</a></td>
                             <td><a href="TASF-Beta.pdf" style="color:#1976d2;" target="_blank">TASF-Beta.pdf</a></td>
-                            <td><span class="status-active">Pending</span></td>
+                            <td><span class="status-pending">Pending</span></td>
                             <td>
-                                <a href="#" style="color:#1976d2;">View</a>
-                                <button class="btn" style="background:#4cff4c;color:#222;margin-left:4px;">Approve</button>
-                                <button class="btn" style="background:#f76c6c;color:#fff;margin-left:4px;">Reject</button>
+                                <button class="table-action-view">View</button>
+                                <button class="table-action-approve">Approve</button>
+                                <button class="table-action-reject">Reject</button>
                             </td>
                         </tr>
                         <tr>
@@ -217,19 +292,34 @@ $page_subtext = 'This page reviews, approves, and manages all season parking app
                             <td><a href="Delta-SSM.pdf" style="color:#1976d2;" target="_blank">Delta-SSM.pdf</a></td>
                             <td><a href="TACP-Delta.pdf" style="color:#1976d2;" target="_blank">TACP-Delta.pdf</a></td>
                             <td><a href="TASF-Delta.pdf" style="color:#1976d2;" target="_blank">TASF-Delta.pdf</a></td>
-                            <td><span class="status-active">Pending</span></td>
+                            <td><span class="status-pending">Pending</span></td>
                             <td>
-                                <a href="#" style="color:#1976d2;">View</a>
-                                <button class="btn" style="background:#4cff4c;color:#222;margin-left:4px;">Approve</button>
-                                <button class="btn" style="background:#f76c6c;color:#fff;margin-left:4px;">Reject</button>
+                                <button class="table-action-view">View</button>
+                                <button class="table-action-approve">Approve</button>
+                                <button class="table-action-reject">Reject</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            <div class="table-footer-pagination">
+        <div class="table-footer-left">
+        Show
+        <select id="entriesPerPage" class="entries-dropdown">
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        </select>
+        entries
+        <span id="table-info" style="margin-left:16px;"></span>
+        </div>
+        <div class="table-footer-right" id="pagination-controls"></div>
+        </div>
+            
         </div>
     </div>
-
+    
     <script>
     document.querySelectorAll('.account-type-toggle').forEach(function(btn) {
         btn.addEventListener('click', function() {

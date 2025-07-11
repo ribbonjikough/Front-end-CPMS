@@ -110,7 +110,7 @@ $page_subtext = 'This page manages and configures different types of parking fee
                                             <td>Early Bird</td>
                                             <td>Flat Rate</td>
                                             <td>RM5.00</td>
-                                            <td><span class="status-badge status-active">Active</span></td>
+                                            <td><span class="status-active">Active</span></td>
                                             <td>Before 9.00 a.m.</td>
                                             <td>
                                                 <div class="action-btn-group">
@@ -123,7 +123,7 @@ $page_subtext = 'This page manages and configures different types of parking fee
                                             <td>Flat Rate Friday</td>
                                             <td>Flat Rate</td>
                                             <td>RM15.00</td>
-                                            <td><span class="status-badge status-inactive">Inactive</span></td>
+                                            <td><span class="status-inactive">Inactive</span></td>
                                             <td>Every Friday</td>
                                             <td>
                                                 <div class="action-btn-group">
@@ -136,7 +136,7 @@ $page_subtext = 'This page manages and configures different types of parking fee
                                             <td>Spend & Redeem</td>
                                             <td>Percentage Discount</td>
                                             <td>50%</td>
-                                            <td><span class="status-badge status-active">Active</span></td>
+                                            <td><span class="status-active">Active</span></td>
                                             <td>Any time</td>
                                             <td>
                                                 <div class="action-btn-group">

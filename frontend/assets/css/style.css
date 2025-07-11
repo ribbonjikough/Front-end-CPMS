@@ -1675,6 +1675,61 @@ html {
   margin-left: 6px;
   font-size: 15px
 }
+/* Action buttons for tables */
+.table-action-view {
+  background: none;
+  color: #1976d2;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: background 0.18s, color 0.18s;
+  margin-left: 0;
+  margin-right: 4px;
+  text-decoration: underline;
+}
+.table-action-view:hover {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+
+.table-action-approve {
+  background: #4cff4c;
+  color: #222;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 6px;
+  margin-left: 0;
+  margin-right: 4px;
+  transition: background 0.18s, color 0.18s;
+}
+.table-action-approve:hover {
+  background: #13a847;
+  color: #fff;
+}
+
+.table-action-reject {
+  background: #f76c6c;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 6px;
+  margin-left: 0;
+  margin-right: 4px;
+  transition: background 0.18s, color 0.18s;
+}
+.table-action-reject:hover {
+  background: #b91c1c;
+  color: #fff;
+}
 .table td .action-btn-group {
   display: flex;
   flex-direction: column;
@@ -2235,7 +2290,7 @@ html {
 
 /* Status color classes */
 .status-active {
-  background: #13a847;
+  background: #56d883;
   color: #15803d !important; /* dark green */
   font-weight: 600;
   border-radius: 16px;
@@ -2303,6 +2358,48 @@ html {
 .status-toggle-btn.status-disabled .status-disable {
   font-weight: bold;
   color: #d32f2f;
+}
+
+/* Add to style.css for new orange status */
+.status-not-reviewed {
+  background: #ffb84d;
+  color: #b26a00 !important;
+  font-weight: 600;
+  border-radius: 16px;
+  padding: 4px 18px;
+  display: inline-block;
+  min-width: 90px;
+  text-align: center;
+}
+.status-approved {
+  background: #13a847;
+  color: #15803d !important;
+  font-weight: 600;
+  border-radius: 16px;
+  padding: 4px 18px;
+  display: inline-block;
+  min-width: 90px;
+  text-align: center;
+}
+.status-pending {
+  background: #f7e967;
+  color: #b59f00 !important;
+  font-weight: 600;
+  border-radius: 16px;
+  padding: 4px 18px;
+  display: inline-block;
+  min-width: 90px;
+  text-align: center;
+}
+.status-rejected {
+  background: #cf5f5f;
+  color: #b91c1c !important;
+  font-weight: 600;
+  border-radius: 16px;
+  padding: 4px 18px;
+  display: inline-block;
+  min-width: 90px;
+  text-align: center;
 }
 
 .quick-access-settings {

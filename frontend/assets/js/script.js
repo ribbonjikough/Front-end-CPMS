@@ -349,4 +349,141 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+    // Refunds table action buttons logic
+  document.querySelectorAll('.table').forEach(function(table) {
+    table.querySelectorAll('tbody tr').forEach(function(row) {
+      const statusCell = row.querySelector('td:nth-last-child(2) span');
+      const actionCell = row.querySelector('td:last-child');
+      if (!statusCell || !actionCell) return;
+      const status = statusCell.className;
+
+      // Clear existing buttons
+      actionCell.innerHTML = '';
+
+      if (status.includes('status-approved')) {
+        // Approved: View + Mark as Paid
+        const viewBtn = document.createElement('button');
+        viewBtn.className = 'table-action-view';
+        viewBtn.textContent = 'View';
+        actionCell.appendChild(viewBtn);
+
+        const paidBtn = document.createElement('button');
+        paidBtn.className = 'table-action-approve';
+        paidBtn.textContent = 'Mark as Paid';
+        actionCell.appendChild(paidBtn);
+      } else if (status.includes('status-not-reviewed')) {
+        // Not Reviewed: View only
+        const viewBtn = document.createElement('button');
+        viewBtn.className = 'table-action-view';
+        viewBtn.textContent = 'View';
+        actionCell.appendChild(viewBtn);
+      } else if (status.includes('status-pending')) {
+        // Pending: View + Approve + Reject
+        const viewBtn = document.createElement('button');
+        viewBtn.className = 'table-action-view';
+        viewBtn.textContent = 'View';
+        actionCell.appendChild(viewBtn);
+
+        const approveBtn = document.createElement('button');
+        approveBtn.className = 'table-action-approve';
+        approveBtn.textContent = 'Approve';
+        actionCell.appendChild(approveBtn);
+
+        const rejectBtn = document.createElement('button');
+        rejectBtn.className = 'table-action-reject';
+        rejectBtn.textContent = 'Reject';
+        actionCell.appendChild(rejectBtn);
+      } else if (status.includes('status-rejected')) {
+        // Rejected: Mark as Completed
+        const completedBtn = document.createElement('button');
+        completedBtn.className = 'table-action-reject';
+        completedBtn.textContent = 'Mark as Completed';
+        actionCell.appendChild(completedBtn);
+      }
+    });
+  });
+
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Generic pagination for any visible table
+  function paginateVisibleTable() {
+    // Find the visible table
+    const table = document.querySelector('.table-responsive table.table:not([style*="display: none"])');
+    if (!table) return;
+    const tbody = table.querySelector('tbody');
+    if (!tbody) return;
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    const info = document.getElementById('table-info');
+    const pagination = document.getElementById('pagination-controls');
+    const entriesSelect = document.getElementById('entriesPerPage');
+
+    let currentPage = 1;
+    let entriesPerPage = parseInt(entriesSelect.value);
+
+    function renderTable() {
+      rows.forEach(row => row.style.display = 'none');
+      const total = rows.length;
+      const totalPages = Math.max(1, Math.ceil(total / entriesPerPage));
+      const start = (currentPage - 1) * entriesPerPage;
+      const end = Math.min(start + entriesPerPage, total);
+      rows.slice(start, end).forEach(row => row.style.display = '');
+      info.textContent = `Showing ${start + 1}-${end} out of ${total} items`;
+      pagination.innerHTML = '';
+
+      // Previous button
+      const prevBtn = document.createElement('button');
+      prevBtn.textContent = 'Previous';
+      prevBtn.className = 'pagination-btn';
+      prevBtn.disabled = currentPage === 1;
+      prevBtn.onclick = () => { if (currentPage > 1) { currentPage--; renderTable(); }};
+      pagination.appendChild(prevBtn);
+
+      // Page numbers
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        btn.className = 'pagination-btn' + (i === currentPage ? ' active' : '');
+        btn.onclick = () => { currentPage = i; renderTable(); };
+        pagination.appendChild(btn);
+      }
+
+      // Next button
+      const nextBtn = document.createElement('button');
+      nextBtn.textContent = 'Next';
+      nextBtn.className = 'pagination-btn';
+      nextBtn.disabled = currentPage === totalPages;
+      nextBtn.onclick = () => { if (currentPage < totalPages) { currentPage++; renderTable(); }};
+      pagination.appendChild(nextBtn);
+    }
+
+    entriesSelect.onchange = function () {
+      entriesPerPage = parseInt(this.value);
+      currentPage = 1;
+      renderTable();
+    };
+
+    renderTable();
+
+    // Expose for toggling
+    return {
+      reset: function() {
+        currentPage = 1;
+        renderTable();
+      }
+    };
+  }
+
+  // Initial pagination
+  let paginator = paginateVisibleTable();
+
+  // Re-run pagination when toggling account type
+  document.querySelectorAll('.account-type-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setTimeout(function() {
+        paginator = paginateVisibleTable();
+      }, 0);
+    });
+  });
 });
