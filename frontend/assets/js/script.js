@@ -204,12 +204,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
   if (window.innerWidth < 600) {
-    // Highlight the active nav icon based on current page
-    const navLinks = document.querySelectorAll('.mobile-bottom-nav .nav-icon');
+    // Map nav section to all related pages
+    const navGroups = {
+      home: [
+        'index.php', 'dashboard_season.php'
+      ],
+      parking: [
+        'car_in_park.php', 'parking_manual.php', 'parking_history.php', 'parking_lpr.php'
+      ],
+      report: [
+        'transactions.php', 'daily_sales.php', 'hourly_traffic.php', 'monthly_sales.php',
+        'length_of_stay.php', 'manual_open_barrier.php', 'redemption_transactions.php'
+      ],
+      season: [
+        'season_parking_list.php', 'season_applications.php', 'season_refunds.php',
+        'season_einvoice.php', 'season_reporting.php', 'season_access_cards.php'
+      ],
+      settings: [
+        'parking_rate_adjustment.php', 'season_parking_adjustment.php', 'privileges.php',
+        'redemptions.php', 'settings.php'
+      ]
+    };
+
     const current = location.pathname.split('/').pop();
-    navLinks.forEach(link => {
-      if (link.getAttribute('href').includes(current)) {
+    document.querySelectorAll('.mobile-bottom-nav .nav-icon').forEach(link => {
+      const section = link.getAttribute('data-section');
+      // If the current file is in the group, set active
+      if (navGroups[section] && navGroups[section].includes(current)) {
         link.classList.add('active');
+      } else {
+        link.classList.remove('active');
       }
     });
   }
@@ -230,7 +254,7 @@ const sidebarMap = {
   'report': 'assets/partials/sidebar_report.php',
   'settings': 'assets/partials/sidebar.php',
   'admin': 'assets/partials/sidebar.php'
-};
+};  
   function getCurrentSection() {
     return document.body.getAttribute('data-section') || 'home';
   }
@@ -281,11 +305,7 @@ const sidebarMap = {
     if (!isMobile()) {
       drawer.classList.remove('open');
       overlay.classList.remove('active');
-      drawer.style.display = 'none';
-      overlay.style.display = 'none';
-      document.body.style.overflow = '';
     } else {
-      drawer.style.display = 'block';
       overlay.style.display = '';
     }
   }
