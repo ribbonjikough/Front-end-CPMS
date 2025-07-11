@@ -77,7 +77,6 @@ $page_subtext = 'This page tracks, processes, and manages refunds or termination
                 </div>
                 <div class="filter-btns">
                     <button class="btn btn-search" type="button">Search</button>
-                    <button class="btn btn-export" type="button">Export</button>
                 </div>
             </div>
             <div class="table-responsive">

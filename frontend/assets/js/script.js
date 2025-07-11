@@ -405,7 +405,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-
 document.addEventListener('DOMContentLoaded', function () {
   // Generic pagination for any visible table
   function paginateVisibleTable() {
@@ -487,3 +486,41 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.account-type-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.account-type-toggle').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            if (btn.dataset.type === 'individual') {
+                document.getElementById('individual-table').style.display = '';
+                document.getElementById('corporate-table').style.display = 'none';
+                document.getElementById('account-table-title').textContent = 'Current Individual List';
+                document.getElementById('account-table-subtext').textContent = 'All current individual records';
+            } else {
+                document.getElementById('individual-table').style.display = 'none';
+                document.getElementById('corporate-table').style.display = '';
+                document.getElementById('account-table-title').textContent = 'Current Corporate List';
+                document.getElementById('account-table-subtext').textContent = 'All current corporate records';
+            }
+        });
+    });
+
+        document.querySelectorAll('.account-type-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.account-type-toggle').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            if (btn.dataset.type === 'individual') {
+                document.getElementById('individual-applications-table').style.display = '';
+                document.getElementById('corporate-applications-table').style.display = 'none';
+                document.getElementById('applications-table-title').textContent = 'Pending Individual Applications';
+                document.getElementById('applications-table-subtext').textContent = 'Review and approve/reject individual applications';
+            } else {
+                document.getElementById('individual-applications-table').style.display = 'none';
+                document.getElementById('corporate-applications-table').style.display = '';
+                document.getElementById('applications-table-title').textContent = 'Pending Corporate Applications';
+                document.getElementById('applications-table-subtext').textContent = 'Review and approve/reject corporate applications';
+            }
+        });
+    });
+  });
