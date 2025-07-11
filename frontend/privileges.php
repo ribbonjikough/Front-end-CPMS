@@ -17,7 +17,7 @@ $page_subtext = 'This page controls which admins can access specific features. P
 </head>
 <body data-section="<?= strtolower(trim($topbar_title)) ?>">
 
-<div id="loading-spinner" style="display:none;">
+<div id="loading-spinner">
   <div class="spinner"></div>
 </div>
 

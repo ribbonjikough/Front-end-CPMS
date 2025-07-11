@@ -16,7 +16,7 @@ $page_subtext = 'This page shows records of manual gate operations, including to
 </head>
 <body data-section="<?= strtolower(trim($topbar_title)) ?>">
 
-<div id="loading-spinner" style="display:none;">
+<div id="loading-spinner">
   <div class="spinner"></div>
 </div>
 
