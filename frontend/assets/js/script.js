@@ -644,3 +644,137 @@ document.addEventListener('DOMContentLoaded', function () {
       renderTable();
     });
   });
+
+    document.addEventListener('DOMContentLoaded', function () {
+    // Export overlay logic
+    document.querySelectorAll('.btn-export').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Show overlay
+        const overlay = document.getElementById('exportOverlay');
+        if (!overlay) return;
+        overlay.style.display = 'flex';
+        // Reset checkboxes and actions
+        document.getElementById('exportCsv').checked = false;
+        document.getElementById('exportPdf').checked = false;
+        // document.getElementById('exportPrint').checked = false;
+        document.getElementById('exportActions').style.display = 'flex';
+        // Disable confirm button initially
+        document.getElementById('exportConfirmBtn').disabled = true;
+        document.getElementById('exportConfirmBtn').style.opacity = 0.5;
+        document.getElementById('exportConfirmBtn').style.cursor = 'not-allowed';
+      });
+    });
+
+    // Enable/disable confirm button based on checkbox state
+    ['exportCsv', 'exportPdf'].forEach(id => {
+      document.getElementById(id).addEventListener('change', function() {
+        const confirmBtn = document.getElementById('exportConfirmBtn');
+        const show = document.getElementById('exportCsv').checked || document.getElementById('exportPdf').checked;
+        confirmBtn.disabled = !show;
+        confirmBtn.style.opacity = show ? 1 : 0.5;
+        confirmBtn.style.cursor = show ? 'pointer' : 'not-allowed';
+      });
+    });
+
+    // Cancel button
+    document.getElementById('exportCancelBtn').onclick = function() {
+      document.getElementById('exportOverlay').style.display = 'none';
+    };
+
+    // Confirm button
+    document.getElementById('exportConfirmBtn').onclick = function() {
+      if (this.disabled) return;
+      const csv = document.getElementById('exportCsv').checked;
+      const pdf = document.getElementById('exportPdf').checked;
+      document.getElementById('exportOverlay').style.display = 'none';
+
+      // Find the nearest table and graph in the same card
+      const btn = document.querySelector('.btn-export:focus') || document.querySelector('.btn-export:hover') || document.querySelector('.btn-export');
+      let card = btn.closest('.card, .card-body, .content') || document.body;
+      let table = card.querySelector('table');
+      let graph = card.querySelector('canvas, .graph-container, .apexcharts-canvas, .chartjs-render-monitor');
+
+      if (csv && table) exportTableToCSV(table);
+      if (pdf && table) exportToPDF(table, graph);
+    };
+
+    // CSV Export
+    function exportTableToCSV(table) {
+      let csv = [];
+      const rows = table.querySelectorAll('tr');
+      rows.forEach(row => {
+        let cols = Array.from(row.querySelectorAll('th,td')).map(cell => {
+          let text = cell.innerText.replace(/"/g, '""');
+          return `"${text}"`;
+        });
+        csv.push(cols.join(','));
+      });
+      const csvContent = csv.join('\n');
+      const blob = new Blob([csvContent], {type: 'text/csv'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = (document.title || 'table') + '.csv';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 100);
+    }
+
+    // PDF Export (table + graph if present)
+    function exportToPDF(table, graph) {
+      // Load jsPDF and html2canvas if not already loaded
+      function loadScript(src, cb) {
+        if (document.querySelector('script[src="' + src + '"]')) return cb();
+        const s = document.createElement('script');
+        s.src = src;
+        s.onload = cb;
+        document.body.appendChild(s);
+      }
+      loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js', function() {
+        loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js', function() {
+          const { jsPDF } = window.jspdf;
+          const doc = new jsPDF({orientation: 'landscape', unit: 'pt', format: 'a4'});
+          let y = 40;
+
+          // Add graph if present
+          if (graph) {
+            window.html2canvas(graph).then(canvas => {
+              const imgData = canvas.toDataURL('image/png');
+              const pageWidth = doc.internal.pageSize.getWidth() - 80;
+              const imgHeight = canvas.height * (pageWidth / canvas.width);
+              doc.addImage(imgData, 'PNG', 40, y, pageWidth, imgHeight);
+              y += imgHeight + 30;
+              addTable();
+            });
+          } else {
+            addTable();
+          }
+
+          function addTable() {
+            // Table as text (simple, robust for all tables)
+            let rows = Array.from(table.querySelectorAll('tr')).map(tr =>
+              Array.from(tr.querySelectorAll('th,td')).map(td => td.innerText)
+            );
+            let colCount = rows[0] ? rows[0].length : 1;
+            let cellWidth = (doc.internal.pageSize.getWidth() - 80) / colCount;
+            rows.forEach((row, i) => {
+              row.forEach((cell, j) => {
+                doc.setFont('helvetica', i === 0 ? 'bold' : 'normal');
+                doc.text(String(cell), 40 + j * cellWidth, y + 18);
+              });
+              y += 24;
+              if (y > doc.internal.pageSize.getHeight() - 40) {
+                doc.addPage();
+                y = 40;
+              }
+            });
+            doc.save((document.title || 'report') + '.pdf');
+          }
+        });
+      });
+    }
+  });

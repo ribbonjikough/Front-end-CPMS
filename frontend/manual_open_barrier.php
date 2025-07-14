@@ -139,7 +139,7 @@ $page_subtext = 'This page shows records of manual gate operations, including to
                                 </div>
                                 <div class="filter-search">
                                     <div class="filter-label">Daily Cut-off Time</div>
-                                    <input type="time" class="search" name="cutoff_time" value="00:00:00" />
+                                    <input type="time" class="search" name="cutoff_time" disabled/>
                                 </div>
                                 <div class="filter-btns">
                                     <button class="btn btn-search" type="button">Search</button>

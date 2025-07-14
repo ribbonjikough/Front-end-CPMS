@@ -43,7 +43,7 @@ $page_subtext = 'This page shows records of parking fee redemptions given throug
                             </div>
                             <div class="card-body">
                                 <div class="summary-chart-box" style="gap:18px;">
-                                    <div class="col-lg-6 col-sm-12" style="display:flex;flex-direction:column;width:40%">
+                                    <div class="col-lg-6 col-sm-12">
                                         <div id="redemption_graph_1" class="graph-container" style="height:220px;"></div>
                                         <div id="redemption_graph_2" class="graph-container" style="height:220px;"></div>
                                     </div>

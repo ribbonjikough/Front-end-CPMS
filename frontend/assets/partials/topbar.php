@@ -55,5 +55,31 @@
         <span>Settings</span>
       </a>
     </nav>
+      <div id="exportOverlay" style="display:none; position:fixed; z-index:4000; left:0; top:0; width:100vw; height:100vh; background:rgba(33,43,54,0.32); align-items:center; justify-content:center;">
+    <div id="exportModal" style="background:#fff; border-radius:12px; box-shadow:0 4px 32px rgba(21,114,185,.18); padding:32px 24px 24px 24px; min-width:280px; max-width:95vw;">
+      <h3 style="margin-top:0; margin-bottom:18px; font-size:1.2rem;">Export Options</h3>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <label style="display:flex; align-items:center; gap:10px; cursor:pointer;">
+          <input type="checkbox" id="exportCsv" style="width:18px; height:18px;">
+          <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/filetype-csv.svg" alt="CSV" style="width:24px; height:24px;">
+          <span>Export as CSV</span>
+        </label>
+        <label style="display:flex; align-items:center; gap:10px; cursor:pointer;">
+          <input type="checkbox" id="exportPdf" style="width:18px; height:18px;">
+          <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/filetype-pdf.svg" alt="PDF" style="width:24px; height:24px;">
+          <span>Export as PDF (includes graph if present)</span>
+        </label>
+        <label style="display:flex; align-items:center; gap:10px; cursor:pointer;">
+          <input type="checkbox" id="exportPrint" style="width:18px; height:18px;">
+          <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/printer.svg" alt="Print" style="width:24px; height:24px;">
+          <span>Print</span>
+        </label>
+      </div>
+      <div id="exportActions" style="display:none; margin-top:24px; gap:12px; justify-content:flex-end;">
+        <button id="exportCancelBtn" class="btn btn-export">Cancel</button>
+        <button id="exportConfirmBtn" class="btn btn-search" style="margin-right:8px;">Confirm</button>
+      </div>
+    </div>
+  </div>
   </body>
 </html>
