@@ -67,7 +67,7 @@
         <label style="display:flex; align-items:center; gap:10px; cursor:pointer;">
           <input type="checkbox" id="exportPdf" style="width:18px; height:18px;">
           <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/filetype-pdf.svg" alt="PDF" style="width:24px; height:24px;">
-          <span>Export as PDF (includes graph if present)</span>
+          <span>Export as PDF</span>
         </label>
         <label style="display:flex; align-items:center; gap:10px; cursor:pointer;">
           <input type="checkbox" id="exportPrint" style="width:18px; height:18px;">

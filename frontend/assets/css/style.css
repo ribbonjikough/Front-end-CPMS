@@ -2996,7 +2996,7 @@ html {
     gap: 10px;
     padding: 12px 18px;
     border-radius: 10px;
-    background: none;
+    background: linear-gradient(90deg, #2196f3 0%, #1976d2 100%);
     color: #fff;
     text-decoration: none;
     font-size: 17px;
@@ -3008,7 +3008,7 @@ html {
   }
   .mobile-side-drawer .side-menu .frame .menu-item:hover,
   .mobile-side-drawer .side-menu-mobile .frame .menu-item:hover {
-    background: linear-gradient(90deg, #2196f3 0%, #1976d2 100%);
+    background: linear-gradient(270deg, #2196f3 0%, #1976d2 100%);
     color: #fff;
     box-shadow: 0 2px 8px rgba(21,114,185,.12);
   }

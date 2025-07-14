@@ -646,25 +646,26 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
     document.addEventListener('DOMContentLoaded', function () {
-    // Export overlay logic
-    document.querySelectorAll('.btn-export').forEach(function(btn) {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        // Show overlay
-        const overlay = document.getElementById('exportOverlay');
-        if (!overlay) return;
-        overlay.style.display = 'flex';
-        // Reset checkboxes and actions
-        document.getElementById('exportCsv').checked = false;
-        document.getElementById('exportPdf').checked = false;
-        // document.getElementById('exportPrint').checked = false;
-        document.getElementById('exportActions').style.display = 'flex';
-        // Disable confirm button initially
-        document.getElementById('exportConfirmBtn').disabled = true;
-        document.getElementById('exportConfirmBtn').style.opacity = 0.5;
-        document.getElementById('exportConfirmBtn').style.cursor = 'not-allowed';
-      });
+    let lastExportBtn = null; // <-- Add this line
+
+  document.querySelectorAll('.btn-export').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      lastExportBtn = btn; // <-- Add this line
+      // Show overlay
+      const overlay = document.getElementById('exportOverlay');
+      if (!overlay) return;
+      overlay.style.display = 'flex';
+      // Reset checkboxes and actions
+      document.getElementById('exportCsv').checked = false;
+      document.getElementById('exportPdf').checked = false;
+      document.getElementById('exportActions').style.display = 'flex';
+      // Disable confirm button initially
+      document.getElementById('exportConfirmBtn').disabled = true;
+      document.getElementById('exportConfirmBtn').style.opacity = 0.5;
+      document.getElementById('exportConfirmBtn').style.cursor = 'not-allowed';
     });
+  });
 
     // Enable/disable confirm button based on checkbox state
     ['exportCsv', 'exportPdf'].forEach(id => {
@@ -689,11 +690,11 @@ document.addEventListener('DOMContentLoaded', function () {
       const pdf = document.getElementById('exportPdf').checked;
       document.getElementById('exportOverlay').style.display = 'none';
 
-      // Find the nearest table and graph in the same card
-      const btn = document.querySelector('.btn-export:focus') || document.querySelector('.btn-export:hover') || document.querySelector('.btn-export');
-      let card = btn.closest('.card, .card-body, .content') || document.body;
-      let table = card.querySelector('table');
-      let graph = card.querySelector('canvas, .graph-container, .apexcharts-canvas, .chartjs-render-monitor');
+      // Find the nearest table and graph in the same card as the last clicked export button
+      let btn = lastExportBtn;
+      let card = btn ? btn.closest('.card, .card-body, .content') : document.body;
+      let table = card ? card.querySelector('table') : null;
+      let graph = card ? card.querySelector('canvas, .graph-container, .apexcharts-canvas, .chartjs-render-monitor') : null;
 
       if (csv && table) exportTableToCSV(table);
       if (pdf && table) exportToPDF(table, graph);
@@ -726,7 +727,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // PDF Export (table + graph if present)
     function exportToPDF(table, graph) {
-      // Load jsPDF and html2canvas if not already loaded
+      // Helper to load scripts in order
       function loadScript(src, cb) {
         if (document.querySelector('script[src="' + src + '"]')) return cb();
         const s = document.createElement('script');
@@ -734,47 +735,71 @@ document.addEventListener('DOMContentLoaded', function () {
         s.onload = cb;
         document.body.appendChild(s);
       }
-      loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js', function() {
-        loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js', function() {
+      function loadAll(cb) {
+        loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js', function() {
+          loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js', cb);
+        });
+      }
+
+      loadAll(function() {
+        setTimeout(function() {
           const { jsPDF } = window.jspdf;
           const doc = new jsPDF({orientation: 'landscape', unit: 'pt', format: 'a4'});
-          let y = 40;
+          const margin = 40;
+          let y = margin;
 
-          // Add graph if present
-          if (graph) {
-            window.html2canvas(graph).then(canvas => {
-              const imgData = canvas.toDataURL('image/png');
-              const pageWidth = doc.internal.pageSize.getWidth() - 80;
-              const imgHeight = canvas.height * (pageWidth / canvas.width);
-              doc.addImage(imgData, 'PNG', 40, y, pageWidth, imgHeight);
-              y += imgHeight + 30;
-              addTable();
-            });
-          } else {
-            addTable();
-          }
+          // Title and date
+          let tableTitle = '';
+          const cardTitle = table.closest('.card, .card-body, .content')?.querySelector('.card-title, h4, h3, h2, h1');
+          if (cardTitle) tableTitle = cardTitle.textContent.trim();
+          if (!tableTitle) tableTitle = document.title || 'Report';
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(20);
+          doc.text(tableTitle + ' Report', margin, y);
+          y += 28;
+          doc.setFont('helvetica', 'normal');
+          doc.setFontSize(11);
+          const now = new Date();
+          doc.text('Date Created: ' + now.toLocaleString(), margin, y);
+          y += 18;
+          y += 10;
 
-          function addTable() {
-            // Table as text (simple, robust for all tables)
-            let rows = Array.from(table.querySelectorAll('tr')).map(tr =>
-              Array.from(tr.querySelectorAll('th,td')).map(td => td.innerText)
-            );
-            let colCount = rows[0] ? rows[0].length : 1;
-            let cellWidth = (doc.internal.pageSize.getWidth() - 80) / colCount;
-            rows.forEach((row, i) => {
-              row.forEach((cell, j) => {
-                doc.setFont('helvetica', i === 0 ? 'bold' : 'normal');
-                doc.text(String(cell), 40 + j * cellWidth, y + 18);
-              });
-              y += 24;
-              if (y > doc.internal.pageSize.getHeight() - 40) {
+          // Find all graphs in the same card/content as the table
+          let card = table.closest('.card, .card-body, .content') || document.body;
+          let graphs = Array.from(card.querySelectorAll('canvas, .graph-container, .apexcharts-canvas, .chartjs-render-monitor'));
+
+          // Helper to add an image (graph or table) to the PDF
+          function addImageToPDF(element, callback) {
+            window.html2canvas(element, {backgroundColor: null, scale: 2}).then(canvas => {
+              const pageWidth = doc.internal.pageSize.getWidth() - margin * 2;
+              const imgWidth = pageWidth;
+              const imgHeight = canvas.height * (imgWidth / canvas.width);
+              // Add new page if image would overflow
+              if (y + imgHeight > doc.internal.pageSize.getHeight() - margin) {
                 doc.addPage();
-                y = 40;
+                y = margin;
               }
+              doc.addImage(canvas.toDataURL('image/png'), 'PNG', margin, y, imgWidth, imgHeight);
+              y += imgHeight + 20;
+              callback();
             });
-            doc.save((document.title || 'report') + '.pdf');
           }
-        });
+
+          // Recursively add all graphs, then the table
+          function addGraphsAndTable(graphList, done) {
+            if (!graphList.length) {
+              addImageToPDF(table, done);
+            } else {
+              addImageToPDF(graphList[0], function() {
+                addGraphsAndTable(graphList.slice(1), done);
+              });
+            }
+          }
+
+          addGraphsAndTable(graphs, function() {
+            doc.save(`${tableTitle.replace(/\s+/g, '_').toLowerCase()}_${now.toISOString().slice(0,10)}.pdf`);
+          });
+        }, 200);
       });
     }
   });
