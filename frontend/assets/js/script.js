@@ -544,3 +544,103 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
   });
+
+    document.addEventListener('DOMContentLoaded', function () {
+    // Universal search for all .filters-row search bars and tables
+    document.querySelectorAll('.filters-row').forEach(function (filtersRow) {
+      const searchInputs = filtersRow.querySelectorAll('input.search');
+      const searchBtn = filtersRow.querySelector('.btn-search');
+      // Find the nearest table in the same content/card
+      let table = filtersRow.parentElement.querySelector('.table');
+      if (!table) table = filtersRow.parentElement.querySelector('.table-responsive .table');
+      if (!table || !searchBtn) return;
+
+      const tbody = table.querySelector('tbody');
+      const info = table.closest('.card-body')?.querySelector('#table-info') || document.getElementById('table-info');
+      const pagination = table.closest('.card-body')?.querySelector('#pagination-controls') || document.getElementById('pagination-controls');
+      const entriesSelect = table.closest('.card-body')?.querySelector('#entriesPerPage') || document.getElementById('entriesPerPage');
+      let allRows = Array.from(tbody.querySelectorAll('tr'));
+      let filteredRows = allRows.slice();
+      let currentPage = 1;
+      let entriesPerPage = entriesSelect ? parseInt(entriesSelect.value) : 10;
+
+      // Only paginate if both info and pagination controls exist
+      const shouldPaginate = !!(info && pagination);
+
+      function renderTable() {
+        allRows.forEach(row => row.style.display = 'none');
+        if (shouldPaginate) {
+          // Paginate filteredRows
+          const total = filteredRows.length;
+          const totalPages = Math.max(1, Math.ceil(total / entriesPerPage));
+          if (currentPage > totalPages) currentPage = totalPages;
+          const start = (currentPage - 1) * entriesPerPage;
+          const end = Math.min(start + entriesPerPage, total);
+          filteredRows.slice(start, end).forEach(row => row.style.display = '');
+          // Info text
+          if (info) info.textContent = `Showing ${total === 0 ? 0 : start + 1}-${end} out of ${total} items`;
+          // Pagination buttons
+          if (pagination) {
+            pagination.innerHTML = '';
+            // Previous button
+            const prevBtn = document.createElement('button');
+            prevBtn.textContent = 'Previous';
+            prevBtn.className = 'pagination-btn';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.onclick = () => { if (currentPage > 1) { currentPage--; renderTable(); }};
+            pagination.appendChild(prevBtn);
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+              const btn = document.createElement('button');
+              btn.textContent = i;
+              btn.className = 'pagination-btn' + (i === currentPage ? ' active' : '');
+              btn.onclick = () => { currentPage = i; renderTable(); };
+              pagination.appendChild(btn);
+            }
+            // Next button
+            const nextBtn = document.createElement('button');
+            nextBtn.textContent = 'Next';
+            nextBtn.className = 'pagination-btn';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.onclick = () => { if (currentPage < totalPages) { currentPage++; renderTable(); }};
+            pagination.appendChild(nextBtn);
+          }
+        } else {
+          // No pagination: show all filtered rows
+          filteredRows.forEach(row => row.style.display = '');
+        }
+      }
+
+      function doSearch() {
+        const searchTerms = Array.from(searchInputs).map(input => input.value.trim().toLowerCase());
+        filteredRows = allRows.filter(row => {
+          const rowText = row.innerText.toLowerCase();
+          return searchTerms.every(term => !term || rowText.includes(term));
+        });
+        currentPage = 1; // Reset to first page on new search
+        renderTable();
+      }
+
+      // Search button click
+      searchBtn.addEventListener('click', doSearch);
+
+      // Enter key triggers search
+      searchInputs.forEach(input => {
+        input.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') searchBtn.click();
+        });
+      });
+
+      // Entries per page change
+      if (entriesSelect) {
+        entriesSelect.addEventListener('change', function () {
+          entriesPerPage = parseInt(this.value);
+          currentPage = 1;
+          renderTable();
+        });
+      }
+
+      // Initial render
+      renderTable();
+    });
+  });

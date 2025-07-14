@@ -2988,8 +2988,8 @@ html {
     background: transparent;
     width: 100%;
   }
-  .mobile-side-drawer .side-menu .menu-item,
-  .mobile-side-drawer .side-menu-mobile .menu-item {
+  .mobile-side-drawer .side-menu .frame .menu-item,
+  .mobile-side-drawer .side-menu-mobile .frame .menu-item {
     display: flex;
     align-items: center;
     width: 100%;
@@ -3006,21 +3006,21 @@ html {
     font-weight: 500;
     margin-bottom: 2px;
   }
-  .mobile-side-drawer .side-menu .menu-item:hover,
-  .mobile-side-drawer .side-menu-mobile .menu-item:hover {
+  .mobile-side-drawer .side-menu .frame .menu-item:hover,
+  .mobile-side-drawer .side-menu-mobile .frame .menu-item:hover {
     background: linear-gradient(90deg, #2196f3 0%, #1976d2 100%);
     color: #fff;
     box-shadow: 0 2px 8px rgba(21,114,185,.12);
   }
-  .mobile-side-drawer .side-menu .menu-item.active,
-  .mobile-side-drawer .side-menu-mobile .menu-item.active {
+  .mobile-side-drawer .side-menu .frame .menu-item.active,
+  .mobile-side-drawer .side-menu-mobile .frame .menu-item.active {
     background: linear-gradient(90deg, #1572b9 63%, #093353 100%);
     color: #fff;
     font-weight: 700;
     box-shadow: 0 2px 8px rgba(21,114,185,.18);
   }
-  .mobile-side-drawer .side-menu .menu-item .transactions,
-  .mobile-side-drawer .side-menu-mobile .menu-item .transactions {
+  .mobile-side-drawer .side-menu .frame .menu-item .transactions,
+  .mobile-side-drawer .side-menu-mobile .frame .menu-item .transactions {
     color: inherit;
     width: fit-content;
     height: fit-content;
@@ -3032,12 +3032,12 @@ html {
     flex: 1;
     white-space: nowrap;
   }
-  .mobile-side-drawer .side-menu .radio-btn,
-  .mobile-side-drawer .side-menu-mobile .radio-btn {
+  .mobile-side-drawer .side-menu .frame .radio-btn,
+  .mobile-side-drawer .side-menu-mobile .frame .radio-btn {
     margin-right: 8px;
   }
-  .mobile-side-drawer .side-menu .radio-circle,
-  .mobile-side-drawer .side-menu-mobile .radio-circle {
+  .mobile-side-drawer .side-menu .frame .radio-circle,
+  .mobile-side-drawer .side-menu-mobile .frame .radio-circle {
     width: 16px;
     height: 16px;
     border-radius: 50%;
@@ -3047,13 +3047,13 @@ html {
     transition: border-color .2s, background .2s;
     box-sizing: border-box;
   }
-  .mobile-side-drawer .side-menu .menu-item.active .radio-circle,
-  .mobile-side-drawer .side-menu-mobile .menu-item.active .radio-circle {
+  .mobile-side-drawer .side-menu .frame .menu-item.active .radio-circle,
+  .mobile-side-drawer .side-menu-mobile .frame .menu-item.active .radio-circle {
     border-color: #fff;
     background: #2196f3;
   }
-  .mobile-side-drawer .side-menu .radio-circle::after,
-  .mobile-side-drawer .side-menu-mobile .radio-circle::after {
+  .mobile-side-drawer .side-menu .frame .radio-circle::after,
+  .mobile-side-drawer .side-menu-mobile .frame .radio-circle::after {
     content: "";
     display: none;
     width: 6px;
@@ -3065,13 +3065,13 @@ html {
     left: 4px;
     transition: background .2s;
   }
-  .mobile-side-drawer .side-menu .menu-item.active .radio-circle::after,
-  .mobile-side-drawer .side-menu-mobile .menu-item.active .radio-circle::after {
+  .mobile-side-drawer .side-menu .frame .menu-item.active .radio-circle::after,
+  .mobile-side-drawer .side-menu-mobile .frame .menu-item.active .radio-circle::after {
     display: block;
     background: #fff;
   }
-  .mobile-side-drawer .side-menu .menu-item.active::before,
-  .mobile-side-drawer .side-menu-mobile .menu-item.active::before {
+  .mobile-side-drawer .side-menu .frame .menu-item.active::before,
+  .mobile-side-drawer .side-menu-mobile .frame .menu-item.active::before {
     content: "";
     position: absolute;
     left: 0;

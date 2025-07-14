@@ -45,6 +45,7 @@ $page_subtext = 'This page views the complete record of all vehicle entries, exi
                             <input type="text" class="search" placeholder="Search Plate No" name="plate_no" />
                         </div>
                         <div class="filter-btns">
+                            <button class="btn btn-search" type="button">Search</button>
                             <button class="btn btn-export" type="button">Export</button>
                         </div>
                     </div>
