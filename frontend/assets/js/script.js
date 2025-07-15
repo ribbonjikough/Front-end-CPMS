@@ -260,11 +260,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function loadSidebar(section) {
+    // Map section to correct sidebar partial
     const url = sidebarMap[section] || sidebarMap['dashboard'];
-    // Always pass section for sidebar.php
-    const fetchUrl = url.includes('sidebar.php')
-      ? url + '?section=' + encodeURIComponent(section)
-      : url;
+    const currentFile = location.pathname.split('/').pop();
+    // Always pass section and current page for both sidebar.php and sidebar_report.php
+    const fetchUrl =
+      (url.includes('sidebar.php') || url.includes('sidebar_report.php'))
+        ? url + '?section=' + encodeURIComponent(section) + '&current=' + encodeURIComponent(currentFile)
+        : url;
     fetch(fetchUrl)
       .then(res => res.text())
       .then(html => {

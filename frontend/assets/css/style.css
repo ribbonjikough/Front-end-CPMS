@@ -2932,27 +2932,27 @@ html {
   }
 }
 
-    .account-type-toggle-group {
-        margin-bottom: 18px;
-        display: flex;
-        gap: 8px;
-    }
-    .account-type-toggle {
-        padding: 7px 18px;
-        border-radius: 8px;
-        border: 1.5px solid #1976d2;
-        background: #fff;
-        color: #1976d2;
-        font-size: 15px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: background 0.18s, color 0.18s;
-    }
-    .account-type-toggle.active,
-    .account-type-toggle:hover {
-        background: #1976d2;
-        color: #fff;
-    }
+.account-type-toggle-group {
+    margin-bottom: 18px;
+    display: flex;
+    gap: 8px;
+}
+.account-type-toggle {
+    padding: 7px 18px;
+    border-radius: 8px;
+    border: 1.5px solid #1976d2;
+    background: #fff;
+    color: #1976d2;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s;
+}
+.account-type-toggle.active,
+.account-type-toggle:hover {
+    background: #1976d2;
+    color: #fff;
+}
 
 @media (max-width: 600px) {
   .mobile-side-drawer {
@@ -3008,13 +3008,13 @@ html {
   }
   .mobile-side-drawer .side-menu .frame .menu-item:hover,
   .mobile-side-drawer .side-menu-mobile .frame .menu-item:hover {
-    background: linear-gradient(270deg, #2196f3 0%, #1976d2 100%);
+    background: linear-gradient(270deg, #2196f3 0%, #003c79 100%);
     color: #fff;
     box-shadow: 0 2px 8px rgba(21,114,185,.12);
   }
   .mobile-side-drawer .side-menu .frame .menu-item.active,
   .mobile-side-drawer .side-menu-mobile .frame .menu-item.active {
-    background: linear-gradient(90deg, #1572b9 63%, #093353 100%);
+    background: linear-gradient(90deg, #1572b9 63%, #ff0202 100%);
     color: #fff;
     font-weight: 700;
     box-shadow: 0 2px 8px rgba(21,114,185,.18);
@@ -3046,29 +3046,6 @@ html {
     position: relative;
     transition: border-color .2s, background .2s;
     box-sizing: border-box;
-  }
-  .mobile-side-drawer .side-menu .frame .menu-item.active .radio-circle,
-  .mobile-side-drawer .side-menu-mobile .frame .menu-item.active .radio-circle {
-    border-color: #fff;
-    background: #2196f3;
-  }
-  .mobile-side-drawer .side-menu .frame .radio-circle::after,
-  .mobile-side-drawer .side-menu-mobile .frame .radio-circle::after {
-    content: "";
-    display: none;
-    width: 6px;
-    height: 6px;
-    background: #fff;
-    border-radius: 50%;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    transition: background .2s;
-  }
-  .mobile-side-drawer .side-menu .frame .menu-item.active .radio-circle::after,
-  .mobile-side-drawer .side-menu-mobile .frame .menu-item.active .radio-circle::after {
-    display: block;
-    background: #fff;
   }
   .mobile-side-drawer .side-menu .frame .menu-item.active::before,
   .mobile-side-drawer .side-menu-mobile .frame .menu-item.active::before {

@@ -5,7 +5,7 @@ if (isset($_GET['section'])) {
 } else {
     $sidebar_type = isset($topbar_title) ? strtolower(trim($topbar_title)) : 'dashboard';
 }
-$current_file = basename($_SERVER['SCRIPT_NAME']);
+$current_file = isset($_GET['current']) ? $_GET['current'] : basename($_SERVER['SCRIPT_NAME']);
 
 function is_active($file) {
     global $current_file;
