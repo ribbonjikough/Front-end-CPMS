@@ -3085,3 +3085,41 @@ html {
     z-index: 1;
   }
 }
+
+.daterange-input, 
+input.daterange-input, 
+input[type="text"].daterange-input {
+  min-width: 180px;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 15px;
+  color: #212b36;
+  box-sizing: border-box;
+  transition: border-color .2s;
+}
+.daterange-input:focus {
+  border-color: #2196f3;
+  background: #fff;
+}
+
+.daterange-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.daterange-wrapper .daterange-input {
+  padding-right: 32px;
+}
+.daterange-wrapper .dropdown-polygon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  background: url("data:image/svg+xml;utf8,<svg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M2 2L8 8L14 2' stroke='%23333' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat;
+}

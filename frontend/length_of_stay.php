@@ -54,25 +54,10 @@ $page_subtext = 'This page shows how long vehicles typically stay in the parking
                             </div>
                             <div class="card-body">
                                 <div class="filters-row" style="margin-bottom:18px;">
-                                    <div class="filter-dropdown">
-                                        <div class="filter-label">Start Date</div>
-                                        <div class="dropdown-wrapper">
-                                            <select class="dropdown" name="start_date">
-                                                <option value="">Start Date</option>
-                                                <option value="2025-07-01">2025-07-01</option>
-                                                <option value="2025-07-02">2025-07-02</option>
-                                            </select>
-                                            <span class="dropdown-polygon"></span>
-                                        </div>
-                                    </div>
-                                    <div class="filter-dropdown">
-                                        <div class="filter-label">End Date</div>
-                                        <div class="dropdown-wrapper">
-                                            <select class="dropdown" name="end_date">
-                                                <option value="">End Date</option>
-                                                <option value="2025-07-01">2025-07-01</option>
-                                                <option value="2025-07-02">2025-07-02</option>
-                                            </select>
+                                    <div class="filter-search">
+                                        <div class="filter-label">Date Range</div>
+                                        <div class="daterange-wrapper">
+                                            <input type="text" id="length-daterange" class="search daterange-input" name="length_daterange" autocomplete="off" placeholder="Insert Date Range here"/>
                                             <span class="dropdown-polygon"></span>
                                         </div>
                                     </div>

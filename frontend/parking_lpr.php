@@ -31,14 +31,13 @@ $page_subtext = 'This page displays all license plate recognition activity, capt
                     <div class="page-subtext"><?= htmlspecialchars($page_subtext) ?></div>
                 </div>
                 <div class="content">
-                    <div class="filters-row">
+                    <div class="filters-row"> 
                         <div class="filter-search">
-                            <div class="filter-label">Start Datetime</div>
-                            <input type="datetime-local" class="search" name="start_datetime" />
-                        </div>
-                        <div class="filter-search">
-                            <div class="filter-label">End Datetime</div>
-                            <input type="datetime-local" class="search" name="end_datetime" />
+                            <div class="filter-label">Exit Date Range</div>
+                            <div class="daterange-wrapper">
+                                <input type="text" id="exit-daterange" class="search daterange-input" name="exit_daterange" autocomplete="off" placeholder="Insert Date Range here"/>
+                                <span class="dropdown-polygon"></span>
+                            </div>
                         </div>
                         <div class="filter-search">
                             <div class="filter-label">Plate No</div>

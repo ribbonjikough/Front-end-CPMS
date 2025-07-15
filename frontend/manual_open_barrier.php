@@ -39,7 +39,7 @@ $page_subtext = 'This page shows records of manual gate operations, including to
                     <div class="row manual-barrier-stats-row">
                         <div class="manual-barrier-stat-card stat-green">
                             <div class="stat-card-content">
-                                <span class="stat-icon"><img src="assets/img/check_circle_24dp.svg" alt="Performance"></span>
+                                <span class="stat-icon"><img src="assets/img/check_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Performance"></span>
                                 <div>
                                     <div class="stat-value">99.36%</div>
                                     <div class="stat-label">Average Performance</div>
@@ -48,7 +48,7 @@ $page_subtext = 'This page shows records of manual gate operations, including to
                         </div>
                         <div class="manual-barrier-stat-card stat-red">
                             <div class="stat-card-content">
-                                <span class="stat-icon"><img src="assets/img/error_24dp.svg" alt="System Error"></span>
+                                <span class="stat-icon"><img src="assets/img/error_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="System Error"></span>
                                 <div>
                                     <div class="stat-value">1.36%</div>
                                     <div class="stat-label">System Error</div>
@@ -57,7 +57,7 @@ $page_subtext = 'This page shows records of manual gate operations, including to
                         </div>
                         <div class="manual-barrier-stat-card stat-blue">
                             <div class="stat-card-content">
-                                <span class="stat-icon"><img src="assets/img/block_24dp.svg" alt="Unpaid"></span>
+                                <span class="stat-icon"><img src="assets/img/error_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Unpaid"></span>
                                 <div>
                                     <div class="stat-value">0.45%</div>
                                     <div class="stat-label">Unpaid</div>
@@ -66,7 +66,7 @@ $page_subtext = 'This page shows records of manual gate operations, including to
                         </div>
                         <div class="manual-barrier-stat-card stat-brown">
                             <div class="stat-card-content">
-                                <span class="stat-icon"><img src="assets/img/warning_24dp.svg" alt="Season Violation"></span>
+                                <span class="stat-icon"><img src="assets/img/featured_seasonal_and_gifts_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24 (1).svg" alt="Season Violation"></span>
                                 <div>
                                     <div class="stat-value">0.00%</div>
                                     <div class="stat-label">Season Violation</div>
@@ -75,7 +75,7 @@ $page_subtext = 'This page shows records of manual gate operations, including to
                         </div>
                         <div class="manual-barrier-stat-card stat-purple">
                             <div class="stat-card-content">
-                                <span class="stat-icon"><img src="assets/img/directions_car_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Duplicate"></span>
+                                <span class="stat-icon"><img src="assets/img/directions_car_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Duplicate"></span>
                                 <div>
                                     <div class="stat-value">0.00%</div>
                                     <div class="stat-label">Duplicate Car Plate</div>
@@ -84,7 +84,7 @@ $page_subtext = 'This page shows records of manual gate operations, including to
                         </div>
                         <div class="manual-barrier-stat-card stat-grey">
                             <div class="stat-card-content">
-                                <span class="stat-icon"><img src="assets/img/receipt_long_24dp.svg" alt="Others"></span>
+                                <span class="stat-icon"><img src="assets/img/other_admission_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Others"></span>
                                 <div>
                                     <div class="stat-value">0.24%</div>
                                     <div class="stat-label">Others</div>
@@ -112,24 +112,10 @@ $page_subtext = 'This page shows records of manual gate operations, including to
                         </div>
                         <div class="card-body">
                             <div class="filters-row" style="margin-bottom:18px;">
-                                <div class="filter-dropdown">
-                                    <div class="filter-label">Start Date</div>
-                                    <div class="dropdown-wrapper">
-                                        <select class="dropdown" name="start_date">
-                                            <option value="">Start Date</option>
-                                            <option value="2025-03-24">2025-03-24</option>
-                                            <option value="2025-03-25">2025-03-25</option>
-                                        </select>
-                                        <span class="dropdown-polygon"></span>
-                                    </div>
-                                </div>
-                                <div class="filter-dropdown">
-                                    <div class="filter-label">End Date</div>
-                                    <div class="dropdown-wrapper">
-                                        <select class="dropdown" name="end_date">
-                                            <option value="">End Date</option>
-                                            <option value="2025-03-30">2025-03-30</option>
-                                        </select>
+                                <div class="filter-search">
+                                    <div class="filter-label">Date Range</div>
+                                    <div class="daterange-wrapper">
+                                        <input type="text" id="manual-daterange" class="search daterange-input" name="manual_daterange" autocomplete="off" placeholder="Insert Date Range here"/>
                                         <span class="dropdown-polygon"></span>
                                     </div>
                                 </div>
@@ -162,9 +148,9 @@ $page_subtext = 'This page shows records of manual gate operations, including to
                                     </thead>
                                     <tbody>
                                         <?php
-                                        // Example data from your screenshot
+                                        // Example data with new date format
                                         $dates = [
-                                            "24 Mar", "25 Mar", "26 Mar", "27 Mar", "28 Mar", "29 Mar", "30 Mar"
+                                            "2025-03-24", "2025-03-25", "2025-03-26", "2025-03-27", "2025-03-28", "2025-03-29", "2025-03-30"
                                         ];
                                         $entries = [57,112,111,73,157,132,81];
                                         $exits = [9,111,114,92,163,136,67];

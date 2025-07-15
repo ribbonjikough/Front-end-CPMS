@@ -33,19 +33,19 @@ $page_subtext = 'This page views the complete record of all vehicle entries, exi
                 <div class="content">
                     <div class="filters-row">
                         <div class="filter-search">
-                            <div class="filter-label">Start Datetime</div>
-                            <input type="datetime-local" class="search" name="start_datetime" />
+                          <div class="filter-label">Exit Date Range</div>
+                          <div class="daterange-wrapper">
+                            <input type="text" id="exit-daterange" class="search daterange-input" name="exit_daterange" autocomplete="off" placeholder="Insert Date Range here"/>
+                            <span class="dropdown-polygon"></span>
+                          </div>
                         </div>
-                        <div class="filter-search">
-                            <div class="filter-label">End Datetime</div>
-                            <input type="datetime-local" class="search" name="end_datetime" />
-                        </div>
-                        <div class="filter-search">
+                        <div class="filter-search"> 
                             <div class="filter-label">Plate No</div>
                             <input type="text" class="search" placeholder="Search Plate No" name="plate_no" />
                         </div>
                         <div class="filter-btns">
                             <button class="btn btn-search" type="button">Search</button>
+                              <span class="dropdown-polygon"></span>
                             <button class="btn btn-export" type="button">Export</button>
                         </div>
                     </div>

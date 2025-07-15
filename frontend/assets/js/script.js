@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const overlay = document.querySelector('.sidebar-overlay');
   const drawer = document.getElementById('mobile-side-drawer');
 
-const sidebarMap = {
+  const sidebarMap = {
   'dashboard': 'assets/partials/sidebar.php',
   'parking': 'assets/partials/sidebar.php',
   'season parking': 'assets/partials/sidebar.php',
@@ -311,7 +311,12 @@ const sidebarMap = {
   }
 
   if (sidebarToggle) sidebarToggle.onclick = openDrawer;
-  if (overlay) overlay.onclick = closeDrawer;
+  if (overlay) {
+    overlay.onclick = function(e) {
+      // Only close if clicking directly on the overlay, not on the drawer
+      if (e.target === overlay) closeDrawer();
+    };
+  }
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && isMobile()) closeDrawer();
   });

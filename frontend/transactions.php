@@ -44,12 +44,11 @@ $page_subtext = 'This page shows all transactions made for all vehicles';
                             <div class="card-body">
                                 <div class="filters-row" style="margin-bottom:18px;">
                                     <div class="filter-search">
-                                        <div class="filter-label">Start Date</div>
-                                        <input type="date" class="search" name="start_date" />
-                                    </div>
-                                    <div class="filter-search">
-                                        <div class="filter-label">End Date</div>
-                                        <input type="date" class="search" name="end_date" />
+                                        <div class="filter-label">Transaction Date Range</div>
+                                        <div class="daterange-wrapper">
+                                            <input type="text" id="trx-daterange" class="search daterange-input" name="trx_daterange" autocomplete="off" placeholder="Insert Date Range here"/>
+                                            <span class="dropdown-polygon"></span>
+                                        </div>
                                     </div>
                                     <div class="filter-search">
                                         <div class="filter-label">Parking Type</div>
