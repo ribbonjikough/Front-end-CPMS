@@ -32,17 +32,24 @@ $page_subtext = 'This page logs all manually opened gates performed by admins du
                 </div>
                 <div class="content">
                     <div class="filters-row">
-                        <div class="filter-search">
+                        <div class="filter-search" style="flex:1;max-width:320px;">
+                            <input type="text" id="tableLiveSearch" class="search" placeholder="Search any value..." style="width:100%;padding:8px 12px;border-radius:6px;border:1px solid #ccc;" />
+                        </div>
+                        <div class="filter-btns">
+                            <button id="filterToggleBtn" class="btn filter-square-btn" type="button" title="Show Filters">
+                                <span class="filter-icon">&#9881;</span>
+                            </button>
+                            <button class="btn btn-export" type="button">Export</button>
+                        </div>
+                    </div>
+                    <div class="filter-segment" id="filterSegment">
+                        <div class="filter-search" style="flex:1;max-width:320px;">
                             <div class="filter-label">MOpening ID</div>
                             <input type="text" class="search" placeholder="Search MOpening ID" name="mopening_id" />
                         </div>
                         <div class="filter-search">
                             <div class="filter-label">Admin ID</div>
                             <input type="text" class="search" placeholder="Search Admin ID" name="admin_id" />
-                        </div>
-                        <div class="filter-btns">
-                            <button class="btn btn-search" type="button">Search</button>
-                            <button class="btn btn-export" type="button">Export</button>
                         </div>
                     </div>
                     <div class="card">

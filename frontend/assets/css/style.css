@@ -3100,3 +3100,43 @@ input[type="text"].daterange-input {
   height: 16px;
   background: url("data:image/svg+xml;utf8,<svg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M2 2L8 8L14 2' stroke='%23333' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat;
 }
+
+/* Filter segment styles */
+.filter-segment {
+  display: flex;
+  gap: 18px;
+  background: #f8fbff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(21,114,185,.06);
+  padding: 16px 18px;
+  margin-bottom: 18px;
+  align-items: flex-end;
+}
+.filter-segment .filter-dropdown {
+  min-width: 160px;
+}
+.filter-square-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #e3f2fd;
+  border: 1px solid #1572b9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-right: 8px;
+  transition: background .2s, box-shadow .2s;
+}
+.filter-square-btn:hover {
+  background: #1572b9;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(21,114,185,.12);
+}
+.filter-icon {
+  font-size: 18px;
+  color: #1572b9;
+}
+.filter-square-btn:hover .filter-icon {
+  color: #fff;
+}

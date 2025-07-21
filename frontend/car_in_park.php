@@ -37,29 +37,38 @@ $page_subtext = 'This page logs all vehicles that is currently in the bay';
                 </div>
                 <div class="content">
                     <div class="filters-row">
-                        <div class="filter-dropdown">
-                            <div class="filter-label">Insert Current Bay</div>
-                            <div class="dropdown-wrapper">
-                                <select class="dropdown" name="current_bay">
-                                    <option value="">Insert Current Bay</option>
-                                    <option value="A">Bay A</option>
-                                    <option value="B">Bay B</option>
-                                    <option value="C">Bay C</option>
-                                </select>
-                                <span class="dropdown-polygon"></span>
-                            </div>
+                        <div class="filter-search" style="flex:1;max-width:320px;">
+                            <input type="text" id="tableLiveSearch" class="search" placeholder="Search any value..." style="width:100%;padding:8px 12px;border-radius:6px;border:1px solid #ccc;" />
+                        </div>
+                        <div class="filter-btns">
+                            <button id="filterToggleBtn" class="btn filter-square-btn" type="button" title="Show Filters">
+                                <span class="filter-icon">&#9881;</span>
+                            </button>
+                            <button class="btn btn-export" type="button">Export</button>
+                        </div>
+                    </div>
+                    <div class="filter-segment" id="filterSegment">
+                        <div class="filter-search">
+                            <div class="filter-label">Current Bay</div>
+                            <select class="search" name="current_bay">
+                                <option value="">All Bays</option>
+                                <option value="A">Bay A</option>
+                                <option value="B">Bay B</option>
+                                <option value="C">Bay C</option>
+                            </select>
                         </div>
                         <div class="filter-search">
                             <div class="filter-label">Parking Type</div>
-                            <input type="text" class="search" placeholder="Select Parking Type" name="parking_type" />
+                            <select class="search" name="parking_type">
+                                <option value="">All Types</option>
+                                <option value="Season">Season</option>
+                                <option value="Visitor">Visitor</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </div>
                         <div class="filter-search">
                             <div class="filter-label">Season ID</div>
-                            <input type="text" class="search" placeholder="Select Season ID" name="season_id" />
-                        </div>
-                        <div class="filter-btns">
-                            <button class="btn btn-search" type="button">Search</button>
-                            <button class="btn btn-export" type="button">Export</button>
+                            <input type="text" class="search" placeholder="Season ID" name="season_id" />
                         </div>
                     </div>
                     <div class="card">
@@ -626,6 +635,7 @@ $page_subtext = 'This page logs all vehicles that is currently in the bay';
                                 </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

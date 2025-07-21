@@ -811,3 +811,58 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
+
+  // Car In Park table filter and live search logic
+  const searchInput = document.getElementById('tableLiveSearch');
+  const table = document.querySelector('.table');
+  const tbody = table ? table.querySelector('tbody') : null;
+  const rows = tbody ? Array.from(tbody.querySelectorAll('tr')) : [];
+  if (searchInput && rows.length) {
+    searchInput.addEventListener('input', function() {
+      const val = this.value.trim().toLowerCase();
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = val === '' || text.includes(val) ? '' : 'none';
+      });
+    });
+  }
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Universal filter toggle for all pages
+  document.querySelectorAll('#filterToggleBtn').forEach(function(btn) {
+    let filterSegment = null;
+    // 1. Try to find .filter-segment as next sibling of .filters-row
+    let filtersRow = btn.closest('.filters-row');
+    if (filtersRow) {
+      let next = filtersRow.nextElementSibling;
+      while (next && next.nodeType === 1) {
+        if (next.classList.contains('filter-segment')) {
+          filterSegment = next;
+          break;
+        }
+        next = next.nextElementSibling;
+      }
+    }
+    // 2. If not found, try within the same parent .content
+    if (!filterSegment) {
+      let content = btn.closest('.content');
+      if (content) {
+        filterSegment = content.querySelector('.filter-segment');
+      }
+    }
+    // 3. Fallback to global ID
+    if (!filterSegment) {
+      filterSegment = document.getElementById('filterSegment');
+    }
+    if (!filterSegment) return;
+    btn.addEventListener('click', function() {
+      if (filterSegment.style.display === 'none' || getComputedStyle(filterSegment).display === 'none') {
+        filterSegment.style.display = 'flex';
+      } else {
+        filterSegment.style.display = 'none';
+      }
+    });
+    // Hide filter segment by default
+    filterSegment.style.display = 'none';
+  });
+});
