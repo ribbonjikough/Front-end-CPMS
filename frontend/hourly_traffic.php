@@ -101,7 +101,7 @@ $page_subtext = 'This page tracks hourly vehicle entries and exits to identify p
                                 </div>
                                 <div class="summary-chart-box">
                                     <div id="hourly-traffic-apexchart" style="width:100%;height:260px;background-color: #ffffff;"></div>
-                        </div>
+                                </div>
                         <div class="report-divider"></div>
                         <div class="card report-card">
                             <div class="card-header">

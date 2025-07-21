@@ -1196,31 +1196,6 @@ html {
     text-overflow: ellipsis;
     order: 0
   }
-  #profileDropdown {
-    position: absolute;
-    top: 56px;
-    right: 0;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(21,114,185,.12);
-    z-index: 2002;
-    min-width: 140px;
-    display: none;
-  }
-  #profileDropdown .dropdown-content {
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  #profileDropdown .profile-name {
-    font-weight: 600;
-    color: #212b36;
-  }
-  #profileDropdown .profile-role {
-    font-size: 13px;
-    color: #888;
-  }
   .page-header {
     position: relative;
     padding: 2px 0 12px 0;
