@@ -45,7 +45,7 @@ $sidebar_items = [
         'icon' => 'assets/img/settings_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg',
         'alt'  => 'settings',
         'href' => 'settings.php',
-        'pages' => ['settings.php', 'parking_rate_adjustment.php', 'season_parking_adjustment.php', 'privileges.php', 'redemptions.php'],
+        'pages' => ['settings.php', 'parking_rate_adjustment.php', 'season_parking_adjustment.php', 'privileges.php', 'redemptions.php','profile.php'],
     ],
 ];
 

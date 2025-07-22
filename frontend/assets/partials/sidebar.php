@@ -134,6 +134,10 @@ function is_active($file) {
           <div class="radio-btn"><div class="radio-circle<?= is_active('settings.php') ?>"></div></div>
           <div class="transactions">Settings</div>
         </a>
+        <a href="profile.php" class="menu-item<?= is_active('profile.php') ?>">
+          <div class="radio-btn"><div class="radio-circle<?= is_active('profile.php') ?>"></div></div>
+          <div class="transactions">Profile</div>
+        </a>
         <?php
         break;
     }
