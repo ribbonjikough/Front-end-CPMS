@@ -37,23 +37,23 @@ $page_subtext = 'This page controls which admins can access specific features. P
                     <div class="page-subtext"><?= htmlspecialchars($page_subtext) ?></div>
                 </div>
                 <div class="content">
-                    <div class="profile-card">
-                        <div class="profile-card-header">
-                            <span class="user-img">
-                                <img src="assets/img/pfp.png" alt="Profile">
-                                <span class="status online"></span>
-                            </span>
-                            <div class="profilesets">
-                                <h2 class="profile-name">John Doe</h2>
-                                <h4 class="profile-role">Global Admin</h4>
-                            </div>
-                        </div>
-                        <hr class="profile-divider">
-                        <div class="profile-card-links">
-                            <a href="profile.php" class="profile-link">Edit Profile</a>
-                            <a href="settings.php" class="profile-link">Settings</a>
+                <div class="profile-card">
+                    <div class="profile-card-header">
+                        <span class="user-img">
+                            <img src="assets/img/pfp.png" alt="Profile">
+                            <span class="status online"></span>
+                        </span>
+                        <div class="profilesets">
+                            <h2 class="profile-name">John Doe</h2>
+                            <h4 class="profile-role">Global Admin</h4>
                         </div>
                     </div>
+                    <hr class="profile-divider">
+                    <div class="profile-card-links">
+                        <a href="profile.php" class="profile-link">Edit Profile</a>
+                        <a href="settings.php" class="profile-link">Settings</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
