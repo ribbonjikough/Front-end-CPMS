@@ -165,96 +165,95 @@ $page_subtext = 'This page shows summary overview of applications, invoices, ter
                         </div>
                     </div>
                     <!-- Quick Access Card -->
-<div class="card quick-access-card" style="margin-bottom:24px;">
-  <div class="card-header">
-    <h4 class="card-title">Quick Access</h4>
-    <div class="card-subtext">quick access for navigation</div>
-  </div>
-  <div class="card-body">
-    <div class="navigate-button-group">
-      <a href="season_applications.php" class="navigate-button">View Applications</a>
-      <a href="season_approvals.php" class="navigate-button">Approve/Rejects</a>
-      <a href="season_refunds.php" class="navigate-button">Refund Panel</a>
-      <a href="season_einvoice.php" class="navigate-button">E-invoice Panel</a>
-      <a href="season_access_cards.php" class="navigate-button">Access Cards</a>
-    </div>
-  </div>
-</div>
-<!-- Visual Trends Card for Season Parking -->
-<div class="card report-card" id="season-visual-trends-card">
-    <div class="card-header">
-        <h4 class="card-title">Graphs & Trends</h4>
-        <div class="card-subtext">Visual trends for season parking applications and refunds</div>
-        <div class="trend-filter-wrapper">
-            <select class="trend-filter-select">
-                <option>June 2025</option>
-                <option>May 2025</option>
-                <option>April 2025</option>
-            </select>
-            <span class="trend-filter-polygon"></span>
-        </div>
-    </div>
-    <div class="card-body">
-        <div class="season-trends-flex">
-            <!-- Left: Monthly Application Trends Line Chart -->
-            <div class="graph-container season-trends-left">
-                <div class="trend-panel trend-panel-fullheight">
-                    <div class="trend-panel-header">
-                        <span class="trend-panel-title">Monthly Application Trends</span>
-                        <div class="trend-panel-filter">
-                            <select class="trend-panel-select">
-                                <option>2025</option>
-                                <option>2024</option>
-                                <option>2023</option>
-                            </select>
-                            <span class="trend-panel-polygon"></span>
+                    <div class="card quick-access-card" style="margin-bottom:24px;">
+                        <div class="card-header">
+                            <h4 class="card-title">Quick Access</h4>
+                            <div class="card-subtext">quick access for navigation</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="navigate-button-group">
+                            <a href="season_applications.php" class="navigate-button">View Applications</a>
+                            <a href="season_approvals.php" class="navigate-button">Approve/Rejects</a>
+                            <a href="season_refunds.php" class="navigate-button">Refund Panel</a>
+                            <a href="season_einvoice.php" class="navigate-button">E-invoice Panel</a>
+                            <a href="season_access_cards.php" class="navigate-button">Access Cards</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="trend-panel-chart-area">
-                        <canvas id="season_app_trend_chart"></canvas>
-                    </div>
-                </div>
-            </div>
-            <!-- Right: Donut above Bar -->
-            <div class="season-trends-right-stack">
-                <div class="graph-container">
-                    <div class="trend-panel">
-                        <div class="trend-panel-header">
-                            <span class="trend-panel-title">Corporate vs Individual</span>
+                <!-- Visual Trends Card for Season Parking -->
+                    <div class="card report-card" id="season-visual-trends-card">
+                        <div class="card-header">
+                            <h4 class="card-title">Graphs & Trends</h4>
+                            <div class="card-subtext">Visual trends for season parking applications and refunds</div>
+                            <div class="trend-filter-wrapper">
+                                <select class="trend-filter-select">
+                                    <option>June 2025</option>
+                                    <option>May 2025</option>
+                                    <option>April 2025</option>
+                                </select>
+                                <span class="trend-filter-polygon"></span>
+                            </div>
                         </div>
-                        <div class="trend-donut-row">
-                            <div class="trend-donut-chart">
-                                <canvas id="season_app_donut_chart"></canvas>
-                                <div class="trend-donut-center">
-                                    <div class="trend-donut-center-label">Applications<br>Count</div>
-                                    <div class="trend-donut-center-value">610</div>
+                        <div class="card-body">
+                            <div class="season-trends-flex">
+                                <!-- Left: Monthly Application Trends Line Chart -->
+                                <div class="graph-container season-trends-left">
+                                    <div class="trend-panel trend-panel-fullheight">
+                                        <div class="trend-panel-header">
+                                            <span class="trend-panel-title">Monthly Application Trends</span>
+                                            <div class="trend-panel-filter">
+                                                <select class="trend-panel-select">
+                                                    <option>2025</option>
+                                                    <option>2024</option>
+                                                    <option>2023</option>
+                                                </select>
+                                                <span class="trend-panel-polygon"></span>
+                                            </div>
+                                        </div>
+                                        <div class="trend-panel-chart-area">
+                                            <canvas id="season_app_trend_chart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Right: Donut above Bar -->
+                                <div class="season-trends-right-stack">
+                                    <div class="graph-container">
+                                        <div class="trend-panel">
+                                            <div class="trend-panel-header">
+                                                <span class="trend-panel-title">Corporate vs Individual</span>
+                                            </div>
+                                            <div class="trend-donut-row">
+                                                <div class="trend-donut-chart">
+                                                    <canvas id="season_app_donut_chart"></canvas>
+                                                    <div class="trend-donut-center">
+                                                        <div class="trend-donut-center-label">Applications<br>Count</div>
+                                                        <div class="trend-donut-center-value">610</div>
+                                                    </div>
+                                                </div>
+                                                <div class="trend-donut-legend">
+                                                    <div><span class="trend-dot trend-dot-individual"></span>Individual - 402</div>
+                                                    <div><span class="trend-dot trend-dot-corporate"></span>Corporate - 208</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="graph-container">
+                                        <div class="trend-panel">
+                                            <div class="trend-panel-header">
+                                                <span class="trend-panel-title">Refund Status Breakdown</span>
+                                            </div>
+                                            <canvas id="season_refund_bar_chart"></canvas>
+                                            <div class="trend-bar-legend">
+                                                <span><span class="trend-dot trend-dot-pending"></span>Pending - 19</span>
+                                                <span><span class="trend-dot trend-dot-accepted"></span>Accepted - 24</span>
+                                                <span><span class="trend-dot trend-dot-rejected"></span>Rejected - 15</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="trend-donut-legend">
-                                <div><span class="trend-dot trend-dot-individual"></span>Individual - 402</div>
-                                <div><span class="trend-dot trend-dot-corporate"></span>Corporate - 208</div>
-                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="graph-container">
-                    <div class="trend-panel">
-                        <div class="trend-panel-header">
-                            <span class="trend-panel-title">Refund Status Breakdown</span>
-                        </div>
-                        <canvas id="season_refund_bar_chart"></canvas>
-                        <div class="trend-bar-legend">
-                            <span><span class="trend-dot trend-dot-pending"></span>Pending - 19</span>
-                            <span><span class="trend-dot trend-dot-accepted"></span>Accepted - 24</span>
-                            <span><span class="trend-dot trend-dot-rejected"></span>Rejected - 15</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
                 </div>
             </div>
         </div>
