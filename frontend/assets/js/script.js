@@ -18,82 +18,49 @@ document.addEventListener('DOMContentLoaded', function() {
   let dropdown = document.getElementById('profileDropdown');
 
   function handleProfileDropdown() {
-    if (window.innerWidth < 600) {
-      // Mobile: existing logic
-      if (!dropdown && profileArea) {
-        dropdown = document.createElement('div');
-        dropdown.id = 'profileDropdown';
-        dropdown.innerHTML = `
-          <div class="dropdown-content">
-            <div class="profile-name">John Doe</div>
-            <div class="profile-role">Global Admin</div>
-          </div>
-        `;
-        profileArea.appendChild(dropdown);
-      }
-      if (profileArea && dropdown) {
-        profileArea.onclick = function(e) {
-          e.stopPropagation();
-          dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        };
-        document.addEventListener('click', hideDropdownOnClick);
-        dropdown.addEventListener('click', function(e) {
-          e.stopPropagation();
-        });
-      }
-    } else {
-      // Tablet/Desktop: show dropdown with links
-      if (!dropdown && profileArea) {
-        dropdown = document.createElement('div');
-        dropdown.id = 'profileDropdown';
-        dropdown.innerHTML = `
-          <div class="dropdown-content">
-            <div class="profile-name">John Doe</div>
-            <div class="profile-role">Global Admin</div>
-            <a href="settings.php" class="profile-link">Settings</a>
-            <a href="profile.php" class="profile-link">Profile</a>
-            <a href="logout.php" class="profile-link logout-link">Logout</a>
-          </div>
-        `;
-        profileArea.appendChild(dropdown);
-      }
-      if (profileArea && dropdown) {
-        profileArea.onclick = function(e) {
-          e.stopPropagation();
-          dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        };
-        document.addEventListener('click', hideDropdownOnClick);
-        dropdown.addEventListener('click', function(e) {
-          e.stopPropagation();
-        });
-      }
-      // Style for desktop/tablet dropdown
-      dropdown.style.position = 'absolute';
-      dropdown.style.top = '56px';
-      dropdown.style.right = '0';
-      dropdown.style.background = '#fff';
-      dropdown.style.borderRadius = '10px';
-      dropdown.style.boxShadow = '0 2px 8px rgba(21,114,185,.12)';
-      dropdown.style.zIndex = '2002';
-      dropdown.style.minWidth = '180px';
-      dropdown.style.display = 'none';
-      dropdown.querySelector('.dropdown-content').style.padding = '16px';
-      dropdown.querySelectorAll('.profile-link').forEach(function(link) {
-        link.style.display = 'block';
-        link.style.padding = '8px 0';
-        link.style.color = '#2196f3';
-        link.style.fontWeight = '500';
-        link.style.textDecoration = 'none';
-      });
-      const logoutLink = dropdown.querySelector('.logout-link');
-      if (logoutLink) {
-        logoutLink.style.color = '#ea5455';
-        logoutLink.style.fontWeight = 'bold';
-        logoutLink.onclick = function(e) {
-          e.preventDefault();
-          window.location.href = '../backend/logout.php';
-        };
-      }
+    // Remove existing dropdown if present (for resize or re-open)
+    if (dropdown) {
+      dropdown.remove();
+      dropdown = null;
+    }
+    if (!profileArea) return;
+
+    // Use the same dropdown for all resolutions, but with smaller font
+    dropdown = document.createElement('div');
+    dropdown.id = 'profileDropdown';
+    dropdown.className = 'profile-dropdown small-profile-dropdown';
+    dropdown.innerHTML = `
+      <div class="dropdown-content">
+        <div class="profile-name">John Doe</div>
+        <div class="profile-role">Global Admin</div>
+        <a href="settings.php" class="profile-link">Settings</a>
+        <a href="profile.php" class="profile-link">Profile</a>
+        <a href="logout.php" class="profile-link logout-link">Logout</a>
+      </div>
+    `;
+    profileArea.appendChild(dropdown);
+
+    profileArea.onclick = function(e) {
+      e.stopPropagation();
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    };
+    document.addEventListener('click', hideDropdownOnClick);
+    dropdown.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+
+    // Always hide initially
+    dropdown.style.display = 'none';
+
+    // Style logout link
+    const logoutLink = dropdown.querySelector('.logout-link');
+    if (logoutLink) {
+      logoutLink.style.color = '#ea5455';
+      logoutLink.style.fontWeight = 'bold';
+      logoutLink.onclick = function(e) {
+        e.preventDefault();
+        window.location.href = 'logout.php';
+      };
     }
   }
 
@@ -270,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ],
       settings: [
         'parking_rate_adjustment.php', 'season_parking_adjustment.php', 'privileges.php',
-        'redemptions.php', 'settings.php'
+        'redemptions.php', 'settings.php', 'profile.php',
       ]
     };
 
